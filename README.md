@@ -4,7 +4,7 @@
 
 Every feed here is fetched weekly by CI. Dead ones get flagged in the table below instead of sitting there looking fine for two years. Each entry also carries measurements you can only get by actually reading the feed: how often it publishes, whether it timestamps its entries, and how well it works as source material for a generated audio summary.
 
-**→ [Pick feeds visually and copy a ready-made config](https://tech-feed-catalog.pages.dev)**
+**→ [Pick feeds visually and copy a ready-made config](https://inoueuj.github.io/tech-feed-catalog/)**
 
 Machine-readable data: [`feeds/*.yaml`](feeds/) · [`site/feeds.json`](site/feeds.json) (single JSON blob, CORS-enabled) · [`schema.json`](schema.json)
 
