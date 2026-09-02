@@ -1,0 +1,60 @@
+- name: Cloudflare Security
+  url: https://blog.cloudflare.com/tag/security/rss/
+  site: https://blog.cloudflare.com/tag/security/
+  category: security
+  kind: blog
+  language: en
+  volume: ~2/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-07-09'
+  status: ok
+  last_checked: '2026-09-02'
+- name: GitHub Security
+  url: https://github.blog/security/feed/
+  site: https://github.blog/security/
+  category: security
+  kind: blog
+  language: en
+  volume: ~5/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-08-27'
+  status: ok
+  last_checked: '2026-09-02'
+- name: Google Project Zero
+  url: https://googleprojectzero.blogspot.com/feeds/posts/default
+  site: https://googleprojectzero.blogspot.com/
+  category: security
+  kind: blog
+  language: en
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-05-13'
+  status: ok
+  last_checked: '2026-09-02'
+- name: Google Security Blog
+  url: https://security.googleblog.com/feeds/posts/default
+  site: https://security.googleblog.com/
+  category: security
+  kind: blog
+  language: en
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-04-23'
+  status: ok
+  last_checked: '2026-09-02'
+- name: Rust Security Advisories
+  url: https://rustsec.org/feed.xml
+  site: https://rustsec.org/advisories/
+  category: security
+  kind: changelog
+  language: en
+  volume: ~300/month
+  radio_friendly: low
+  has_timestamps: true
+  latest_post: '2026-09-01'
+  status: ok
+  last_checked: '2026-09-02'

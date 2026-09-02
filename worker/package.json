@@ -1,0 +1,19 @@
+{
+  "name": "tech-feed-catalog-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCP server exposing the tech-feed-catalog to AI agents",
+  "scripts": {
+    "prebuild": "node scripts/bundle_data.mjs",
+    "predev": "node scripts/bundle_data.mjs",
+    "predeploy": "node scripts/bundle_data.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250726.0",
+    "typescript": "^5.6.0",
+    "wrangler": "^3.90.0"
+  }
+}

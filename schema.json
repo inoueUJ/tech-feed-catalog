@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tech-feed-catalog entry",
+  "description": "One feed in the catalog. Measured fields are written by scripts/validate.py — do not fill them in by hand in a pull request.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "url", "site", "category", "kind", "language"],
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 40,
+        "description": "Shown verbatim in notifications and in the catalog table. Keep it short and human ('Google AI Blog', not 'google-ai-blog-rss')."
+      },
+      "url": {
+        "type": "string",
+        "format": "uri",
+        "description": "The feed URL for RSS/Atom entries, or the sitemap.xml URL when type is 'sitemap'."
+      },
+      "type": {
+        "const": "sitemap",
+        "description": "Only for sites that publish no RSS feed. Omit for ordinary RSS/Atom feeds."
+      },
+      "prefix": {
+        "type": "string",
+        "format": "uri",
+        "description": "Required when type is 'sitemap': only URLs starting with this prefix count as articles."
+      },
+      "site": {
+        "type": "string",
+        "format": "uri",
+        "description": "The human-facing page, so a reader can see what they are subscribing to."
+      },
+      "category": {
+        "enum": ["ai-models", "ai-coding", "infra", "languages", "frontend", "security", "companies", "aggregators"]
+      },
+      "kind": {
+        "enum": ["blog", "changelog", "release-notes"],
+        "description": "blog = narrative posts; changelog = many short entries; release-notes = version announcements. This drives the radio-friendliness estimate."
+      },
+      "language": {
+        "enum": ["en", "ja"]
+      },
+      "source_mode": {
+        "const": "text",
+        "description": "Set when the article pages block automated fetchers (Cloudflare challenge etc.), so consumers submit the feed summary instead of the URL."
+      },
+      "volume": {
+        "type": "string",
+        "description": "Measured: posts per month over the last 90 days."
+      },
+      "radio_friendly": {
+        "enum": ["high", "medium", "low"],
+        "description": "Measured: how well this feed suits a generated audio overview, derived from kind, volume, and how much body text the feed ships."
+      },
+      "has_timestamps": {
+        "type": "boolean",
+        "description": "Measured: whether every entry carries a publish/update time. Feeds without them need ID-based read tracking."
+      },
+      "latest_post": {
+        "type": "string",
+        "format": "date",
+        "description": "Measured: date of the newest entry seen."
+      },
+      "status": {
+        "enum": ["ok", "stale", "broken"],
+        "description": "Measured: 'stale' means nothing new for 180 days; 'broken' means the feed could not be fetched or parsed."
+      },
+      "status_detail": {
+        "type": "string",
+        "description": "Measured: why the status is not 'ok'."
+      },
+      "last_checked": {
+        "type": "string",
+        "format": "date",
+        "description": "Measured: when the weekly validator last fetched this feed."
+      }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "type": { "const": "sitemap" } }, "required": ["type"] },
+        "then": { "required": ["prefix"] }
+      }
+    ]
+  }
+}

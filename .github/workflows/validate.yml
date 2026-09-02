@@ -1,0 +1,109 @@
+name: Validate catalog
+
+on:
+  schedule:
+    # Weekly, Sunday 03:20 UTC. A link list rots silently; this is what stops it.
+    - cron: '20 3 * * 0'
+  pull_request:
+    paths: ['feeds/**', 'schema.json', 'scripts/**', 'README.md', 'site/feeds.json']
+  push:
+    branches: [main]
+    paths: ['feeds/**', 'schema.json', 'scripts/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Fast, network-free: schema conformance and whether the generated files match
+  # the data. This is what a contributor's PR is judged on.
+  structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check schema and generated files
+        run: python scripts/build.py --check
+
+  # Actually fetches every feed. On a PR this proves a newly added URL is real;
+  # on the weekly run it catches feeds that died since last time.
+  reachability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: structure
+    permissions:
+      contents: write   # the weekly run commits refreshed measurements
+      issues: write     # and opens an issue when feeds break
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      # On pull requests, never write — just fail if a proposed feed is unreachable.
+      - name: Check feeds are reachable
+        if: github.event_name == 'pull_request'
+        run: python scripts/validate.py --check-only
+
+      - name: Refresh measurements
+        if: github.event_name != 'pull_request'
+        id: refresh
+        run: |
+          set +e
+          python scripts/validate.py 2>validate-errors.txt
+          echo "broken=$?" >> "$GITHUB_OUTPUT"
+          cat validate-errors.txt
+          python scripts/build.py
+
+      - name: Commit refreshed catalog
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feeds site/feeds.json README.md
+          if git diff --staged --quiet; then
+            echo "Catalog unchanged."
+            exit 0
+          fi
+          git commit -m "chore: refresh feed measurements [skip ci]"
+          REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git pull --rebase "$REMOTE" "${GITHUB_REF_NAME}"
+          git push "$REMOTE" "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Report broken feeds
+        if: github.event_name == 'schedule' && steps.refresh.outputs.broken != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # One rolling issue rather than a new one every week.
+          BODY="The weekly validation run could not fetch these feeds:
+
+          \`\`\`
+          $(cat validate-errors.txt)
+          \`\`\`
+
+          They are flagged in the catalog table. Fix the URL or remove the entry.
+          [Run log](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
+          EXISTING=$(gh issue list --label broken-feeds --state open --limit 1 --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "Broken feeds detected" --label broken-feeds --body "$BODY"
+          fi
