@@ -361,6 +361,7 @@ function renderList() {
       const flags = [];
       if (f.status === 'broken') flags.push('<span class="warnflag">⚠️ fetch failing</span>');
       if (f.status === 'stale') flags.push('<span class="warnflag">💤 dormant</span>');
+      if (f.status === 'blocked') flags.push('<span class="warnflag" title="Works in a browser, but refuses automated clients from cloud IPs">🤖 blocks bots</span>');
       if (f.source_mode === 'text') flags.push('<span class="warnflag">bot-protected</span>');
       if (f.has_timestamps === false) flags.push('no timestamps');
       html += `

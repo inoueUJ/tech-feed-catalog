@@ -56,9 +56,9 @@
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-08-31'
-  status: broken
+  status: blocked
   last_checked: '2026-09-02'
-  status_detail: HTTP 403
+  status_detail: refuses automated clients (HTTP 403 from CI)
 - name: DuckDB
   url: https://duckdb.org/feed.xml
   site: https://duckdb.org/news/

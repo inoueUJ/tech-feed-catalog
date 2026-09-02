@@ -187,6 +187,13 @@ def enrich(entry, now):
     updated['last_checked'] = now.date().isoformat()
 
     if 'error' in result:
+        # 403/429 from a datacenter IP usually means the feed is fine in a browser
+        # but refuses automated clients. That is different from a dead URL, and it
+        # is precisely what someone automating this feed needs to know beforehand.
+        if result['error'] in ('HTTP 403', 'HTTP 429'):
+            updated['status'] = 'blocked'
+            updated['status_detail'] = f"refuses automated clients ({result['error']} from CI)"
+            return updated, None
         updated['status'] = 'broken'
         updated['status_detail'] = result['error']
         return updated, f"{entry['name']}: {result['error']}"

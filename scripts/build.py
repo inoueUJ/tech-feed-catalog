@@ -74,6 +74,8 @@ def status_cell(entry):
         return f'✅ {checked}'
     if status == 'stale':
         return f'💤 {entry.get("status_detail", "stale")}'
+    if status == 'blocked':
+        return '🤖 blocks bots'
     return f'⚠️ {entry.get("status_detail", "broken")}'
 
 

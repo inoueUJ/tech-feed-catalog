@@ -65,8 +65,8 @@
         "description": "Measured: date of the newest entry seen."
       },
       "status": {
-        "enum": ["ok", "stale", "broken"],
-        "description": "Measured: 'stale' means nothing new for 180 days; 'broken' means the feed could not be fetched or parsed."
+        "enum": ["ok", "stale", "blocked", "broken"],
+        "description": "Measured: 'stale' means nothing new for 180 days; 'blocked' means the feed refuses automated clients (403/429 from a datacenter IP) though it works in a browser; 'broken' means the feed could not be fetched or parsed at all."
       },
       "status_detail": {
         "type": "string",
