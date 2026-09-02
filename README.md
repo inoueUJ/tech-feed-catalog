@@ -21,7 +21,7 @@ Built for [notebooklm-radio](https://github.com/inoueUJ/notebooklm-radio), which
 
 <!-- BEGIN CATALOG -->
 
-**76 feeds** across 8 categories · 74 verified working
+**76 feeds** across 8 categories · 72 verified working
 
 ### AI models & research / AI モデル・研究
 
@@ -56,7 +56,7 @@ Built for [notebooklm-radio](https://github.com/inoueUJ/notebooklm-radio), which
 | [AWS News](https://aws.amazon.com/new/) | changelog | ~250/month | ★ | en | [RSS](https://aws.amazon.com/about-aws/whats-new/recent/feed/) | ✅ 2026-09-02 |
 | [Cloudflare Blog](https://blog.cloudflare.com/) | blog | ~25/month | ★★★ | en | [RSS](https://blog.cloudflare.com/rss/) | ✅ 2026-09-02 |
 | [Cloudflare Changelog](https://developers.cloudflare.com/changelog/) | changelog | ~85/month | ★ | en | [RSS](https://developers.cloudflare.com/changelog/rss.xml) | ✅ 2026-09-02 |
-| [Docker](https://www.docker.com/blog/) | blog | ~15/month | ★★★ | en | [RSS](https://www.docker.com/blog/feed/) | ✅ 2026-09-02 |
+| [Docker](https://www.docker.com/blog/) | blog | ~15/month | ★★★ | en | [RSS](https://www.docker.com/blog/feed/) | ⚠️ HTTP 403 |
 | [DuckDB](https://duckdb.org/news/) | blog | ~7/month | ★★★ | en | [RSS](https://duckdb.org/feed.xml) | ✅ 2026-09-02 |
 | [Fly.io](https://fly.io/blog/) | blog | <1/month | ★★★ | en | [RSS](https://fly.io/blog/feed.xml) | ✅ 2026-09-02 |
 | [GitHub Changelog](https://github.blog/changelog/) | changelog | ~75/month | ★ | en | [RSS](https://github.blog/changelog/feed/) | ✅ 2026-09-02 |
@@ -128,7 +128,7 @@ Built for [notebooklm-radio](https://github.com/inoueUJ/notebooklm-radio), which
 | [Stripe Engineering](https://stripe.com/blog/engineering) | blog | ~3/month | ★★★ | en | [RSS](https://stripe.com/blog/feed.rss) | ✅ 2026-09-02 |
 | [ZOZO TECH BLOG](https://techblog.zozo.com/) | blog | ~15/month | ★★★ | ja | [RSS](https://techblog.zozo.com/feed) | ✅ 2026-09-02 |
 | [クックパッド開発者ブログ](https://techlife.cookpad.com/) | blog | ~30/month | ★★★ | ja | [RSS](https://techlife.cookpad.com/feed) | ✅ 2026-09-02 |
-| [メルカリ engineering](https://engineering.mercari.com/blog/) | blog | ~8/month | ★★★ | ja | [RSS](https://engineering.mercari.com/blog/feed.xml) | ✅ 2026-09-02 |
+| [メルカリ engineering](https://engineering.mercari.com/blog/) | blog | ~8/month | ★★★ | ja | [RSS](https://engineering.mercari.com/blog/feed.xml) | ⚠️ HTTP 403 |
 
 ### Aggregators / アグリゲータ
 

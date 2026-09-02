@@ -57,8 +57,8 @@
   has_timestamps: true
   latest_post: '2026-02-24'
   status: stale
-  status_detail: no new posts for 190 days
   last_checked: '2026-09-02'
+  status_detail: no new posts for 190 days
 - name: Svelte
   url: https://svelte.dev/blog/rss.xml
   site: https://svelte.dev/blog
@@ -106,8 +106,8 @@
   has_timestamps: true
   latest_post: '2024-09-01'
   status: stale
-  status_detail: no new posts for 731 days
   last_checked: '2026-09-02'
+  status_detail: no new posts for 731 days
 - name: WebKit
   url: https://webkit.org/feed/
   site: https://webkit.org/blog/
