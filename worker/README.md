@@ -17,7 +17,7 @@ The catalog is baked into the bundle at build time, so requests don't depend on 
 Claude Code:
 
 ```bash
-claude mcp add --transport http tech-feed-catalog https://tech-feed-catalog-mcp.<account>.workers.dev/mcp
+claude mcp add --transport http tech-feed-catalog https://tech-feed-catalog-mcp.yuji-inoue11.workers.dev/mcp
 ```
 
 Any other MCP client: point it at the same `/mcp` URL using the Streamable HTTP transport. No authentication — the catalog is public, read-only data.
@@ -38,7 +38,7 @@ npm run deploy     # wrangler deploy
 ## Try it without a client
 
 ```bash
-curl -s https://tech-feed-catalog-mcp.<account>.workers.dev/mcp \
+curl -s https://tech-feed-catalog-mcp.yuji-inoue11.workers.dev/mcp \
   -H 'Content-Type: application/json' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/call",
        "params":{"name":"search_feeds","arguments":{"category":"ai-models","radio_friendly":"high","limit":3}}}'

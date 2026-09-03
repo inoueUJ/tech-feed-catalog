@@ -156,7 +156,7 @@ curl -s https://raw.githubusercontent.com/inoueUJ/tech-feed-catalog/main/site/fe
 
 Note that several sitemap-based sources can share one sitemap URL and differ only by `prefix` (Anthropic's news and engineering sections, for example), so `url` alone is not a unique key — use `url` plus `prefix`.
 
-For AI agents: point your MCP client at `https://tech-feed-catalog-mcp.<account>.workers.dev/mcp` to query the catalog directly. See [worker/README.md](worker/README.md).
+For AI agents: point your MCP client at `https://tech-feed-catalog-mcp.yuji-inoue11.workers.dev/mcp` to query the catalog directly. See [worker/README.md](worker/README.md).
 
 ## Contributing
 
