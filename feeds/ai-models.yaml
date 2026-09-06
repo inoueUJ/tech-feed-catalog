@@ -6,12 +6,12 @@
   category: ai-models
   kind: blog
   language: en
-  volume: <1/month
+  volume: ~1/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-08-10'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: Anthropic News
   url: https://www.anthropic.com/sitemap.xml
   type: sitemap
@@ -23,9 +23,9 @@
   volume: ~30/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-04'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: Google AI Blog
   url: https://blog.google/technology/ai/rss/
   site: https://blog.google/technology/ai/
@@ -35,9 +35,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-02'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: Google DeepMind
   url: https://deepmind.google/blog/rss.xml
   site: https://deepmind.google/discover/blog/
@@ -47,9 +47,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-03'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: Google Gemini
   url: https://blog.google/products/gemini/rss/
   site: https://blog.google/products/gemini/
@@ -59,9 +59,9 @@
   volume: ~25/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-04'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: Hugging Face
   url: https://huggingface.co/blog/feed.xml
   site: https://huggingface.co/blog
@@ -71,9 +71,9 @@
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-03'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: OpenAI News
   url: https://openai.com/news/rss.xml
   site: https://openai.com/news
@@ -84,18 +84,18 @@
   volume: ~50/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-03'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
 - name: Simon Willison
   url: https://simonwillison.net/atom/everything/
   site: https://simonwillison.net/
   category: ai-models
   kind: blog
   language: en
-  volume: ~70/month
+  volume: ~65/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-02'
+  latest_post: '2026-09-05'
   status: ok
-  last_checked: '2026-09-02'
+  last_checked: '2026-09-06'
