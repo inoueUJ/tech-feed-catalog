@@ -4,12 +4,12 @@
   category: aggregators
   kind: blog
   language: en
-  volume: ~300/month
+  volume: ~600/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-06'
+  latest_post: '2026-09-13'
   status: ok
-  last_checked: '2026-09-06'
+  last_checked: '2026-09-13'
 - name: Publickey
   url: https://www.publickey1.jp/atom.xml
   site: https://www.publickey1.jp/
@@ -19,30 +19,30 @@
   volume: ~40/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-03'
+  latest_post: '2026-09-10'
   status: ok
-  last_checked: '2026-09-06'
+  last_checked: '2026-09-13'
 - name: Zenn Trending
   url: https://zenn.dev/feed
   site: https://zenn.dev/
   category: aggregators
   kind: blog
   language: ja
-  volume: ~100/month
+  volume: ~120/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-05'
+  latest_post: '2026-09-12'
   status: ok
-  last_checked: '2026-09-06'
+  last_checked: '2026-09-13'
 - name: はてなブックマーク テクノロジー
   url: https://b.hatena.ne.jp/hotentry/it.rss
   site: https://b.hatena.ne.jp/hotentry/it
   category: aggregators
   kind: blog
   language: ja
-  volume: ~435/month
-  radio_friendly: medium
+  volume: ~30/month
+  radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-06'
+  latest_post: '2026-09-13'
   status: ok
-  last_checked: '2026-09-06'
+  last_checked: '2026-09-13'
