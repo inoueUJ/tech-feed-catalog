@@ -10,7 +10,7 @@
   radio_friendly: high
   has_timestamps: false
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'
 - name: Claude Blog
   url: https://claude.com/sitemap.xml
   type: sitemap
@@ -19,12 +19,12 @@
   category: ai-coding
   kind: blog
   language: en
-  volume: ~85/month
+  volume: ~55/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-11'
+  latest_post: '2026-09-17'
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'
 - name: Claude Code
   url: https://code.claude.com/docs/en/whats-new/rss.xml
   site: https://code.claude.com/docs/en/whats-new
@@ -34,9 +34,9 @@
   volume: ~4/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-08-22'
+  latest_post: '2026-09-15'
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'
 - name: Codex Changelog
   url: https://developers.openai.com/codex/changelog/rss.xml
   site: https://developers.openai.com/codex/changelog
@@ -44,35 +44,35 @@
   kind: changelog
   language: en
   volume: ~15/month
-  radio_friendly: medium
+  radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-09-11'
+  latest_post: '2026-09-18'
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'
 - name: Cursor Changelog
   url: https://cursor.com/changelog/rss.xml
   site: https://cursor.com/changelog
   category: ai-coding
   kind: changelog
   language: en
-  volume: ~6/month
+  volume: ~5/month
   radio_friendly: medium
   has_timestamps: true
   latest_post: '2026-09-10'
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'
 - name: GitHub Copilot
   url: https://github.blog/ai-and-ml/github-copilot/feed/
   site: https://github.blog/ai-and-ml/github-copilot/
   category: ai-coding
   kind: blog
   language: en
-  volume: ~10/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-11'
+  latest_post: '2026-09-17'
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'
 - name: Zed
   url: https://zed.dev/blog.rss
   site: https://zed.dev/blog
@@ -82,6 +82,6 @@
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-01'
+  latest_post: '2026-09-16'
   status: ok
-  last_checked: '2026-09-13'
+  last_checked: '2026-09-20'

@@ -27,117 +27,117 @@ Built for [notebooklm-radio](https://github.com/inoueUJ/notebooklm-radio), which
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Anthropic Engineering](https://www.anthropic.com/engineering) | blog | <1/month | ★★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-09-13 |
-| [Anthropic News](https://www.anthropic.com/news) | blog | ~65/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-09-13 |
-| [Google AI Blog](https://blog.google/technology/ai/) | blog | ~10/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-09-13 |
-| [Google DeepMind](https://deepmind.google/discover/blog/) | blog | ~9/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-09-13 |
-| [Google Gemini](https://blog.google/products/gemini/) | blog | ~20/month | ★★★ | en | [RSS](https://blog.google/products/gemini/rss/) | ✅ 2026-09-13 |
-| [Hugging Face](https://huggingface.co/blog) | blog | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ✅ 2026-09-13 |
-| [OpenAI News](https://openai.com/news) | blog | ~50/month | ★★ | en | [RSS](https://openai.com/news/rss.xml) ¹ | ✅ 2026-09-13 |
-| [Simon Willison](https://simonwillison.net/) | blog | ~150/month | ★★ | en | [RSS](https://simonwillison.net/atom/everything/) | ✅ 2026-09-13 |
+| [Anthropic Engineering](https://www.anthropic.com/engineering) | blog | <1/month | ★★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-09-20 |
+| [Anthropic News](https://www.anthropic.com/news) | blog | ~60/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-09-20 |
+| [Google AI Blog](https://blog.google/technology/ai/) | blog | ~15/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-09-20 |
+| [Google DeepMind](https://deepmind.google/discover/blog/) | blog | ~8/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-09-20 |
+| [Google Gemini](https://blog.google/products/gemini/) | blog | ~20/month | ★★★ | en | [RSS](https://blog.google/products/gemini/rss/) | ✅ 2026-09-20 |
+| [Hugging Face](https://huggingface.co/blog) | blog | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ✅ 2026-09-20 |
+| [OpenAI News](https://openai.com/news) | blog | ~50/month | ★★ | en | [RSS](https://openai.com/news/rss.xml) ¹ | ✅ 2026-09-20 |
+| [Simon Willison](https://simonwillison.net/) | blog | ~100/month | ★★ | en | [RSS](https://simonwillison.net/atom/everything/) | ✅ 2026-09-20 |
 
 ### AI coding tools / AI コーディングツール
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Antigravity](https://antigravity.google/blog) | blog | unknown | ★★★ | en | [sitemap](https://antigravity.google/sitemap.xml) | ✅ 2026-09-13 |
-| [Claude Blog](https://claude.com/blog) | blog | ~85/month | ★★ | en | [sitemap](https://claude.com/sitemap.xml) | ✅ 2026-09-13 |
-| [Claude Code](https://code.claude.com/docs/en/whats-new) | releases | ~4/month | ★★ | en | [RSS](https://code.claude.com/docs/en/whats-new/rss.xml) | ✅ 2026-09-13 |
-| [Codex Changelog](https://developers.openai.com/codex/changelog) | changelog | ~15/month | ★★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-09-13 |
-| [Cursor Changelog](https://cursor.com/changelog) | changelog | ~6/month | ★★ | en | [RSS](https://cursor.com/changelog/rss.xml) | ✅ 2026-09-13 |
-| [GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/) | blog | ~10/month | ★★★ | en | [RSS](https://github.blog/ai-and-ml/github-copilot/feed/) | ✅ 2026-09-13 |
-| [Zed](https://zed.dev/blog) | blog | ~2/month | ★★★ | en | [RSS](https://zed.dev/blog.rss) | ✅ 2026-09-13 |
+| [Antigravity](https://antigravity.google/blog) | blog | unknown | ★★★ | en | [sitemap](https://antigravity.google/sitemap.xml) | ✅ 2026-09-20 |
+| [Claude Blog](https://claude.com/blog) | blog | ~55/month | ★★ | en | [sitemap](https://claude.com/sitemap.xml) | ✅ 2026-09-20 |
+| [Claude Code](https://code.claude.com/docs/en/whats-new) | releases | ~4/month | ★★ | en | [RSS](https://code.claude.com/docs/en/whats-new/rss.xml) | ✅ 2026-09-20 |
+| [Codex Changelog](https://developers.openai.com/codex/changelog) | changelog | ~15/month | ★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-09-20 |
+| [Cursor Changelog](https://cursor.com/changelog) | changelog | ~5/month | ★★ | en | [RSS](https://cursor.com/changelog/rss.xml) | ✅ 2026-09-20 |
+| [GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/) | blog | ~8/month | ★★★ | en | [RSS](https://github.blog/ai-and-ml/github-copilot/feed/) | ✅ 2026-09-20 |
+| [Zed](https://zed.dev/blog) | blog | ~2/month | ★★★ | en | [RSS](https://zed.dev/blog.rss) | ✅ 2026-09-20 |
 
 ### Cloud & infrastructure / クラウド・インフラ
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) | blog | ~20/month | ★★★ | en | [RSS](https://aws.amazon.com/blogs/architecture/feed/) | ✅ 2026-09-13 |
-| [AWS News](https://aws.amazon.com/new/) | changelog | ~275/month | ★ | en | [RSS](https://aws.amazon.com/about-aws/whats-new/recent/feed/) | ✅ 2026-09-13 |
-| [Cloudflare Blog](https://blog.cloudflare.com/) | blog | ~20/month | ★★★ | en | [RSS](https://blog.cloudflare.com/rss/) | ✅ 2026-09-13 |
-| [Cloudflare Changelog](https://developers.cloudflare.com/changelog/) | changelog | ~85/month | ★ | en | [RSS](https://developers.cloudflare.com/changelog/rss.xml) | ✅ 2026-09-13 |
+| [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) | blog | ~20/month | ★★★ | en | [RSS](https://aws.amazon.com/blogs/architecture/feed/) | ✅ 2026-09-20 |
+| [AWS News](https://aws.amazon.com/new/) | changelog | ~250/month | ★ | en | [RSS](https://aws.amazon.com/about-aws/whats-new/recent/feed/) | ✅ 2026-09-20 |
+| [Cloudflare Blog](https://blog.cloudflare.com/) | blog | ~15/month | ★★★ | en | [RSS](https://blog.cloudflare.com/rss/) | ✅ 2026-09-20 |
+| [Cloudflare Changelog](https://developers.cloudflare.com/changelog/) | changelog | ~90/month | ★ | en | [RSS](https://developers.cloudflare.com/changelog/rss.xml) | ✅ 2026-09-20 |
 | [Docker](https://www.docker.com/blog/) | blog | ~15/month | ★★★ | en | [RSS](https://www.docker.com/blog/feed/) | 🤖 blocks bots |
-| [DuckDB](https://duckdb.org/news/) | blog | ~7/month | ★★★ | en | [RSS](https://duckdb.org/feed.xml) | ✅ 2026-09-13 |
-| [Fly.io](https://fly.io/blog/) | blog | ~1/month | ★★★ | en | [RSS](https://fly.io/blog/feed.xml) | ✅ 2026-09-13 |
-| [GitHub Changelog](https://github.blog/changelog/) | changelog | ~100/month | ★ | en | [RSS](https://github.blog/changelog/feed/) | ✅ 2026-09-13 |
-| [Google Cloud Blog](https://cloud.google.com/blog) | blog | ~60/month | ★★★ | en | [RSS](https://cloudblog.withgoogle.com/rss/) | ✅ 2026-09-13 |
-| [Grafana](https://grafana.com/blog/) | blog | unknown | ★★★ | en | [RSS](https://grafana.com/blog/index.xml) | ✅ 2026-09-13 |
-| [HashiCorp](https://www.hashicorp.com/blog) | blog | ~9/month | ★★★ | en | [RSS](https://www.hashicorp.com/blog/feed.xml) | ✅ 2026-09-13 |
-| [Kubernetes](https://kubernetes.io/blog/) | blog | ~9/month | ★★★ | en | [RSS](https://kubernetes.io/feed.xml) | ✅ 2026-09-13 |
-| [PlanetScale](https://planetscale.com/blog) | blog | ~7/month | ★★★ | en | [RSS](https://planetscale.com/blog/rss.xml) | ✅ 2026-09-13 |
-| [Sentry](https://blog.sentry.io/) | blog | ~7/month | ★★★ | en | [RSS](https://blog.sentry.io/feed.xml) | ✅ 2026-09-13 |
-| [Supabase](https://supabase.com/blog) | blog | ~5/month | ★★★ | en | [RSS](https://supabase.com/rss.xml) | ✅ 2026-09-13 |
-| [Vercel Blog](https://vercel.com/blog) | blog | ~110/month | ★★ | en | [RSS](https://vercel.com/blog/feed) | ✅ 2026-09-13 |
-| [Vercel Changelog](https://vercel.com/changelog) | changelog | ~110/month | ★ | en | [RSS](https://vercel.com/atom) | ✅ 2026-09-13 |
+| [DuckDB](https://duckdb.org/news/) | blog | ~9/month | ★★★ | en | [RSS](https://duckdb.org/feed.xml) | ✅ 2026-09-20 |
+| [Fly.io](https://fly.io/blog/) | blog | ~1/month | ★★★ | en | [RSS](https://fly.io/blog/feed.xml) | ✅ 2026-09-20 |
+| [GitHub Changelog](https://github.blog/changelog/) | changelog | ~100/month | ★ | en | [RSS](https://github.blog/changelog/feed/) | ✅ 2026-09-20 |
+| [Google Cloud Blog](https://cloud.google.com/blog) | blog | ~120/month | ★★★ | en | [RSS](https://cloudblog.withgoogle.com/rss/) | ✅ 2026-09-20 |
+| [Grafana](https://grafana.com/blog/) | blog | unknown | ★★★ | en | [RSS](https://grafana.com/blog/index.xml) | ✅ 2026-09-20 |
+| [HashiCorp](https://www.hashicorp.com/blog) | blog | ~9/month | ★★★ | en | [RSS](https://www.hashicorp.com/blog/feed.xml) | ✅ 2026-09-20 |
+| [Kubernetes](https://kubernetes.io/blog/) | blog | ~10/month | ★★★ | en | [RSS](https://kubernetes.io/feed.xml) | ✅ 2026-09-20 |
+| [PlanetScale](https://planetscale.com/blog) | blog | ~8/month | ★★★ | en | [RSS](https://planetscale.com/blog/rss.xml) | ✅ 2026-09-20 |
+| [Sentry](https://blog.sentry.io/) | blog | ~7/month | ★★★ | en | [RSS](https://blog.sentry.io/feed.xml) | ✅ 2026-09-20 |
+| [Supabase](https://supabase.com/blog) | blog | ~5/month | ★★★ | en | [RSS](https://supabase.com/rss.xml) | ✅ 2026-09-20 |
+| [Vercel Blog](https://vercel.com/blog) | blog | ~110/month | ★★ | en | [RSS](https://vercel.com/blog/feed) | ✅ 2026-09-20 |
+| [Vercel Changelog](https://vercel.com/changelog) | changelog | ~110/month | ★ | en | [RSS](https://vercel.com/atom) | ✅ 2026-09-20 |
 
 ### Languages & runtimes / 言語・ランタイム
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Bun](https://bun.sh/blog) | blog | ~2/month | ★★★ | en | [RSS](https://bun.sh/rss.xml) | ✅ 2026-09-13 |
-| [Deno](https://deno.com/blog) | blog | <1/month | ★★★ | en | [RSS](https://deno.com/feed) | ✅ 2026-09-13 |
-| [Go Blog](https://go.dev/blog/) | blog | ~4/month | ★★★ | en | [RSS](https://go.dev/blog/feed.atom) | ✅ 2026-09-13 |
-| [Node.js](https://nodejs.org/en/blog) | releases | ~8/month | ★★ | en | [RSS](https://nodejs.org/en/feed/blog.xml) | ✅ 2026-09-13 |
-| [PHP](https://www.php.net/) | releases | ~10/month | ★★ | en | [RSS](https://www.php.net/feed.atom) | ✅ 2026-09-13 |
-| [Python Insider](https://blog.python.org/) | releases | ~4/month | ★★ | en | [RSS](https://blog.python.org/feeds/posts/default) | ✅ 2026-09-13 |
-| [Ruby](https://www.ruby-lang.org/en/news/) | releases | ~2/month | ★★★ | en | [RSS](https://www.ruby-lang.org/en/feeds/news.rss) | ✅ 2026-09-13 |
-| [Rust Blog](https://blog.rust-lang.org/) | blog | ~5/month | ★★★ | en | [RSS](https://blog.rust-lang.org/feed.xml) | ✅ 2026-09-13 |
-| [Swift](https://www.swift.org/blog/) | blog | ~2/month | ★★★ | en | [RSS](https://www.swift.org/atom.xml) | ✅ 2026-09-13 |
-| [TypeScript](https://devblogs.microsoft.com/typescript/) | blog | <1/month | ★★★ | en | [RSS](https://devblogs.microsoft.com/typescript/feed/) | ✅ 2026-09-13 |
+| [Bun](https://bun.sh/blog) | blog | ~2/month | ★★★ | en | [RSS](https://bun.sh/rss.xml) | ✅ 2026-09-20 |
+| [Deno](https://deno.com/blog) | blog | <1/month | ★★★ | en | [RSS](https://deno.com/feed) | ✅ 2026-09-20 |
+| [Go Blog](https://go.dev/blog/) | blog | ~4/month | ★★★ | en | [RSS](https://go.dev/blog/feed.atom) | ✅ 2026-09-20 |
+| [Node.js](https://nodejs.org/en/blog) | releases | ~6/month | ★★ | en | [RSS](https://nodejs.org/en/feed/blog.xml) | ✅ 2026-09-20 |
+| [PHP](https://www.php.net/) | releases | ~9/month | ★★ | en | [RSS](https://www.php.net/feed.atom) | ✅ 2026-09-20 |
+| [Python Insider](https://blog.python.org/) | releases | ~4/month | ★★ | en | [RSS](https://blog.python.org/feeds/posts/default) | ✅ 2026-09-20 |
+| [Ruby](https://www.ruby-lang.org/en/news/) | releases | ~2/month | ★★★ | en | [RSS](https://www.ruby-lang.org/en/feeds/news.rss) | ✅ 2026-09-20 |
+| [Rust Blog](https://blog.rust-lang.org/) | blog | ~5/month | ★★★ | en | [RSS](https://blog.rust-lang.org/feed.xml) | ✅ 2026-09-20 |
+| [Swift](https://www.swift.org/blog/) | blog | ~2/month | ★★★ | en | [RSS](https://www.swift.org/atom.xml) | ✅ 2026-09-20 |
+| [TypeScript](https://devblogs.microsoft.com/typescript/) | blog | <1/month | ★★★ | en | [RSS](https://devblogs.microsoft.com/typescript/feed/) | ✅ 2026-09-20 |
 
 ### Frontend / フロントエンド
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Astro](https://astro.build/blog/) | blog | ~3/month | ★★★ | en | [RSS](https://astro.build/rss.xml) | ✅ 2026-09-13 |
-| [Chrome for Developers](https://developer.chrome.com/blog) | blog | ~1/month | ★★★ | en | [RSS](https://developer.chrome.com/static/blog/feed.xml) | ✅ 2026-09-13 |
-| [Mozilla Hacks](https://hacks.mozilla.org/) | blog | <1/month | ★★★ | en | [RSS](https://hacks.mozilla.org/feed/) | ✅ 2026-09-13 |
-| [Next.js](https://nextjs.org/blog) | blog | ~5/month | ★★★ | en | [RSS](https://nextjs.org/feed.xml) | ✅ 2026-09-13 |
-| [React](https://react.dev/blog) | blog | ~8/month | ★★★ | en | [RSS](https://react.dev/rss.xml) | ✅ 2026-09-13 |
-| [Svelte](https://svelte.dev/blog) | blog | ~2/month | ★★★ | en | [RSS](https://svelte.dev/blog/rss.xml) | ✅ 2026-09-13 |
-| [Tailwind CSS](https://tailwindcss.com/blog) | blog | ~10/month | ★★★ | en | [RSS](https://tailwindcss.com/feeds/feed.xml) | ✅ 2026-09-13 |
-| [Vite](https://vite.dev/blog) | blog | <1/month | ★★★ | en | [RSS](https://vite.dev/blog.rss) | ✅ 2026-09-13 |
-| [Vue.js](https://blog.vuejs.org/) | blog | <1/month | ★★★ | en | [RSS](https://blog.vuejs.org/feed.rss) | 💤 no new posts for 742 days |
-| [WebKit](https://webkit.org/blog/) | blog | ~4/month | ★★★ | en | [RSS](https://webkit.org/feed/) | ✅ 2026-09-13 |
+| [Astro](https://astro.build/blog/) | blog | ~3/month | ★★★ | en | [RSS](https://astro.build/rss.xml) | ✅ 2026-09-20 |
+| [Chrome for Developers](https://developer.chrome.com/blog) | blog | <1/month | ★★★ | en | [RSS](https://developer.chrome.com/static/blog/feed.xml) | ✅ 2026-09-20 |
+| [Mozilla Hacks](https://hacks.mozilla.org/) | blog | <1/month | ★★★ | en | [RSS](https://hacks.mozilla.org/feed/) | ✅ 2026-09-20 |
+| [Next.js](https://nextjs.org/blog) | blog | ~5/month | ★★★ | en | [RSS](https://nextjs.org/feed.xml) | ✅ 2026-09-20 |
+| [React](https://react.dev/blog) | blog | ~3/month | ★★★ | en | [RSS](https://react.dev/rss.xml) | ✅ 2026-09-20 |
+| [Svelte](https://svelte.dev/blog) | blog | ~1/month | ★★★ | en | [RSS](https://svelte.dev/blog/rss.xml) | ✅ 2026-09-20 |
+| [Tailwind CSS](https://tailwindcss.com/blog) | blog | ~3/month | ★★★ | en | [RSS](https://tailwindcss.com/feeds/feed.xml) | ✅ 2026-09-20 |
+| [Vite](https://vite.dev/blog) | blog | <1/month | ★★★ | en | [RSS](https://vite.dev/blog.rss) | ✅ 2026-09-20 |
+| [Vue.js](https://blog.vuejs.org/) | blog | <1/month | ★★★ | en | [RSS](https://blog.vuejs.org/feed.rss) | 💤 no new posts for 749 days |
+| [WebKit](https://webkit.org/blog/) | blog | ~4/month | ★★★ | en | [RSS](https://webkit.org/feed/) | ✅ 2026-09-20 |
 
 ### Security / セキュリティ
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Cloudflare Security](https://blog.cloudflare.com/tag/security/) | blog | ~2/month | ★★★ | en | [RSS](https://blog.cloudflare.com/tag/security/rss/) | ✅ 2026-09-13 |
-| [GitHub Security](https://github.blog/security/) | blog | ~4/month | ★★★ | en | [RSS](https://github.blog/security/feed/) | ✅ 2026-09-13 |
-| [Google Project Zero](https://googleprojectzero.blogspot.com/) | blog | ~6/month | ★★★ | en | [RSS](https://googleprojectzero.blogspot.com/feeds/posts/default) | ✅ 2026-09-13 |
-| [Google Security Blog](https://security.googleblog.com/) | blog | <1/month | ★★★ | en | [RSS](https://security.googleblog.com/feeds/posts/default) | ✅ 2026-09-13 |
-| [Rust Security Advisories](https://rustsec.org/advisories/) | changelog | ~25/month | ★★ | en | [RSS](https://rustsec.org/feed.xml) | ✅ 2026-09-13 |
+| [Cloudflare Security](https://blog.cloudflare.com/tag/security/) | blog | ~3/month | ★★★ | en | [RSS](https://blog.cloudflare.com/tag/security/rss/) | ✅ 2026-09-20 |
+| [GitHub Security](https://github.blog/security/) | blog | ~4/month | ★★★ | en | [RSS](https://github.blog/security/feed/) | ✅ 2026-09-20 |
+| [Google Project Zero](https://googleprojectzero.blogspot.com/) | blog | ~2/month | ★★★ | en | [RSS](https://googleprojectzero.blogspot.com/feeds/posts/default) | ✅ 2026-09-20 |
+| [Google Security Blog](https://security.googleblog.com/) | blog | <1/month | ★★★ | en | [RSS](https://security.googleblog.com/feeds/posts/default) | ✅ 2026-09-20 |
+| [Rust Security Advisories](https://rustsec.org/advisories/) | changelog | ~25/month | ★★ | en | [RSS](https://rustsec.org/feed.xml) | ✅ 2026-09-20 |
 
 ### Company engineering blogs / 企業テックブログ
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Cybozu Engineering](https://blog.cybozu.io/) | blog | ~20/month | ★★★ | ja | [RSS](https://blog.cybozu.io/feed) | ✅ 2026-09-13 |
-| [DeNA Engineering](https://engineering.dena.com/) | blog | ~7/month | ★★★ | ja | [RSS](https://engineering.dena.com/index.xml) | ✅ 2026-09-13 |
-| [Discord Engineering](https://discord.com/category/engineering) | blog | ~4/month | ★★★ | en | [RSS](https://discord.com/blog/rss.xml) | ✅ 2026-09-13 |
-| [Dropbox Tech](https://dropbox.tech/) | blog | ~2/month | ★★★ | en | [RSS](https://dropbox.tech/feed) | ✅ 2026-09-13 |
-| [Figma Engineering](https://www.figma.com/blog/engineering/) | blog | ~15/month | ★★★ | en | [RSS](https://www.figma.com/blog/feed/atom.xml) | ✅ 2026-09-13 |
-| [freee Developers Hub](https://developers.freee.co.jp/) | blog | ~6/month | ★★★ | ja | [RSS](https://developers.freee.co.jp/feed) | ✅ 2026-09-13 |
-| [LINE / LY Engineering](https://techblog.lycorp.co.jp/ja) | blog | ~10/month | ★★★ | ja | [RSS](https://techblog.lycorp.co.jp/ja/feed/index.xml) | ✅ 2026-09-13 |
-| [Netflix Tech Blog](https://netflixtechblog.com/) | blog | ~4/month | ★★★ | en | [RSS](https://netflixtechblog.com/feed) | ✅ 2026-09-13 |
-| [Shopify Engineering](https://shopify.engineering/) | blog | ~4/month | ★★★ | en | [RSS](https://shopify.engineering/blog.atom) | ✅ 2026-09-13 |
-| [Slack Engineering](https://slack.engineering/) | blog | <1/month | ★★★ | en | [RSS](https://slack.engineering/feed/) | ✅ 2026-09-13 |
-| [SmartHR Tech Blog](https://tech.smarthr.jp/) | blog | ~20/month | ★★★ | ja | [RSS](https://tech.smarthr.jp/feed) | ✅ 2026-09-13 |
-| [Stripe Engineering](https://stripe.com/blog/engineering) | blog | ~2/month | ★★★ | en | [RSS](https://stripe.com/blog/feed.rss) | ✅ 2026-09-13 |
-| [ZOZO TECH BLOG](https://techblog.zozo.com/) | blog | ~20/month | ★★★ | ja | [RSS](https://techblog.zozo.com/feed) | ✅ 2026-09-13 |
-| [クックパッド開発者ブログ](https://techlife.cookpad.com/) | blog | ~3/month | ★★★ | ja | [RSS](https://techlife.cookpad.com/feed) | ✅ 2026-09-13 |
+| [Cybozu Engineering](https://blog.cybozu.io/) | blog | ~20/month | ★★★ | ja | [RSS](https://blog.cybozu.io/feed) | ✅ 2026-09-20 |
+| [DeNA Engineering](https://engineering.dena.com/) | blog | ~7/month | ★★★ | ja | [RSS](https://engineering.dena.com/index.xml) | ✅ 2026-09-20 |
+| [Discord Engineering](https://discord.com/category/engineering) | blog | ~4/month | ★★★ | en | [RSS](https://discord.com/blog/rss.xml) | ✅ 2026-09-20 |
+| [Dropbox Tech](https://dropbox.tech/) | blog | ~1/month | ★★★ | en | [RSS](https://dropbox.tech/feed) | ✅ 2026-09-20 |
+| [Figma Engineering](https://www.figma.com/blog/engineering/) | blog | ~15/month | ★★★ | en | [RSS](https://www.figma.com/blog/feed/atom.xml) | ✅ 2026-09-20 |
+| [freee Developers Hub](https://developers.freee.co.jp/) | blog | ~6/month | ★★★ | ja | [RSS](https://developers.freee.co.jp/feed) | ✅ 2026-09-20 |
+| [LINE / LY Engineering](https://techblog.lycorp.co.jp/ja) | blog | ~10/month | ★★★ | ja | [RSS](https://techblog.lycorp.co.jp/ja/feed/index.xml) | ✅ 2026-09-20 |
+| [Netflix Tech Blog](https://netflixtechblog.com/) | blog | ~3/month | ★★★ | en | [RSS](https://netflixtechblog.com/feed) | ✅ 2026-09-20 |
+| [Shopify Engineering](https://shopify.engineering/) | blog | ~4/month | ★★★ | en | [RSS](https://shopify.engineering/blog.atom) | ✅ 2026-09-20 |
+| [Slack Engineering](https://slack.engineering/) | blog | <1/month | ★★★ | en | [RSS](https://slack.engineering/feed/) | ✅ 2026-09-20 |
+| [SmartHR Tech Blog](https://tech.smarthr.jp/) | blog | ~20/month | ★★★ | ja | [RSS](https://tech.smarthr.jp/feed) | ✅ 2026-09-20 |
+| [Stripe Engineering](https://stripe.com/blog/engineering) | blog | ~3/month | ★★★ | en | [RSS](https://stripe.com/blog/feed.rss) | ✅ 2026-09-20 |
+| [ZOZO TECH BLOG](https://techblog.zozo.com/) | blog | ~20/month | ★★★ | ja | [RSS](https://techblog.zozo.com/feed) | ✅ 2026-09-20 |
+| [クックパッド開発者ブログ](https://techlife.cookpad.com/) | blog | ~2/month | ★★★ | ja | [RSS](https://techlife.cookpad.com/feed) | ✅ 2026-09-20 |
 | [メルカリ engineering](https://engineering.mercari.com/blog/) | blog | ~8/month | ★★★ | ja | [RSS](https://engineering.mercari.com/blog/feed.xml) | 🤖 blocks bots |
 
 ### Aggregators / アグリゲータ
 
 | Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |
 |---|---|---|---|---|---|---|
-| [Hacker News Front Page](https://news.ycombinator.com/) | blog | ~600/month | ★★ | en | [RSS](https://hnrss.org/frontpage) | ✅ 2026-09-13 |
-| [Publickey](https://www.publickey1.jp/) | blog | ~40/month | ★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-09-13 |
-| [Zenn Trending](https://zenn.dev/) | blog | ~120/month | ★★ | ja | [RSS](https://zenn.dev/feed) | ✅ 2026-09-13 |
-| [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | blog | ~30/month | ★★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-09-13 |
+| [Hacker News Front Page](https://news.ycombinator.com/) | blog | ~600/month | ★★ | en | [RSS](https://hnrss.org/frontpage) | ✅ 2026-09-20 |
+| [Publickey](https://www.publickey1.jp/) | blog | ~40/month | ★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-09-20 |
+| [Zenn Trending](https://zenn.dev/) | blog | ~150/month | ★★ | ja | [RSS](https://zenn.dev/feed) | ✅ 2026-09-20 |
+| [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | blog | ~450/month | ★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-09-20 |
 
 ¹ Article pages block automated fetchers — subscribe using the feed summary, not the URL.
 <!-- END CATALOG -->
