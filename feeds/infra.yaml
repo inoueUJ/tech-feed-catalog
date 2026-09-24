@@ -192,6 +192,9 @@
   last_checked: '2026-09-20'
 - name: Vercel Changelog
   url: https://vercel.com/atom
+  # Returns exactly the same entries as the blog feed (verified 2026-09: identical
+  # 169-entry windows); subscribing to both means every article twice.
+  same_as: https://vercel.com/blog/feed
   site: https://vercel.com/changelog
   category: infra
   kind: changelog

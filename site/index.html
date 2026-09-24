@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>tech-feed-catalog — pick developer RSS feeds</title>
-<meta name="description" content="A curated, continuously validated catalog of developer RSS feeds. Filter by topic, check what you want, copy a ready-made config.">
+<title>tech-feed-catalog — build your notebooklm-radio config</title>
+<meta name="description" content="A curated, continuously validated catalog of developer RSS feeds. Pick feeds, group them into notebooks, set the audio style, and download a complete notebooklm-radio config.yaml.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
 <style>
 :root {
@@ -20,6 +20,9 @@
   --accent-soft: #fdf0e4;
   --ok: #3f7d3f;
   --warn: #9a6b12;
+  --warn-soft: #fbf3df;
+  --bad: #a33a2a;
+  --bad-soft: #fbe9e5;
   --radius: 10px;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
@@ -38,6 +41,9 @@
     --accent-soft: #2e2317;
     --ok: #7db87d;
     --warn: #d0a44a;
+    --warn-soft: #2c2616;
+    --bad: #e0705e;
+    --bad-soft: #301c18;
   }
 }
 :root[data-theme="dark"] {
@@ -53,6 +59,9 @@
   --accent-soft: #2e2317;
   --ok: #7db87d;
   --warn: #d0a44a;
+  --warn-soft: #2c2616;
+  --bad: #e0705e;
+  --bad-soft: #301c18;
 }
 
 * { box-sizing: border-box; }
@@ -66,8 +75,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); }
+code { font-family: var(--mono); font-size: .92em; }
 
-.wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 
 header {
   border-bottom: 1px solid var(--border);
@@ -78,7 +88,7 @@ header {
 h1 { font-size: 21px; margin: 0; letter-spacing: -0.01em; font-family: var(--mono); }
 h1 .dot { color: var(--accent); }
 .count { font-size: 13px; color: var(--text-dim); font-variant-numeric: tabular-nums; }
-.tagline { margin: 8px 0 0; color: var(--text-dim); font-size: 14px; max-width: 62ch; }
+.tagline { margin: 8px 0 0; color: var(--text-dim); font-size: 14px; max-width: 70ch; }
 .tagline strong { color: var(--text); font-weight: 600; }
 .header-links { margin-top: 12px; display: flex; gap: 16px; font-size: 13px; flex-wrap: wrap; }
 
@@ -117,9 +127,10 @@ h1 .dot { color: var(--accent); }
 }
 .chip .n { opacity: .65; margin-left: 5px; font-variant-numeric: tabular-nums; }
 
-.layout { display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 28px; align-items: start; padding: 24px 0 80px; }
-@media (max-width: 900px) { .layout { grid-template-columns: 1fr; padding-bottom: 120px; } }
+.layout { display: grid; grid-template-columns: minmax(0,1fr) 430px; gap: 28px; align-items: start; padding: 24px 0 80px; }
+@media (max-width: 960px) { .layout { grid-template-columns: 1fr; padding-bottom: 120px; } }
 
+.step { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
 .group-head {
   display: flex; align-items: baseline; gap: 10px;
   margin: 22px 0 8px; padding-bottom: 6px;
@@ -127,7 +138,7 @@ h1 .dot { color: var(--accent); }
 }
 .group-head:first-child { margin-top: 0; }
 .group-head h2 { font-size: 13px; margin: 0; text-transform: uppercase; letter-spacing: .07em; color: var(--text-dim); }
-.group-head .ja { font-size: 12px; color: var(--text-faint); }
+.group-head .ja, .ja { font-size: 12px; color: var(--text-faint); }
 
 .feed {
   display: grid; grid-template-columns: auto minmax(0,1fr) auto;
@@ -156,22 +167,54 @@ h1 .dot { color: var(--accent); }
 .feed-links a { color: var(--text-faint); text-decoration: none; }
 .feed-links a:hover { color: var(--accent); text-decoration: underline; }
 
+/* custom feed card (main column) */
+.custom {
+  border: 1px dashed var(--border-strong); border-radius: var(--radius);
+  background: var(--surface); padding: 14px 16px; margin-bottom: 22px;
+}
+.custom h2 { font-size: 14px; margin: 2px 0 4px; }
+.custom p { margin: 0 0 10px; font-size: 12.5px; color: var(--text-dim); }
+.custom-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.custom-row select, .custom-row input[type="text"] {
+  padding: 7px 10px; font-size: 13px; font-family: inherit;
+  border: 1px solid var(--border-strong); border-radius: 7px;
+  background: var(--bg); color: var(--text);
+}
+.custom-row input[type="text"] { flex: 1 1 200px; min-width: 0; font-family: var(--mono); }
+.custom-result { margin-top: 8px; font-size: 12.5px; min-height: 1.4em; overflow-wrap: anywhere; }
+.custom-result .ok { color: var(--ok); }
+.custom-result .bad { color: var(--bad); }
+.custom-list { margin: 10px 0 0; padding: 0; list-style: none; font-size: 12.5px; }
+.custom-list li { display: flex; gap: 8px; align-items: center; padding: 4px 0; border-top: 1px solid var(--border); }
+.custom-list li span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.custom-list code { color: var(--text-faint); font-size: 11px; }
+
+.btn-sm {
+  padding: 6px 11px; font-size: 12.5px; font-family: inherit; cursor: pointer; font-weight: 600;
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--border-strong); border-radius: 7px;
+}
+.btn-sm:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn-sm:disabled { opacity: .45; cursor: default; }
+.btn-sm.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .btn-sm.primary,
+:root:not([data-theme="light"]) .btn-sm.primary { color: #16150f; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .btn-sm.primary { color: #fff; } }
+
+/* panel */
 .panel {
   position: sticky; top: 78px;
   border: 1px solid var(--border-strong); border-radius: var(--radius);
   background: var(--surface); overflow: hidden;
+  display: flex; flex-direction: column;
+  max-height: calc(100vh - 92px);
 }
 .panel-toggle { display: none; }
-
-/* Narrow screens: the panel becomes a bottom sheet. Left in the normal flow it
-   would land thousands of pixels below the list, so ticking a feed would appear
-   to do nothing. */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .panel {
     position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 30;
     border-radius: 12px 12px 0 0; border-bottom: none;
     box-shadow: 0 -10px 30px rgb(0 0 0 / 22%);
-    display: flex; flex-direction: column; max-height: 80vh;
+    max-height: 84vh;
     transform: translateY(100%);
     transition: transform .22s ease;
   }
@@ -179,11 +222,11 @@ h1 .dot { color: var(--accent); }
   .panel.has-sel.open { transform: translateY(0); }
   .panel-head { cursor: pointer; }
   .panel-toggle { display: inline; color: var(--text-faint); font-size: 12px; }
-  .panel-body { overflow-y: auto; }
   pre { max-height: 40vh; }
 }
-.panel-head { padding: 13px 14px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.panel-head { padding: 13px 14px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex: none; }
 .panel-head strong { font-size: 14px; }
+.panel-body { overflow-y: auto; flex: 1 1 auto; min-height: 0; }
 .linkbtn { background: none; border: none; color: var(--text-faint); font-size: 12px; cursor: pointer; font-family: inherit; padding: 0; }
 .linkbtn:hover { color: var(--accent); text-decoration: underline; }
 .formats { display: flex; gap: 0; padding: 10px 14px 0; }
@@ -195,15 +238,43 @@ h1 .dot { color: var(--accent); }
 .formats button:first-child { border-radius: 6px 0 0 6px; }
 .formats button:last-child { border-radius: 0 6px 6px 0; border-right: 1px solid var(--border); }
 .formats button[aria-pressed="true"] { background: var(--surface); color: var(--text); font-weight: 600; border-color: var(--border-strong); }
-.topics { padding: 10px 14px 0; }
-.topics-label { font-size: 11.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
-.topic-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 12.5px; }
-.topic-row span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-dim); }
-.topic-row input {
-  width: 92px; padding: 3px 7px; font-size: 12px; font-family: var(--mono);
+
+.sec { padding: 12px 14px 4px; border-bottom: 1px solid var(--border); }
+.sec h3 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-dim); display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.sec h3 .ja { text-transform: none; letter-spacing: 0; color: var(--text-faint); font-weight: 400; }
+.sec .help { font-size: 11.5px; color: var(--text-faint); margin: -4px 0 8px; line-height: 1.45; }
+
+.nb { border: 1px solid var(--border); border-radius: 8px; padding: 9px 10px; margin-bottom: 8px; background: var(--bg); }
+.nb-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.nb-head input { flex: 1; min-width: 0; padding: 4px 8px; font-size: 13px; font-weight: 600; font-family: var(--mono); border: 1px solid var(--border-strong); border-radius: 5px; background: var(--surface); color: var(--text); }
+.nb-head .n { font-size: 11.5px; color: var(--text-faint); white-space: nowrap; }
+.nb-feed { display: flex; align-items: center; gap: 6px; font-size: 12px; padding: 2px 0; }
+.nb-feed .name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-dim); }
+.nb-feed select { font-size: 11px; padding: 2px 4px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--text-dim); max-width: 96px; font-family: inherit; }
+.nb-feed label { font-size: 11px; color: var(--text-faint); display: flex; align-items: center; gap: 3px; white-space: nowrap; cursor: pointer; }
+.nb-feed input[type="checkbox"] { accent-color: var(--accent); margin: 0; }
+.nb-audio { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+.nb-audio select, .nb textarea, .basics select, .basics input {
+  width: 100%; padding: 5px 8px; font-size: 12.5px; font-family: inherit;
   border: 1px solid var(--border-strong); border-radius: 5px;
-  background: var(--bg); color: var(--text);
+  background: var(--surface); color: var(--text);
 }
+.nb textarea { margin-top: 6px; min-height: 64px; resize: vertical; font-size: 12px; line-height: 1.45; }
+.field { display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; }
+.field label { font-size: 11.5px; color: var(--text-dim); }
+.basics .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.basics .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.inline { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: var(--text-dim); }
+.inline input[type="checkbox"] { width: auto; accent-color: var(--accent); margin: 0; }
+.quota { font-size: 12.5px; padding: 8px 10px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--border); margin-bottom: 8px; }
+.quota.over { background: var(--bad-soft); border-color: var(--bad); }
+.quota b { font-variant-numeric: tabular-nums; }
+
+.warnings { margin: 0; padding: 0; list-style: none; font-size: 12px; }
+.warnings li { padding: 6px 9px; border-radius: 6px; margin-bottom: 5px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-dim); }
+.warnings li.warn { background: var(--warn-soft); border-color: var(--warn); color: var(--text); }
+.warnings li.bad { background: var(--bad-soft); border-color: var(--bad); color: var(--text); }
+
 pre {
   margin: 10px 14px; padding: 12px;
   background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
@@ -211,7 +282,7 @@ pre {
   max-height: 320px; overflow: auto; white-space: pre;
 }
 .empty { color: var(--text-faint); font-style: italic; }
-.panel-actions { display: flex; gap: 8px; padding: 0 14px 14px; }
+.panel-actions { display: flex; gap: 8px; padding: 0 14px 10px; }
 .btn {
   flex: 1; padding: 9px; border-radius: 7px; font-size: 13px; font-family: inherit;
   cursor: pointer; font-weight: 600;
@@ -224,6 +295,8 @@ pre {
 .btn.ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .btn:disabled { opacity: .45; cursor: default; }
 .hint { padding: 0 14px 14px; font-size: 11.5px; color: var(--text-faint); line-height: 1.5; }
+.hint ol { margin: 6px 0 0; padding-left: 18px; }
+.hint li { margin-bottom: 2px; }
 
 footer { border-top: 1px solid var(--border); padding: 22px 0 40px; color: var(--text-faint); font-size: 12.5px; }
 .noresults { padding: 40px 0; text-align: center; color: var(--text-faint); }
@@ -237,7 +310,7 @@ footer { border-top: 1px solid var(--border); padding: 22px 0 40px; color: var(-
       <h1>tech-feed-catalog<span class="dot">.</span></h1>
       <span class="count" id="headcount"></span>
     </div>
-    <p class="tagline">A curated list of developer RSS feeds that <strong>can't quietly rot</strong> — every entry is re-fetched weekly by CI, and carries measurements you only get by actually reading the feed.</p>
+    <p class="tagline">A curated list of developer RSS feeds that <strong>can't quietly rot</strong> — every entry is re-fetched weekly by CI. Pick feeds, group them into notebooks, set the audio style, and download a complete <strong>notebooklm-radio</strong> <code>config.yaml</code>.</p>
     <div class="header-links">
       <a href="https://github.com/inoueUJ/tech-feed-catalog">GitHub</a>
       <a href="feeds.json">feeds.json</a>
@@ -260,7 +333,27 @@ footer { border-top: 1px solid var(--border); padding: 22px 0 40px; color: var(-
 </div>
 
 <div class="wrap layout">
-  <main id="list"></main>
+  <main>
+    <div class="custom" id="custom">
+      <div class="step">Step 1 · pick feeds</div>
+      <h2>Add a feed that isn't in the catalog <span class="ja">カタログに無いフィードを追加</span></h2>
+      <p>Zenn topics, Qiita tags, a personal blog — anything with an RSS/Atom feed. <strong>Check</strong> fetches it once (through this site's worker) so you know it works before it goes in your config.</p>
+      <div class="custom-row">
+        <select id="c-preset">
+          <option value="zenn_topic">Zenn topic</option>
+          <option value="zenn_user">Zenn user</option>
+          <option value="qiita_tag">Qiita tag</option>
+          <option value="url">Feed URL</option>
+        </select>
+        <input type="text" id="c-value" placeholder="rust" autocomplete="off" spellcheck="false">
+        <button class="btn-sm" id="c-check">Check</button>
+        <button class="btn-sm primary" id="c-add" disabled>Add</button>
+      </div>
+      <div class="custom-result" id="c-result"></div>
+      <ul class="custom-list" id="c-list"></ul>
+    </div>
+    <div id="list"></div>
+  </main>
 
   <aside class="panel">
     <div class="panel-head" id="panelhead">
@@ -271,19 +364,50 @@ footer { border-top: 1px solid var(--border); padding: 22px 0 40px; color: var(-
     <div class="panel-body">
     <div class="formats">
       <button data-fmt="yaml" aria-pressed="true">config.yaml</button>
+      <button data-fmt="cron" aria-pressed="false">cron</button>
       <button data-fmt="opml" aria-pressed="false">OPML</button>
       <button data-fmt="urls" aria-pressed="false">URLs</button>
     </div>
-    <div class="topics" id="topics" hidden>
-      <div class="topics-label">Notebook topic per feed</div>
-      <div id="topicrows"></div>
-    </div>
+
+    <section class="sec builder" id="sec-nb" hidden>
+      <h3><span class="step">Step 2</span> Notebooks <span class="ja">ノートブック＝話題のまとまり</span></h3>
+      <p class="help">Each notebook is one daily radio episode. Keep unrelated topics apart — an AI-news show and a cloud-changelog show read better than one mixed show. Rename freely; move a feed with its dropdown.</p>
+      <div id="nbcards"></div>
+    </section>
+
+    <section class="sec builder basics" id="sec-basics" hidden>
+      <h3><span class="step">Step 3</span> Basics <span class="ja">基本設定</span></h3>
+      <div class="row">
+        <div class="field"><label for="b-language">Audio language</label><input id="b-language" list="languages" autocomplete="off"><datalist id="languages"><option value="ja"><option value="en"><option value="ko"><option value="zh"><option value="es"><option value="fr"><option value="de"><option value="pt"></datalist></div>
+        <div class="field"><label for="b-timezone">Timezone</label><input id="b-timezone" list="timezones" autocomplete="off"><datalist id="timezones"><option value="Asia/Tokyo"><option value="Asia/Seoul"><option value="Asia/Shanghai"><option value="Asia/Singapore"><option value="Asia/Kolkata"><option value="Europe/London"><option value="Europe/Berlin"><option value="Europe/Paris"><option value="America/New_York"><option value="America/Chicago"><option value="America/Los_Angeles"><option value="UTC"></datalist></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="b-run1">Morning run (local time)</label><input id="b-run1" type="time" value="06:50"></div>
+        <div class="field"><label for="b-run2">Second run <span class="inline"><input type="checkbox" id="b-run2on" checked> on</span></label><input id="b-run2" type="time" value="17:15"></div>
+      </div>
+      <div class="field"><label for="b-plan">NotebookLM plan (sets the daily Audio Overview quota)</label>
+        <select id="b-plan"><option value="free">Free — 3 per day</option><option value="plus">Google AI Plus — 6 per day</option><option value="pro">Google AI Pro — 20 per day</option></select></div>
+      <div class="quota" id="quota"></div>
+      <div class="row3">
+        <div class="field"><label for="b-perfeed">Articles / feed / run</label><input id="b-perfeed" type="number" min="1" max="20" value="3"></div>
+        <div class="field"><label for="b-total">Articles / run</label><input id="b-total" type="number" min="1" max="60" value="15"></div>
+        <div class="field"><label for="b-retention">Keep notebooks (days)</label><input id="b-retention" type="number" min="1" max="90" value="7"></div>
+      </div>
+      <div class="field"><label for="b-stack">Your stack (goes into the default prompt — e.g. "Next.js, Cloudflare Workers, Claude Code")</label><input id="b-stack" type="text" autocomplete="off"></div>
+    </section>
+
+    <section class="sec builder" id="sec-warn" hidden>
+      <h3><span class="step">Check</span> Things to know <span class="ja">注意点</span></h3>
+      <ul class="warnings" id="warnings"></ul>
+    </section>
+
     <pre id="out"><span class="empty">Tick some feeds to build your config.</span></pre>
     <div class="panel-actions">
       <button class="btn" id="copy" disabled>Copy</button>
       <button class="btn ghost" id="download" disabled>Download</button>
+      <button class="btn ghost" id="share" disabled title="Copy a link that restores this whole setup">Share link</button>
     </div>
-    <p class="hint" id="hint">Paste the result under <code>feeds:</code> in your notebooklm-radio <code>config.yaml</code>.</p>
+    <div class="hint" id="hint"></div>
     </div>
   </aside>
 </div>
@@ -291,31 +415,142 @@ footer { border-top: 1px solid var(--border); padding: 22px 0 40px; color: var(-
 <footer>
   <div class="wrap">
     Data: <a href="https://github.com/inoueUJ/tech-feed-catalog">inoueUJ/tech-feed-catalog</a> · MIT ·
-    Feeds are re-validated weekly; a ⚠️ row means CI could not fetch it.
+    Feeds are re-validated weekly; a ⚠️ row means CI could not fetch it. Your selection is kept in this page's URL and in your browser — nothing is sent anywhere except the one-off feed check.
   </div>
 </footer>
 
 <script>
-const S = { cats: new Set(), q: '', radio: false, lang: 'all', quiet: false, fmt: 'yaml',
-            sel: new Map(), data: null };
-
+// ---------------------------------------------------------------------------
+// State. Everything the builder knows lives here, and it round-trips through the
+// URL hash (shareable) and localStorage (survives reload).
+// ---------------------------------------------------------------------------
+const WORKER = 'https://tech-feed-catalog-mcp.yuji-inoue11.workers.dev';
+const PLANS = { free: 3, plus: 6, pro: 20 };
+const AUDIO_FORMATS = ['deep-dive', 'brief', 'critique', 'debate'];
+const LENGTHS = ['short', 'default', 'long'];
 const TOPIC_DEFAULTS = {
   'ai-models': 'AI', 'ai-coding': 'AI', 'infra': 'Infra', 'languages': 'Dev',
   'frontend': 'Web', 'security': 'Security', 'companies': 'Eng', 'aggregators': 'News',
 };
 const STARS = { high: 3, medium: 2, low: 1 };
+const browserTz = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch { return 'UTC'; } })();
+const browserLang = (navigator.language || 'en').toLowerCase().startsWith('ja') ? 'ja' : 'en';
+
+const S = {
+  cats: new Set(), q: '', radio: false, lang: 'all', quiet: false, fmt: 'yaml', data: null,
+  sel: new Map(),          // catalog feed key -> { feed, topic, latest }
+  custom: [],              // { name, url, topic, latest, check }
+  notebooks: {},           // topic -> { format, length, prompt }
+  basics: { language: browserLang, timezone: browserTz, run1: '06:50', run2: '17:15', run2on: true,
+            plan: 'free', per_feed: 3, total: 15, retention: 7, stack: '' },
+};
 
 const el = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const yamlStr = (s) => /^[\w .()/-]+$/.test(s) ? s : JSON.stringify(s);
+const yamlStr = (s) => /^[\w .()/-]+$/.test(s) && !/^(true|false|null|yes|no|on|off|~)$/i.test(s) && !/^[\d.]+$/.test(s) ? s : JSON.stringify(s);
+const feedKey = (f) => f.url + '|' + (f.prefix || '');
 
 function volumeNumber(v) {
   if (!v || v === 'unknown') return null;
-  if (v.startsWith('<1')) return 0.5;
-  const m = v.match(/(\d+)/);
+  if (String(v).startsWith('<1')) return 0.5;
+  const m = String(v).match(/(\d+)/);
   return m ? Number(m[1]) : null;
 }
+// Aggregators and other firehoses can't be drained oldest-first; default them to "newest only".
+// "Firehose" is relative to what the user's limits can absorb: per_feed × runs per day × 30 days.
+function monthlyCapacity() {
+  return Math.max(1, Number(S.basics.per_feed) || 3) * Math.max(1, activeRuns().length) * 30;
+}
+const defaultLatest = (f) => f.category === 'aggregators' || (volumeNumber(f.volume) || 0) > monthlyCapacity();
 
+// --- persistence -------------------------------------------------------------
+function serialize() {
+  return {
+    v: 1, fmt: S.fmt,
+    sel: [...S.sel.entries()].map(([k, v]) => [k, v.topic, v.latest ? 1 : 0]),
+    custom: S.custom.map(c => ({ n: c.name, u: c.url, t: c.topic, l: c.latest ? 1 : 0, c: c.check })),
+    nb: S.notebooks, b: S.basics,
+  };
+}
+function restore(obj) {
+  if (!obj || obj.v !== 1) return;
+  S.fmt = BUILDERS[obj.fmt] ? obj.fmt : 'yaml';
+  S.sel = new Map();
+  for (const [k, topic, latest] of obj.sel || []) {
+    const feed = S.data.feeds.find(f => feedKey(f) === k);
+    if (feed) S.sel.set(k, { feed, topic: topic || 'AI', latest: !!latest });
+  }
+  S.custom = (obj.custom || []).filter(c => c.u).map(c => ({ name: c.n || c.u, url: c.u, topic: c.t || 'AI', latest: !!c.l, check: c.c || null }));
+  S.notebooks = obj.nb && typeof obj.nb === 'object' ? obj.nb : {};
+  S.basics = { ...S.basics, ...(obj.b || {}) };
+}
+const b64e = (s) => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const b64d = (s) => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/'))));
+let saveTimer = null;
+function persist() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    const json = JSON.stringify(serialize());
+    try { localStorage.setItem('builder', json); } catch {}
+    const hash = (S.sel.size || S.custom.length) ? '#s=' + b64e(json) : '';
+    try { history.replaceState(null, '', location.pathname + location.search + hash); } catch {}
+  }, 150);
+}
+function loadPersisted() {
+  try {
+    const m = location.hash.match(/^#s=(.+)$/);
+    if (m) { restore(JSON.parse(b64d(m[1]))); return; }
+  } catch {}
+  try {
+    const raw = localStorage.getItem('builder');
+    if (raw) restore(JSON.parse(raw));
+  } catch {}
+}
+
+// --- selection model ------------------------------------------------------------
+function selectedEntries() {
+  const out = [];
+  for (const [key, v] of S.sel) {
+    out.push({ key, name: v.feed.name, url: v.feed.url, type: v.feed.type, prefix: v.feed.prefix,
+               source_mode: v.feed.source_mode, topic: v.topic, latest: v.latest, meta: v.feed, custom: false });
+  }
+  for (const c of S.custom) {
+    const meta = c.check
+      ? { volume: c.check.volume, has_timestamps: c.check.has_timestamps, status: c.check.ok ? 'ok' : 'broken', custom: true }
+      : { custom: true, unchecked: true };
+    out.push({ key: 'custom|' + c.url, name: c.name, url: c.url, topic: c.topic, latest: c.latest, meta, custom: true });
+  }
+  return out;
+}
+const topicsInUse = () => [...new Set(selectedEntries().map(e => e.topic))];
+function nbFor(topic) {
+  if (!S.notebooks[topic]) S.notebooks[topic] = { format: 'deep-dive', length: 'long', prompt: '' };
+  return S.notebooks[topic];
+}
+function setTopic(key, topic) {
+  if (key.startsWith('custom|')) { const c = S.custom.find(c => 'custom|' + c.url === key); if (c) c.topic = topic; }
+  else { const v = S.sel.get(key); if (v) v.topic = topic; }
+}
+function setLatest(key, on) {
+  if (key.startsWith('custom|')) { const c = S.custom.find(c => 'custom|' + c.url === key); if (c) c.latest = on; }
+  else { const v = S.sel.get(key); if (v) v.latest = on; }
+}
+function renameTopic(from, to) {
+  to = to.trim();
+  if (!to || to === from) return;
+  for (const v of S.sel.values()) if (v.topic === from) v.topic = to;
+  for (const c of S.custom) if (c.topic === from) c.topic = to;
+  if (S.notebooks[from] && !S.notebooks[to]) S.notebooks[to] = S.notebooks[from];
+  delete S.notebooks[from];
+}
+function newTopicName() {
+  const used = new Set(topicsInUse());
+  for (const cand of ['Dev', 'Web', 'News', 'Security', 'Eng', 'Misc']) if (!used.has(cand)) return cand;
+  let i = 2; while (used.has('Topic ' + i)) i++;
+  return 'Topic ' + i;
+}
+
+// --- catalog list ---------------------------------------------------------------
 function matches(f) {
   if (S.cats.size && !S.cats.has(f.category)) return false;
   if (S.radio && f.radio_friendly !== 'high') return false;
@@ -356,7 +591,7 @@ function renderList() {
     if (!items.length) continue;
     html += `<div class="group-head"><h2>${esc(c.label_en)}</h2><span class="ja">${esc(c.label_ja)}</span></div>`;
     for (const f of items) {
-      const key = f.url + '|' + (f.prefix || '');
+      const key = feedKey(f);
       const on = S.sel.has(key);
       const flags = [];
       if (f.status === 'broken') flags.push('<span class="warnflag">⚠️ fetch failing</span>');
@@ -364,6 +599,7 @@ function renderList() {
       if (f.status === 'blocked') flags.push('<span class="warnflag" title="Works in a browser, but refuses automated clients from cloud IPs">🤖 blocks bots</span>');
       if (f.source_mode === 'text') flags.push('<span class="warnflag">bot-protected</span>');
       if (f.has_timestamps === false) flags.push('no timestamps');
+      if (f.same_as) flags.push('<span class="warnflag" title="Publishes the same articles as another entry">same as another feed</span>');
       html += `
       <label class="feed ${on ? 'on' : ''}" data-key="${esc(key)}">
         <input type="checkbox" ${on ? 'checked' : ''}>
@@ -393,39 +629,210 @@ function renderList() {
 }
 
 function toggle(key, on) {
-  const feed = S.data.feeds.find(f => (f.url + '|' + (f.prefix || '')) === key);
+  const feed = S.data.feeds.find(f => feedKey(f) === key);
   if (!feed) return;
-  if (on) S.sel.set(key, { feed, topic: TOPIC_DEFAULTS[feed.category] || 'AI' });
+  if (on) S.sel.set(key, { feed, topic: TOPIC_DEFAULTS[feed.category] || 'AI', latest: defaultLatest(feed) });
   else S.sel.delete(key);
   renderList(); renderPanel();
 }
 
-function buildYaml() {
-  const lines = [];
-  for (const { feed, topic } of S.sel.values()) {
-    lines.push(`  - name: ${yamlStr(feed.name)}`);
-    if (feed.type === 'sitemap') {
-      lines.push(`    type: sitemap`);
-      lines.push(`    url: ${feed.url}`);
-      lines.push(`    prefix: ${feed.prefix}`);
+// --- custom feeds ---------------------------------------------------------------
+const PRESETS = {
+  zenn_topic: { placeholder: 'rust', url: v => `https://zenn.dev/topics/${encodeURIComponent(v)}/feed`, name: v => `Zenn: ${v}` },
+  zenn_user:  { placeholder: 'username', url: v => `https://zenn.dev/${encodeURIComponent(v.replace(/^@/, ''))}/feed`, name: v => `Zenn @${v.replace(/^@/, '')}` },
+  qiita_tag:  { placeholder: 'Rust', url: v => `https://qiita.com/tags/${encodeURIComponent(v)}/feed`, name: v => `Qiita: ${v}` },
+  url:        { placeholder: 'https://example.com/feed.xml', url: v => v, name: v => { try { return new URL(v).hostname.replace(/^www\./, ''); } catch { return v; } } },
+};
+let pendingCheck = null; // { url, name, result }
+
+function customUrl() {
+  const preset = PRESETS[el('c-preset').value];
+  const v = el('c-value').value.trim();
+  if (!v) return null;
+  const url = preset.url(v);
+  if (!/^https?:\/\/\S+$/.test(url)) return null;
+  return { url, name: preset.name(v) };
+}
+
+function describeCheck(r) {
+  if (!r) return '';
+  if (!r.ok) {
+    const why = r.blocked ? `HTTP ${r.status} — the host refuses automated clients (bot protection)` :
+                r.error ? r.error : `HTTP ${r.status}`;
+    return `<span class="bad">✗ ${esc(why)}</span>`;
+  }
+  const bits = [esc(String(r.kind || 'feed').toUpperCase()), `${r.entries} entr${r.entries === 1 ? 'y' : 'ies'}`,
+                r.has_timestamps ? 'timestamps ✓' : '<span class="bad">no timestamps</span>'];
+  if (r.latest) bits.push(`latest ${esc(r.latest)}`);
+  if (r.volume) bits.push(`~${esc(r.volume)}/month`);
+  return `<span class="ok">✓ ${esc(r.title || '')}</span> · ${bits.join(' · ')}`;
+}
+
+async function runCheck() {
+  const target = customUrl();
+  if (!target) { el('c-result').innerHTML = '<span class="bad">Enter a value first.</span>'; return; }
+  el('c-check').disabled = true;
+  el('c-result').textContent = `Fetching ${target.url} …`;
+  try {
+    const r = await fetch(`${WORKER}/check?url=${encodeURIComponent(target.url)}`);
+    const result = await r.json();
+    pendingCheck = { ...target, result };
+    el('c-result').innerHTML = describeCheck(result) + ` <code>${esc(target.url)}</code>`;
+  } catch (e) {
+    pendingCheck = { ...target, result: null };
+    el('c-result').innerHTML = `<span class="bad">Could not reach the checker.</span> You can still add the URL unchecked. <code>${esc(target.url)}</code>`;
+  } finally {
+    el('c-check').disabled = false;
+    el('c-add').disabled = false;
+  }
+}
+
+function addCustom() {
+  const current = customUrl();
+  if (!current) return;
+  const target = pendingCheck && pendingCheck.url === current.url ? pendingCheck : { ...current, result: null };
+  if (S.custom.some(c => c.url === target.url) || S.data.feeds.some(f => f.url === target.url)) {
+    el('c-result').innerHTML = '<span class="bad">That feed is already in your selection or in the catalog — tick it in the list.</span>';
+    return;
+  }
+  const r = target.result;
+  const check = r ? { ok: !!r.ok, status: r.status, kind: r.kind, title: r.title, entries: r.entries, has_timestamps: r.has_timestamps, latest: r.latest, volume: r.volume, blocked: !!r.blocked } : null;
+  const topics = topicsInUse();
+  const isJa = /zenn\.dev|qiita\.com/.test(target.url);
+  const name = (r && r.ok && r.title && el('c-preset').value === 'url') ? String(r.title).slice(0, 40) : target.name;
+  S.custom.push({ name, url: target.url, topic: topics[0] || (isJa ? 'Dev' : 'AI'),
+                  latest: !!(check && (volumeNumber(check.volume) || 0) > monthlyCapacity()), check });
+  pendingCheck = null;
+  el('c-value').value = ''; el('c-result').textContent = ''; el('c-add').disabled = true;
+  renderCustomList(); renderPanel();
+}
+
+function renderCustomList() {
+  el('c-list').innerHTML = S.custom.map((c, i) => {
+    const status = c.check ? (c.check.ok ? '<span class="ok">✓</span>' : '<span class="bad">✗</span>') : '<span class="warnflag" title="not checked">?</span>';
+    return `<li>${status} <span><strong>${esc(c.name)}</strong> <code>${esc(c.url)}</code></span><button class="linkbtn" data-rm="${i}">remove</button></li>`;
+  }).join('');
+  el('c-list').querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { S.custom.splice(Number(b.dataset.rm), 1); renderCustomList(); renderPanel(); });
+}
+
+// --- cron ------------------------------------------------------------------------
+function validTz(tz) { try { Intl.DateTimeFormat(undefined, { timeZone: tz }); return true; } catch { return false; } }
+function tzOffsetMinutes(tz, date = new Date()) {
+  const dtf = new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  const p = Object.fromEntries(dtf.formatToParts(date).map(x => [x.type, x.value]));
+  const asUTC = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second);
+  return Math.round((asUTC - date.getTime()) / 60000);
+}
+function activeRuns() {
+  const b = S.basics; const runs = [];
+  if (/^\d\d:\d\d$/.test(b.run1)) runs.push(b.run1);
+  if (b.run2on && /^\d\d:\d\d$/.test(b.run2)) runs.push(b.run2);
+  return runs;
+}
+function cronFor(hhmm, tz) {
+  const [h, m] = hhmm.split(':').map(Number);
+  let total = h * 60 + m - tzOffsetMinutes(tz);
+  total = ((total % 1440) + 1440) % 1440;
+  return { min: total % 60, hour: Math.floor(total / 60) };
+}
+function fmtOffset(minutes) {
+  const sign = minutes < 0 ? '-' : '+';
+  const a = Math.abs(minutes);
+  return `UTC${sign}${String(Math.floor(a / 60)).padStart(2, '0')}:${String(a % 60).padStart(2, '0')}`;
+}
+
+// --- prompt template -----------------------------------------------------------------
+function defaultPrompt() {
+  const stack = S.basics.stack.trim();
+  if ((S.basics.language || '').toLowerCase().startsWith('ja')) {
+    return `洞察力のある素人が鋭い質問を投げ、専門家が深く答える対談形式で。\n各ニュースの表面的な紹介ではなく、「なぜ今このタイミングで出たのか」と、${stack ? stack + ' を使う開発者' : '開発者'}の日常に何が変わるかを深掘りすること。件数を網羅するより、重要な話題を選んで掘り下げてよい。`;
+  }
+  return `A curious generalist asks sharp questions and an expert answers in depth.\nDon't just introduce each item: dig into why it shipped now and what changes for ${stack ? 'developers who use ' + stack : 'working developers'}. Prefer depth on the important stories over covering everything.`;
+}
+
+// --- builders ---------------------------------------------------------------------------
+function buildConfigYaml() {
+  const entries = selectedEntries();
+  const topics = topicsInUse();
+  const b = S.basics;
+  const L = [];
+  L.push(`# notebooklm-radio config.yaml — built with https://inoueuj.github.io/tech-feed-catalog/ on ${new Date().toISOString().slice(0, 10)}`);
+  L.push('# Replace your whole config.yaml with this file, then check it: python radio_batch.py --check-config');
+  L.push('feeds:');
+  for (const e of entries) {
+    L.push(`  - name: ${yamlStr(e.name)}`);
+    if (e.type === 'sitemap') {
+      L.push('    type: sitemap');
+      L.push(`    url: ${e.url}`);
+      L.push(`    prefix: ${e.prefix}`);
     } else {
-      lines.push(`    url: ${feed.url}`);
+      L.push(`    url: ${e.url}`);
     }
-    lines.push(`    topic: ${yamlStr(topic)}`);
-    if (feed.source_mode === 'text') {
-      lines.push(`    # article pages are bot-protected; submit the feed summary instead`);
-      lines.push(`    source_mode: text`);
+    L.push(`    topic: ${yamlStr(e.topic)}`);
+    if (e.source_mode === 'text') {
+      L.push('    # article pages are bot-protected; submit the feed summary instead');
+      L.push('    source_mode: text');
+    }
+    if (e.latest && e.type !== 'sitemap') L.push('    mode: latest  # newest N per run; the rest is marked read (firehose feed)');
+  }
+  if (topics.length) {
+    L.push('');
+    L.push('# One notebook (and one Audio Overview per run) per topic. Overrides settings.audio per topic.');
+    L.push('topics:');
+    for (const t of topics) {
+      const n = nbFor(t);
+      L.push(`  ${yamlStr(t)}:`);
+      L.push('    audio:');
+      L.push(`      format: ${AUDIO_FORMATS.includes(n.format) ? n.format : 'deep-dive'}`);
+      L.push(`      length: ${LENGTHS.includes(n.length) ? n.length : 'long'}`);
+      const prompt = (n.prompt || '').trim() || defaultPrompt();
+      L.push('      prompt: >-');
+      for (const line of prompt.split('\n')) L.push(line.trim() ? '        ' + line.trim() : '');
     }
   }
-  return 'feeds:\n' + lines.join('\n');
+  L.push('');
+  L.push('settings:');
+  L.push('  notebook_title_format: "Tech Radio {topic} {date}"');
+  L.push(`  language: ${yamlStr(b.language || 'ja')}`);
+  L.push(`  timezone: ${yamlStr(b.timezone || 'UTC')}`);
+  L.push(`  default_topic: ${yamlStr(topics[0] || 'AI')}`);
+  L.push('  limits:');
+  L.push(`    per_feed: ${Math.max(1, Number(b.per_feed) || 3)}`);
+  L.push(`    total: ${Math.max(1, Number(b.total) || 15)}`);
+  L.push('  audio:');
+  L.push("    scope: run  # each run's episode covers only the articles added in that run");
+  L.push('  cleanup:');
+  L.push('    enabled: true');
+  L.push(`    retention_days: ${Math.max(1, Number(b.retention) || 7)}`);
+  L.push('    dry_run: true  # flip to false once the would-delete list in your notifications looks right');
+  L.push('  stale_feed_days: 30');
+  return L.join('\n') + '\n';
+}
+
+function buildCron() {
+  const b = S.basics;
+  const tz = validTz(b.timezone) ? b.timezone : 'UTC';
+  const off = tzOffsetMinutes(tz);
+  const L = ['# .github/workflows/rss-radio.yml — replace the `- cron:` lines under `schedule:` with these', 'on:', '  schedule:'];
+  for (const t of activeRuns()) {
+    const c = cronFor(t, tz);
+    L.push(`    - cron: '${c.min} ${c.hour} * * *'  # ${t} ${tz}`);
+  }
+  L.push('  workflow_dispatch:');
+  L.push('');
+  L.push(`# Offsets computed for today (${tz} = ${fmtOffset(off)}). GitHub cron is UTC and knows nothing about`);
+  L.push('# daylight saving time: if your zone observes it, runs shift by an hour for part of the year.');
+  L.push('# Runs can start minutes to hours late when GitHub is busy; avoid :00 and :30.');
+  return L.join('\n') + '\n';
 }
 
 function buildOpml() {
-  const items = [...S.sel.values()].filter(({ feed }) => feed.type !== 'sitemap');
-  const body = items.map(({ feed }) =>
-    `    <outline type="rss" text="${esc(feed.name)}" title="${esc(feed.name)}" xmlUrl="${esc(feed.url)}" htmlUrl="${esc(feed.site)}"/>`
+  const all = selectedEntries();
+  const items = all.filter(e => e.type !== 'sitemap');
+  const body = items.map(e =>
+    `    <outline type="rss" text="${esc(e.name)}" title="${esc(e.name)}" xmlUrl="${esc(e.url)}"${e.meta && e.meta.site ? ` htmlUrl="${esc(e.meta.site)}"` : ''}/>`
   ).join('\n');
-  const skipped = S.sel.size - items.length;
+  const skipped = all.length - items.length;
   const note = skipped ? `\n<!-- ${skipped} sitemap-based source(s) omitted: OPML only carries real feeds -->` : '';
   return `<?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
@@ -437,51 +844,158 @@ ${body}
 }
 
 function buildUrls() {
-  // Sitemap sources are not feeds — pasting one into a reader just fails, so keep
-  // them out of the list and say so instead of silently dropping them.
-  const feeds = [...S.sel.values()].filter(({ feed }) => feed.type !== 'sitemap');
-  const skipped = S.sel.size - feeds.length;
-  const lines = feeds.map(({ feed }) => feed.url);
+  const all = selectedEntries();
+  const feeds = all.filter(e => e.type !== 'sitemap');
+  const skipped = all.length - feeds.length;
+  const lines = feeds.map(e => e.url);
   if (skipped) lines.push(`# ${skipped} sitemap-based source(s) omitted — they are not subscribable feeds`);
   return lines.join('\n');
 }
 
-const BUILDERS = { yaml: buildYaml, opml: buildOpml, urls: buildUrls };
+const BUILDERS = { yaml: buildConfigYaml, cron: buildCron, opml: buildOpml, urls: buildUrls };
+const FILENAMES = { yaml: 'config.yaml', cron: 'cron.txt', opml: 'feeds.opml', urls: 'feeds.txt' };
 const HINTS = {
-  yaml: 'Paste the result under <code>feeds:</code> in your notebooklm-radio <code>config.yaml</code>.',
+  yaml: `This is a <strong>complete</strong> <code>config.yaml</code> — replace the whole file, don't paste it under <code>feeds:</code>.
+<ol>
+<li>Create your repo from the <a href="https://github.com/inoueUJ/notebooklm-radio" target="_blank" rel="noopener">notebooklm-radio</a> template (Private).</li>
+<li>Replace <code>config.yaml</code> with this, and the cron lines (the <em>cron</em> tab) in <code>.github/workflows/rss-radio.yml</code>.</li>
+<li>Do the one-time login and secrets from the README quick start, then run the workflow once.</li>
+</ol>`,
+  cron: 'Two lines for the workflow file, already converted to UTC for your timezone.',
   opml: 'Import into any RSS reader. Sitemap-based sources are skipped — they are not real feeds.',
   urls: 'Plain feed URLs, one per line.',
 };
-const FILENAMES = { yaml: 'feeds.yaml', opml: 'feeds.opml', urls: 'feeds.txt' };
 
+// --- warnings ------------------------------------------------------------------------------
+function computeWarnings() {
+  const out = [];
+  const bad = (t) => out.push({ level: 'bad', text: t });
+  const warn = (t) => out.push({ level: 'warn', text: t });
+  const info = (t) => out.push({ level: 'info', text: t });
+  const entries = selectedEntries();
+  const b = S.basics;
+  const runs = activeRuns().length;
+  const perFeed = Math.max(1, Number(b.per_feed) || 3);
+
+  if (!validTz(b.timezone)) bad(`"${b.timezone}" is not a timezone name. Use an IANA name like Asia/Tokyo or Europe/Berlin.`);
+  for (const t of activeRuns()) {
+    const m = Number(t.split(':')[1]);
+    if (m % 30 === 0) warn(`${t}: GitHub's cron is congested at :00 and :30 and starts late there. Pick an odd minute, e.g. ${t.slice(0, 3)}${String((m + 5) % 60).padStart(2, '0')}.`);
+  }
+  for (const e of entries) {
+    const m = e.meta || {};
+    if (m.unchecked) info(`${e.name}: added without checking. If it isn't a real feed you'll get a fetch warning every run.`);
+    if (m.status === 'broken' && !m.custom) bad(`${e.name}: CI could not fetch this feed (⚠️). It will raise a feed warning every run.`);
+    if (m.status === 'broken' && m.custom) bad(`${e.name}: the check failed. It will raise a feed warning every run.`);
+    if (m.status === 'blocked') bad(`${e.name}: refuses automated clients from cloud IPs (🤖). GitHub Actions runs from cloud IPs, so expect it to fail.`);
+    if (m.status === 'stale') warn(`${e.name}: nothing new for 6+ months (💤).`);
+    if (e.source_mode === 'text') info(`${e.name}: article pages are bot-protected, so the radio only gets the feed's summary text (marked 要約のみ in notifications).`);
+    if (m.has_timestamps === false) info(`${e.name}: entries carry no publish time; read-state falls back to IDs.`);
+    const vol = volumeNumber(m.volume);
+    const capacity = perFeed * runs * 30;
+    if (vol && vol > capacity && !e.latest && e.type !== 'sitemap') warn(`${e.name} publishes ~${vol}/month but you process at most ${capacity}/month from it (${perFeed} × ${runs} run${runs === 1 ? '' : 's'} × 30 days). The backlog never drains — tick "newest only" or raise the limit.`);
+    if (m.same_as) {
+      const other = entries.find(o => o.url === m.same_as);
+      if (other) bad(`${e.name} and ${other.name} publish the same articles — every article would be added twice. Keep one.`);
+    }
+  }
+  const total = Math.max(1, Number(b.total) || 15);
+  if (entries.length * perFeed > total) info(`Up to ${entries.length * perFeed} new articles per run across ${entries.length} feeds, but the per-run total is ${total}. Overflow isn't lost — it carries over to the next run, oldest first.`);
+  return out;
+}
+
+// --- panel -------------------------------------------------------------------------------------
+function renderNotebooks() {
+  const topics = topicsInUse();
+  const entries = selectedEntries();
+  const perFeed = Math.max(1, Number(S.basics.per_feed) || 3);
+  el('nbcards').innerHTML = topics.map(t => {
+    const n = nbFor(t);
+    const mine = entries.filter(e => e.topic === t);
+    const opts = (cur) => topics.map(x => `<option ${x === cur ? 'selected' : ''}>${esc(x)}</option>`).join('') + '<option value="__new__">+ new notebook…</option>';
+    return `<div class="nb" data-topic="${esc(t)}">
+      <div class="nb-head"><input value="${esc(t)}" data-rename="${esc(t)}" aria-label="Notebook name" spellcheck="false"><span class="n">${mine.length} feed${mine.length === 1 ? '' : 's'}</span></div>
+      ${mine.map(e => `<div class="nb-feed">
+        <span class="name" title="${esc(e.url)}">${esc(e.name)}</span>
+        ${e.type !== 'sitemap' ? `<label title="Take only the newest ${perFeed} per run and mark the rest read (for firehose feeds)"><input type="checkbox" data-latest="${esc(e.key)}" ${e.latest ? 'checked' : ''}> newest only</label>` : ''}
+        <select data-move="${esc(e.key)}" aria-label="Move to notebook">${opts(t)}</select>
+      </div>`).join('')}
+      <div class="nb-audio">
+        <select data-format="${esc(t)}" aria-label="Conversation format">${AUDIO_FORMATS.map(f => `<option ${f === n.format ? 'selected' : ''} value="${f}">${f}</option>`).join('')}</select>
+        <select data-length="${esc(t)}" aria-label="Length">${LENGTHS.map(l => `<option ${l === n.length ? 'selected' : ''} value="${l}">${l}</option>`).join('')}</select>
+      </div>
+      <textarea data-prompt="${esc(t)}" placeholder="${esc(defaultPrompt())}" aria-label="Focus / style instructions">${esc(n.prompt || '')}</textarea>
+    </div>`;
+  }).join('');
+
+  const cards = el('nbcards');
+  cards.querySelectorAll('[data-rename]').forEach(input => {
+    input.onchange = () => { renameTopic(input.dataset.rename, input.value); renderPanel(); };
+    input.onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); input.blur(); } };
+  });
+  cards.querySelectorAll('[data-move]').forEach(sel => sel.onchange = () => {
+    const isNew = sel.value === '__new__';
+    const to = isNew ? newTopicName() : sel.value;
+    setTopic(sel.dataset.move, to);
+    renderPanel();
+    if (isNew) { const box = cards.querySelector(`[data-rename="${CSS.escape(to)}"]`); if (box) { box.focus(); box.select(); } }
+  });
+  cards.querySelectorAll('[data-latest]').forEach(cb => cb.onchange = () => { setLatest(cb.dataset.latest, cb.checked); renderPanel(); });
+  cards.querySelectorAll('[data-format]').forEach(sel => sel.onchange = () => { nbFor(sel.dataset.format).format = sel.value; renderOutput(); });
+  cards.querySelectorAll('[data-length]').forEach(sel => sel.onchange = () => { nbFor(sel.dataset.length).length = sel.value; renderOutput(); });
+  cards.querySelectorAll('[data-prompt]').forEach(ta => ta.oninput = () => { nbFor(ta.dataset.prompt).prompt = ta.value; renderOutput(); });
+}
+
+function renderBasicsInputs() {
+  const b = S.basics;
+  el('b-language').value = b.language; el('b-timezone').value = b.timezone;
+  el('b-run1').value = b.run1; el('b-run2').value = b.run2; el('b-run2on').checked = b.run2on;
+  el('b-run2').disabled = !b.run2on;
+  el('b-plan').value = b.plan; el('b-perfeed').value = b.per_feed; el('b-total').value = b.total;
+  el('b-retention').value = b.retention; el('b-stack').value = b.stack;
+}
+function renderQuota() {
+  const nbs = topicsInUse().length, runs = activeRuns().length, quota = PLANS[S.basics.plan] || 3;
+  const perDay = nbs * runs;
+  const q = el('quota');
+  q.classList.toggle('over', perDay > quota);
+  q.innerHTML = perDay > quota
+    ? `<b>${nbs}</b> notebook${nbs === 1 ? '' : 's'} × <b>${runs}</b> run${runs === 1 ? '' : 's'}/day = <b>${perDay}</b> Audio Overviews/day — over the <b>${quota}</b>/day of this plan. The extra ones fail with <code>rate_limited</code>. Merge notebooks, turn off the second run, or pick a bigger plan.`
+    : `<b>${nbs}</b> notebook${nbs === 1 ? '' : 's'} × <b>${runs}</b> run${runs === 1 ? '' : 's'}/day = <b>${perDay}</b> Audio Overview${perDay === 1 ? '' : 's'}/day, within this plan's <b>${quota}</b>.`;
+}
+function renderWarnings() {
+  const w = computeWarnings();
+  el('sec-warn').hidden = !w.length;
+  el('warnings').innerHTML = w.map(x => `<li class="${x.level}">${esc(x.text)}</li>`).join('');
+}
+function renderOutput() {
+  const n = selectedEntries().length;
+  el('out').innerHTML = n ? '' : '<span class="empty">Tick some feeds to build your config.</span>';
+  if (n) el('out').textContent = BUILDERS[S.fmt]();
+  renderQuota(); renderWarnings();
+  persist();
+}
 function renderPanel() {
-  const n = S.sel.size;
-  el('selcount').textContent = n ? `${n} feed${n > 1 ? 's' : ''} selected` : 'Nothing selected';
-  el('copy').disabled = el('download').disabled = !n;
+  const n = selectedEntries().length;
+  const nbs = topicsInUse().length;
+  el('selcount').textContent = n ? `${n} feed${n > 1 ? 's' : ''} · ${nbs} notebook${nbs === 1 ? '' : 's'}` : 'Nothing selected';
+  el('copy').disabled = el('download').disabled = el('share').disabled = !n;
   el('hint').innerHTML = HINTS[S.fmt];
 
   const panel = document.querySelector('.panel');
   panel.classList.toggle('has-sel', n > 0);
   if (!n) panel.classList.remove('open');
 
-  const showTopics = n > 0 && S.fmt === 'yaml';
-  el('topics').hidden = !showTopics;
-  if (showTopics) {
-    el('topicrows').innerHTML = [...S.sel.entries()].map(([key, v]) =>
-      `<div class="topic-row"><span>${esc(v.feed.name)}</span><input value="${esc(v.topic)}" data-key="${esc(key)}"></div>`
-    ).join('');
-    el('topicrows').querySelectorAll('input').forEach(input => {
-      input.oninput = () => {
-        const entry = S.sel.get(input.dataset.key);
-        if (entry) { entry.topic = input.value || 'AI'; el('out').textContent = BUILDERS[S.fmt](); }
-      };
-    });
-  }
-
-  el('out').innerHTML = n ? '' : '<span class="empty">Tick some feeds to build your config.</span>';
-  if (n) el('out').textContent = BUILDERS[S.fmt]();
+  const builder = n > 0 && (S.fmt === 'yaml' || S.fmt === 'cron');
+  el('sec-nb').hidden = !(builder && S.fmt === 'yaml');
+  el('sec-basics').hidden = !builder;
+  if (builder && S.fmt === 'yaml') renderNotebooks();
+  if (builder) renderBasicsInputs();
+  renderOutput();
+  if (!builder) el('sec-warn').hidden = true;
 }
 
+// --- wiring ----------------------------------------------------------------------------------
 el('q').oninput = (e) => { S.q = e.target.value.trim().toLowerCase(); renderList(); };
 el('f-radio').onclick = (e) => { S.radio = !S.radio; e.currentTarget.setAttribute('aria-pressed', S.radio); renderList(); };
 el('f-quiet').onclick = (e) => { S.quiet = !S.quiet; e.currentTarget.setAttribute('aria-pressed', S.quiet); renderList(); };
@@ -491,7 +1005,7 @@ el('f-lang').onclick = (e) => {
   e.currentTarget.setAttribute('aria-pressed', S.lang !== 'all');
   renderList();
 };
-el('clear').onclick = (e) => { e.stopPropagation(); S.sel.clear(); renderList(); renderPanel(); };
+el('clear').onclick = (e) => { e.stopPropagation(); S.sel.clear(); S.custom = []; S.notebooks = {}; renderList(); renderCustomList(); renderPanel(); };
 el('panelhead').onclick = () => {
   const panel = document.querySelector('.panel');
   const open = panel.classList.toggle('open');
@@ -515,11 +1029,36 @@ el('download').onclick = () => {
   a.click();
   URL.revokeObjectURL(a.href);
 };
+el('share').onclick = async () => {
+  clearTimeout(saveTimer);
+  const hash = '#s=' + b64e(JSON.stringify(serialize()));
+  history.replaceState(null, '', location.pathname + location.search + hash);
+  await navigator.clipboard.writeText(location.href);
+  el('share').textContent = 'Link copied';
+  setTimeout(() => el('share').textContent = 'Share link', 1400);
+};
 el('theme').onclick = () => {
   const dark = matchMedia('(prefers-color-scheme: dark)').matches;
   const now = document.documentElement.getAttribute('data-theme') || (dark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', now === 'dark' ? 'light' : 'dark');
 };
+
+// custom feed form
+el('c-preset').onchange = () => { el('c-value').placeholder = PRESETS[el('c-preset').value].placeholder; pendingCheck = null; el('c-add').disabled = !customUrl(); el('c-result').textContent = ''; };
+el('c-value').oninput = () => { pendingCheck = null; el('c-add').disabled = !customUrl(); el('c-result').textContent = ''; };
+el('c-value').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); runCheck(); } };
+el('c-check').onclick = runCheck;
+el('c-add').onclick = addCustom;
+
+// basics form
+const bind = (id, key, transform = (v) => v) => { el(id).oninput = () => { S.basics[key] = transform(el(id).value); renderOutput(); }; };
+bind('b-language', 'language', v => v.trim());
+bind('b-timezone', 'timezone', v => v.trim());
+bind('b-run1', 'run1'); bind('b-run2', 'run2');
+bind('b-perfeed', 'per_feed', Number); bind('b-total', 'total', Number); bind('b-retention', 'retention', Number);
+el('b-stack').oninput = () => { S.basics.stack = el('b-stack').value; renderNotebooks(); renderOutput(); };
+el('b-plan').onchange = () => { S.basics.plan = el('b-plan').value; renderOutput(); };
+el('b-run2on').onchange = () => { S.basics.run2on = el('b-run2on').checked; el('b-run2').disabled = !S.basics.run2on; renderOutput(); };
 
 fetch('feeds.json')
   .then(r => r.json())
@@ -527,7 +1066,9 @@ fetch('feeds.json')
     S.data = data;
     const ok = data.feeds.filter(f => f.status === 'ok').length;
     el('headcount').textContent = `${data.feeds.length} feeds · ${ok} verified working`;
-    renderChips(); renderList(); renderPanel();
+    loadPersisted();
+    document.querySelectorAll('.formats button').forEach(x => x.setAttribute('aria-pressed', x.dataset.fmt === S.fmt));
+    renderChips(); renderList(); renderCustomList(); renderPanel();
   })
   .catch(() => { el('list').innerHTML = '<p class="noresults">Could not load feeds.json.</p>'; });
 </script>

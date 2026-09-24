@@ -487,6 +487,7 @@
     {
       "name": "Vercel Changelog",
       "url": "https://vercel.com/atom",
+      "same_as": "https://vercel.com/blog/feed",
       "site": "https://vercel.com/changelog",
       "category": "infra",
       "kind": "changelog",

@@ -43,6 +43,11 @@
       "language": {
         "enum": ["en", "ja"]
       },
+      "same_as": {
+        "type": "string",
+        "format": "uri",
+        "description": "The URL of another catalog entry that publishes the same articles (e.g. a site's blog feed and its Atom feed are identical). Consumers should warn when both are selected: subscribing to both means every article twice."
+      },
       "source_mode": {
         "const": "text",
         "description": "Set when the article pages block automated fetchers (Cloudflare challenge etc.), so consumers submit the feed summary instead of the URL."

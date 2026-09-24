@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
     paths: ['site/**', '.github/workflows/pages.yml']
+  # The weekly refresh commits site/feeds.json with the workflow token and [skip ci],
+  # which never triggers a push workflow — so the deployed site went stale while
+  # main kept getting fresher. Deploy after that workflow finishes instead.
+  workflow_run:
+    workflows: ['Validate catalog']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,6 +25,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:
