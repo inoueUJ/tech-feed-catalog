@@ -859,7 +859,7 @@ const HINTS = {
 <ol>
 <li>Create your repo from the <a href="https://github.com/inoueUJ/notebooklm-radio" target="_blank" rel="noopener">notebooklm-radio</a> template (Private).</li>
 <li>Replace <code>config.yaml</code> with this, and the cron lines (the <em>cron</em> tab) in <code>.github/workflows/rss-radio.yml</code>.</li>
-<li>Do the one-time login and secrets from the README quick start, then run the workflow once.</li>
+<li>In the clone, run <code>python scripts/setup.py</code>: it installs the CLI, logs you in, stores the secrets and starts the first run.</li>
 </ol>`,
   cron: 'Two lines for the workflow file, already converted to UTC for your timezone.',
   opml: 'Import into any RSS reader. Sitemap-based sources are skipped — they are not real feeds.',
