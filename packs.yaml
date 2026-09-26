@@ -1,0 +1,44 @@
+# Starter packs: one-tap bundles for people who don't know where to begin.
+# Each pack adds a small, curated set of catalog feeds (by name) into one show.
+# `latest` lists feeds that should get `mode: latest` (firehoses).
+- id: ai
+  label_ja: AI 派
+  label_en: AI news
+  blurb_ja: Anthropic・OpenAI・Google の一次情報を毎朝
+  blurb_en: First-party news from Anthropic, OpenAI and Google
+  show_ja: AI
+  show_en: AI
+  feeds: [Anthropic News, Anthropic Engineering, Claude Code, OpenAI News, Google Gemini]
+- id: web
+  label_ja: Web・フロント派
+  label_en: Web & frontend
+  blurb_ja: Next.js・React・Vercel・ブラウザの動き
+  blurb_en: Next.js, React, Vercel and the browsers
+  show_ja: Web
+  show_en: Web
+  feeds: [Next.js, React, Vercel Changelog, Chrome for Developers, Tailwind CSS]
+- id: infra
+  label_ja: クラウド・インフラ派
+  label_en: Cloud & infrastructure
+  blurb_ja: Cloudflare・GitHub・AWS・Kubernetes の変更点
+  blurb_en: What changed at Cloudflare, GitHub, AWS and Kubernetes
+  show_ja: インフラ
+  show_en: Infra
+  feeds: [Cloudflare Blog, Cloudflare Changelog, GitHub Changelog, AWS Architecture Blog, Kubernetes]
+- id: languages
+  label_ja: 言語派
+  label_en: Languages
+  blurb_ja: Rust・Go・TypeScript・Python の公式ブログ
+  blurb_en: The official Rust, Go, TypeScript and Python blogs
+  show_ja: 言語
+  show_en: Dev
+  feeds: [Rust Blog, Go Blog, TypeScript, Python Insider, Node.js]
+- id: japan
+  label_ja: 日本語で追う派
+  label_en: Japanese tech
+  blurb_ja: Publickey・Zenn トレンド・企業テックブログ
+  blurb_en: Publickey, Zenn trending and Japanese engineering blogs
+  show_ja: 日本語
+  show_en: Japan
+  feeds: [Publickey, Zenn Trending, メルカリ engineering, LINE / LY Engineering, Cybozu Engineering]
+  latest: [Zenn Trending]

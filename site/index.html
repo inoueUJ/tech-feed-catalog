@@ -121,6 +121,18 @@ h1 .dot { color: var(--accent); }
 @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.12); } 100% { transform: scale(1); } }
 .tchip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+.packrow { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.pack { text-align: left; display: grid; gap: 2px; padding: 10px 12px; border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); color: var(--text); cursor: pointer; transition: border-color .15s, background .15s; }
+.pack b { font-size: 13.5px; }
+.pack span { font-size: 11.5px; color: var(--text-dim); line-height: 1.4; }
+.pack:hover { border-color: var(--accent); }
+.pack[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.pack[aria-pressed="mixed"] { border-color: var(--accent); border-style: dashed; }
+.pack.pop { animation: pop .3s cubic-bezier(.3,1.6,.5,1); }
+.pack:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.custom-note { font-size: 11.5px; color: var(--accent); }
+.nb-adv .field span { font-size: 11.5px; color: var(--text-dim); }
+.intro .loaded { font-size: 13px; color: var(--text); background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .picked { display: grid; gap: 8px; border-top: 1px solid var(--border); padding-top: 14px; }
 .picked h3 { margin: 0; font-size: 13px; color: var(--text-dim); font-weight: 600; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -365,9 +377,15 @@ const T = {
     s2_h: '番組に分けましょう', s2_p: '番組 = NotebookLM のノートブック 1 冊 = 1 日 1 本のラジオ。話題が混ざると散らかるので、無関係なものは分けます。名前は自由に変えられ、プルダウンでフィードを移せます。',
     nb_feeds: (n) => `${n} フィード`, move: '移す', new_nb: '+ 新しい番組…',
     newest_only: '最新だけ', newest_title: (n) => `毎回最新 ${n} 件だけ拾い、残りは読んだことにする（流量の多いフィード向け）`,
-    style: '雰囲気', style_deep: 'じっくり', style_brief: '手短に', style_custom: '細かく',
-    adv: '細かく指定する（形式・長さ・指示文）', fmt: '会話の形式', len: '長さ', prompt_ph: '指示文（空なら下の雛形）',
+    style: '雰囲気', style_deep: 'じっくり', style_brief: '手短に', style_custom_note: '（下で細かく指定中）',
+    adv: '細かく指定する（会話の形式・長さ・指示文）', fmt: '会話の形式', len: '長さ', prompt_l: '指示文（空なら雛形を使います）', prompt_ph: '指示文（空なら下の雛形）',
+    fmt_labels: { 'deep-dive': 'じっくり対談 — 2 人が深掘りする（標準）', brief: '手短に — 要点だけを短く', critique: '批評 — 良い点と弱点を論じる', debate: '討論 — 賛否に分かれて議論する' },
+    len_labels: { short: '短め（5 分前後）', default: '標準（10 分前後）', long: '長め（15〜20 分）' },
     explain_style: 'じっくり = 対談形式で深掘り（長め）。手短に = 要点だけを短く。',
+    packs_h: 'まずはおすすめから', packs_p: '押すと、そのセットのフィードが 1 つの番組として入ります。あとで足し引きできます。',
+    loaded_saved: (f, n) => `前回の続き: ${f} フィード · ${n} 番組を読み込みました。`,
+    loaded_link: (f, n) => `リンクから ${f} フィード · ${n} 番組の設定を読み込みました。`,
+    restart: '最初からやり直す', flag_sitemap: 'sitemap',
     s3_h: 'いつ聴きますか?', s3_p: '朝の時刻と、必要なら 2 回目。GitHub は :00 と :30 が混むので、少しずらすと時間どおりに始まります。',
     lang: '音声の言語', tz: 'タイムゾーン', run1: '朝の実行（現地時刻）', run2: '2 回目', run2on: 'あり',
     plan: 'NotebookLM のプラン（1 日の音声生成の上限が決まります）',
@@ -429,9 +447,15 @@ const T = {
     s2_h: 'Group into shows', s2_p: 'A show = one NotebookLM notebook = one episode a day. Unrelated topics in one show read badly, so keep them apart. Rename freely; move feeds with the dropdown.',
     nb_feeds: (n) => `${n} feed${n === 1 ? '' : 's'}`, move: 'move', new_nb: '+ new show…',
     newest_only: 'newest only', newest_title: (n) => `Take only the newest ${n} per run and mark the rest read (for firehose feeds)`,
-    style: 'Style', style_deep: 'In depth', style_brief: 'Brief', style_custom: 'Custom',
-    adv: 'Fine-tune (format, length, instructions)', fmt: 'Conversation format', len: 'Length', prompt_ph: 'Instructions (empty = the template below)',
+    style: 'Style', style_deep: 'In depth', style_brief: 'Brief', style_custom_note: '(customized below)',
+    adv: 'Fine-tune (conversation format, length, instructions)', fmt: 'Conversation format', len: 'Length', prompt_l: 'Instructions (empty = the template)', prompt_ph: 'Instructions (empty = the template below)',
+    fmt_labels: { 'deep-dive': 'Deep dive — two hosts dig in (default)', brief: 'Brief — just the essentials', critique: 'Critique — strengths and weaknesses', debate: 'Debate — two sides argue it out' },
+    len_labels: { short: 'Short (about 5 min)', default: 'Default (about 10 min)', long: 'Long (15–20 min)' },
     explain_style: 'In depth = a long two-host deep dive. Brief = just the essentials, short.',
+    packs_h: 'Start from a pack', packs_p: 'One tap adds that set of feeds as one show. Add or remove afterwards.',
+    loaded_saved: (f, n) => `Picking up where you left off: ${f} feeds · ${n} show${n === 1 ? '' : 's'}.`,
+    loaded_link: (f, n) => `Loaded ${f} feeds · ${n} show${n === 1 ? '' : 's'} from the link.`,
+    restart: 'Start over', flag_sitemap: 'sitemap',
     s3_h: 'When do you listen?', s3_p: 'A morning time, and a second run if you want one. GitHub\'s cron is congested at :00 and :30; an odd minute starts on time.',
     lang: 'Audio language', tz: 'Timezone', run1: 'Morning run (local time)', run2: 'Second run', run2on: 'on',
     plan: 'NotebookLM plan (sets the daily Audio Overview cap)',
@@ -563,10 +587,11 @@ function loadPersisted() {
   let fromHash = false;
   try { const m = location.hash.match(/^#s=(.+)$/); if (m && restore(JSON.parse(b64d(m[1])))) fromHash = true; } catch {}
   if (!fromHash) { try { const raw = localStorage.getItem('builder'); if (raw) restore(JSON.parse(raw)); } catch {} }
-  if (fromHash && (S.sel.size || S.custom.length) && !hadUi) {
-    // A link someone shared with a first-time visitor: land on the result.
-    S.mode = 'guided'; S.step = 3; S.started = true; S.sharedBanner = true;
-  }
+  // A selection that arrived in the URL (a shared link, or a bookmark from the older
+  // picker) is loaded, but the page still opens on its first screen and says so —
+  // landing someone straight on "done" looked like a bug.
+  S.fromLink = fromHash && !hadUi && (S.sel.size + S.custom.length) > 0;
+  if (S.fromLink) { S.mode = 'guided'; S.started = false; S.step = 0; }
   if (!S.sel.size && !S.custom.length) S.step = 0;
 }
 
@@ -633,6 +658,19 @@ function toggleTag(id) {
   const tag = S.data.tags.find(tg => tg.id === id);
   const topic = tag && GROUP_TOPICS[S.lang][tag.group];
   for (const f of feeds) selectFeed(f, true, topic);
+  return true;
+}
+// starter packs → feeds (curated bundles, one show each)
+const packFeeds = (pk) => pk.feeds.map(name => S.data.feeds.find(f => f.name === name)).filter(Boolean);
+function packState(pk) {
+  const feeds = packFeeds(pk), n = feeds.filter(f => S.sel.has(feedKey(f))).length;
+  return n === 0 ? 'false' : n === feeds.length ? 'true' : 'mixed';
+}
+function togglePack(pk) {
+  const feeds = packFeeds(pk);
+  if (packState(pk) === 'true') { for (const f of feeds) selectFeed(f, false); return false; }
+  const show = S.lang === 'ja' ? pk.show_ja : pk.show_en;
+  for (const f of feeds) { selectFeed(f, true, show); if ((pk.latest || []).includes(f.name)) setLatest(feedKey(f), true); }
   return true;
 }
 
@@ -751,14 +789,15 @@ function notebooksHtml() {
         ${e.type !== 'sitemap' ? `<label title="${esc(t('newest_title', perFeed))}"><input type="checkbox" data-latest="${esc(e.key)}" ${e.latest ? 'checked' : ''}> ${esc(t('newest_only'))}</label>` : ''}
         <select data-move="${esc(e.key)}" aria-label="${esc(t('move'))}">${opts}</select></div>`).join('')}
       <div class="nb-style"><span>${esc(t('style'))}</span>
-        <div class="seg" role="group"><button data-style="deep" data-topic="${esc(tp)}" aria-pressed="${st === 'deep'}">${esc(t('style_deep'))}</button><button data-style="brief" data-topic="${esc(tp)}" aria-pressed="${st === 'brief'}">${esc(t('style_brief'))}</button><button data-style="custom" data-topic="${esc(tp)}" aria-pressed="${st === 'custom'}">${esc(t('style_custom'))}</button></div>
+        <div class="seg" role="group"><button data-style="deep" data-topic="${esc(tp)}" aria-pressed="${st === 'deep'}">${esc(t('style_deep'))}</button><button data-style="brief" data-topic="${esc(tp)}" aria-pressed="${st === 'brief'}">${esc(t('style_brief'))}</button></div>
+        ${st === 'custom' ? `<span class="custom-note">${esc(t('style_custom_note'))}</span>` : ''}
       </div>
       <details class="nb-adv" ${st === 'custom' ? 'open' : ''}><summary>${esc(t('adv'))}</summary>
         <div class="nb-audio">
-          <select data-format="${esc(tp)}" aria-label="${esc(t('fmt'))}">${AUDIO_FORMATS.map(f => `<option ${f === n.format ? 'selected' : ''} value="${f}">${f}</option>`).join('')}</select>
-          <select data-length="${esc(tp)}" aria-label="${esc(t('len'))}">${LENGTHS.map(l => `<option ${l === n.length ? 'selected' : ''} value="${l}">${l}</option>`).join('')}</select>
+          <label class="field"><span>${esc(t('fmt'))}</span><select data-format="${esc(tp)}">${AUDIO_FORMATS.map(f => `<option ${f === n.format ? 'selected' : ''} value="${f}">${esc(t('fmt_labels')[f])}</option>`).join('')}</select></label>
+          <label class="field"><span>${esc(t('len'))}</span><select data-length="${esc(tp)}">${LENGTHS.map(l => `<option ${l === n.length ? 'selected' : ''} value="${l}">${esc(t('len_labels')[l])}</option>`).join('')}</select></label>
         </div>
-        <textarea data-prompt="${esc(tp)}" placeholder="${esc(defaultPrompt())}" aria-label="${esc(t('prompt_ph'))}">${esc(n.prompt || '')}</textarea>
+        <label class="field"><span>${esc(t('prompt_l'))}</span><textarea data-prompt="${esc(tp)}" placeholder="${esc(defaultPrompt())}">${esc(n.prompt || '')}</textarea></label>
       </details>
     </div>`;
   }).join('');
@@ -777,12 +816,11 @@ function bindNotebooks(root, rerender) {
   root.querySelectorAll('[data-style]').forEach(b => b.onclick = () => {
     const n = nbFor(b.dataset.topic);
     if (b.dataset.style === 'deep') { n.format = 'deep-dive'; n.length = 'long'; }
-    else if (b.dataset.style === 'brief') { n.format = 'brief'; n.length = 'default'; }
-    else { n.format = 'critique'; }
+    else { n.format = 'brief'; n.length = 'default'; }
     rerender();
   });
-  root.querySelectorAll('[data-format]').forEach(sel => sel.onchange = () => { nbFor(sel.dataset.format).format = sel.value; persist(); });
-  root.querySelectorAll('[data-length]').forEach(sel => sel.onchange = () => { nbFor(sel.dataset.length).length = sel.value; persist(); });
+  root.querySelectorAll('[data-format]').forEach(sel => sel.onchange = () => { nbFor(sel.dataset.format).format = sel.value; rerender(); });
+  root.querySelectorAll('[data-length]').forEach(sel => sel.onchange = () => { nbFor(sel.dataset.length).length = sel.value; rerender(); });
   root.querySelectorAll('[data-prompt]').forEach(ta => ta.oninput = () => { nbFor(ta.dataset.prompt).prompt = ta.value; persist(); });
 }
 
@@ -915,7 +953,7 @@ function pickedHtml() {
   if (!entries.length) return `<div class="picked"><h3>${esc(t('picked_h'))}</h3><p class="empty" style="margin:0;font-size:13px">${esc(t('picked_none'))}</p></div>`;
   return `<div class="picked"><h3>${esc(t('picked_h'))}</h3><div class="pills">${entries.map(e => {
     const m = e.meta || {}; const flags = [];
-    if (m.unchecked) flags.push(t('unchecked')); if (m.status === 'broken') flags.push('⚠️'); if (m.status === 'blocked') flags.push('🤖'); if (e.source_mode === 'text') flags.push(t('flag_text'));
+    if (e.type === 'sitemap') flags.push(t('flag_sitemap')); if (m.unchecked) flags.push(t('unchecked')); if (m.status === 'broken') flags.push('⚠️'); if (m.status === 'blocked') flags.push('🤖'); if (e.source_mode === 'text') flags.push(t('flag_text'));
     return `<span class="pill" data-key="${esc(e.key)}">${esc(e.name)}${flags.length ? ` <span class="flag">${esc(flags.join(' '))}</span>` : ''}<button class="x" data-rm="${esc(e.key)}" aria-label="${esc(t('remove'))}">×</button></span>`;
   }).join('')}</div></div>`;
 }
@@ -923,7 +961,9 @@ function stepHtml() {
   const s = S.step;
   if (s === 0) {
     const groups = GROUP_ORDER.filter(g => S.data.tags.some(tg => tg.group === g));
+    const packs = (S.data.packs || []).map(pk => `<button class="pack" data-pack="${pk.id}" aria-pressed="${packState(pk)}"><b>${esc(S.lang === 'ja' ? pk.label_ja : pk.label_en)}</b><span>${esc(S.lang === 'ja' ? pk.blurb_ja : pk.blurb_en)}</span></button>`).join('');
     return `<div class="stephead"><div class="stepnum">1 / 4</div><h2>${esc(t('s1_h'))}</h2><p class="lead">${esc(t('s1_p'))}</p></div>
+      ${packs ? `<div class="tgroup packs"><h3>${esc(t('packs_h'))}</h3><p class="lead" style="font-size:12.5px">${esc(t('packs_p'))}</p><div class="packrow">${packs}</div></div>` : ''}
       ${groups.map(g => `<div class="tgroup"><h3>${esc(t('groups')[g])}</h3><div class="tchips">${S.data.tags.filter(tg => tg.group === g).map(tg => `<button class="tchip" data-tag="${tg.id}" aria-pressed="${tagState(tg.id)}">${esc(label(tg))}<span class="n">${tagFeeds(tg.id).length}</span></button>`).join('')}</div></div>`).join('')}
       <div id="g-picked">${pickedHtml()}</div>
       <div id="g-customwrap">${customHtml('g')}</div>`;
@@ -944,10 +984,12 @@ function stepHtml() {
 function renderGuided() {
   const root = el('guided');
   if (!S.started) {
-    const has = selectedEntries().length > 0;
-    root.innerHTML = `<div class="intro"><h2>${esc(t('intro_h'))}</h2><p>${t('intro_p')}</p><div class="cta"><button class="btn big" id="g-start">${esc(has ? t('intro_resume') : t('intro_start'))}</button><button class="linkbtn" id="g-tolist">${esc(t('intro_list'))}</button></div></div>`;
-    el('g-start').onclick = () => { S.started = true; if (!has) S.step = 0; persist(); renderGuided(); };
+    const n = selectedEntries().length, has = n > 0;
+    const note = has ? `<p class="loaded">${esc(t(S.fromLink ? 'loaded_link' : 'loaded_saved', n, topicsInUse().length))} <button class="linkbtn" id="g-restart">${esc(t('restart'))}</button></p>` : '';
+    root.innerHTML = `<div class="intro"><h2>${esc(t('intro_h'))}</h2><p>${t('intro_p')}</p>${note}<div class="cta"><button class="btn big" id="g-start">${esc(has ? t('intro_resume') : t('intro_start'))}</button><button class="linkbtn" id="g-tolist">${esc(t('intro_list'))}</button></div></div>`;
+    el('g-start').onclick = () => { S.started = true; if (!has) S.step = 0; S.fromLink = false; persist(); renderGuided(); };
     el('g-tolist').onclick = () => setMode('list');
+    if (el('g-restart')) el('g-restart').onclick = () => { S.sel.clear(); S.custom = []; S.notebooks = {}; S.step = 0; S.fromLink = false; persist(); renderGuided(); };
     return;
   }
   const n = selectedEntries().length;
@@ -961,14 +1003,21 @@ function renderGuided() {
   if (el('g-edit')) el('g-edit').onclick = () => goStep(0);
 
   if (S.step === 0) {
+    const syncChips = () => { root.querySelectorAll('[data-tag]').forEach(x => x.setAttribute('aria-pressed', tagState(x.dataset.tag))); root.querySelectorAll('[data-pack]').forEach(x => x.setAttribute('aria-pressed', packState(S.data.packs.find(pk => pk.id === x.dataset.pack)))); };
     root.querySelectorAll('[data-tag]').forEach(b => b.onclick = () => {
       const on = toggleTag(b.dataset.tag);
-      root.querySelectorAll('[data-tag]').forEach(x => x.setAttribute('aria-pressed', tagState(x.dataset.tag)));
+      syncChips();
+      if (on && !reducedMotion) { b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); }
+      refreshPicked(on); bumpStatus(); syncNext(); persist();
+    });
+    root.querySelectorAll('[data-pack]').forEach(b => b.onclick = () => {
+      const on = togglePack(S.data.packs.find(pk => pk.id === b.dataset.pack));
+      syncChips();
       if (on && !reducedMotion) { b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); }
       refreshPicked(on); bumpStatus(); syncNext(); persist();
     });
     bindPicked(root);
-    bindCustom('g', () => { root.querySelectorAll('[data-tag]').forEach(x => x.setAttribute('aria-pressed', tagState(x.dataset.tag))); refreshPicked(true); bumpStatus(); syncNext(); persist(); });
+    bindCustom('g', () => { syncChips(); refreshPicked(true); bumpStatus(); syncNext(); persist(); });
   }
   if (S.step === 1) bindNotebooks(el('g-nbcards'), () => { renderGuided(); });
   if (S.step === 2) bindBasics('g', () => { refreshQuota('g'); persist(); });
@@ -990,6 +1039,7 @@ function bindPicked(root) {
   root.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => {
     removeEntry(b.dataset.rm);
     document.querySelectorAll('[data-tag]').forEach(x => x.setAttribute('aria-pressed', tagState(x.dataset.tag)));
+    document.querySelectorAll('[data-pack]').forEach(x => x.setAttribute('aria-pressed', packState(S.data.packs.find(pk => pk.id === x.dataset.pack))));
     refreshPicked(false); bumpStatus(); syncNext(); persist();
   });
 }
@@ -1122,7 +1172,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 fetch('feeds.json').then(r => r.json()).then(data => {
-  S.data = data; S.data.tags = data.tags || [];
+  S.data = data; S.data.tags = data.tags || []; S.data.packs = data.packs || [];
   loadPersisted();
   renderChrome();
   renderMode();

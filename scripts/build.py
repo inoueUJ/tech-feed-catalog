@@ -22,6 +22,7 @@ README_PATH = os.path.join(BASE_DIR, 'README.md')
 SITE_DATA_PATH = os.path.join(BASE_DIR, 'site', 'feeds.json')
 SCHEMA_PATH = os.path.join(BASE_DIR, 'schema.json')
 TAGS_PATH = os.path.join(BASE_DIR, 'tags.yaml')
+PACKS_PATH = os.path.join(BASE_DIR, 'packs.yaml')
 
 BEGIN = '<!-- BEGIN CATALOG -->'
 END = '<!-- END CATALOG -->'
@@ -56,6 +57,25 @@ def load_tags():
                 print(f"tags.yaml: tag {t.get('id')!r} is missing {key}", file=sys.stderr)
                 sys.exit(1)
     return tags
+
+
+def load_packs(entries):
+    """Starter packs (packs.yaml): curated bundles the builder offers as one tap."""
+    if not os.path.exists(PACKS_PATH):
+        return []
+    with open(PACKS_PATH, encoding='utf-8') as f:
+        packs = yaml.safe_load(f) or []
+    names = {e['name'] for e in entries}
+    for pack in packs:
+        for key in ('id', 'label_ja', 'label_en', 'show_ja', 'show_en', 'feeds'):
+            if not pack.get(key):
+                print(f"packs.yaml: pack {pack.get('id')!r} is missing {key}", file=sys.stderr)
+                sys.exit(1)
+        missing = [n for n in pack['feeds'] + pack.get('latest', []) if n not in names]
+        if missing:
+            print(f"packs.yaml: pack {pack['id']!r} names feeds not in the catalog: {missing}", file=sys.stderr)
+            sys.exit(1)
+    return packs
 
 
 def load_feeds(tags=None):
@@ -143,7 +163,7 @@ def render_readme(entries):
     return f'{head}{BEGIN}\n\n{summary}{render_table(entries)}{END}{tail}'
 
 
-def render_site_data(entries, tags):
+def render_site_data(entries, tags, packs):
     used = {tag for e in entries for tag in e.get('tags', [])}
     payload = {
         'categories': [
@@ -153,6 +173,7 @@ def render_site_data(entries, tags):
         ],
         # Only tags that some feed actually carries; an empty chip helps nobody.
         'tags': [t for t in tags if t['id'] in used],
+        'packs': packs,
         'feeds': entries,
     }
     return json.dumps(payload, ensure_ascii=False, indent=2) + '\n'
@@ -165,8 +186,9 @@ def main():
 
     tags = load_tags()
     entries = load_feeds(tags)
+    packs = load_packs(entries)
     readme = render_readme(entries)
-    site_data = render_site_data(entries, tags)
+    site_data = render_site_data(entries, tags, packs)
 
     if args.check:
         stale = []
