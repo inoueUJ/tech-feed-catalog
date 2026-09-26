@@ -10,9 +10,9 @@
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-15'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: GitHub Security
   url: https://github.blog/security/feed/
   site: https://github.blog/security/
@@ -25,9 +25,9 @@
   volume: ~4/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-08-27'
+  latest_post: '2026-09-24'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Google Project Zero
   url: https://googleprojectzero.blogspot.com/feeds/posts/default
   site: https://googleprojectzero.blogspot.com/
@@ -36,12 +36,12 @@
   language: en
   tags:
   - security
-  volume: ~2/month
+  volume: ~3/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-08'
+  latest_post: '2026-09-21'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Google Security Blog
   url: https://security.googleblog.com/feeds/posts/default
   site: https://security.googleblog.com/
@@ -55,7 +55,7 @@
   has_timestamps: true
   latest_post: '2026-04-23'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Rust Security Advisories
   url: https://rustsec.org/feed.xml
   site: https://rustsec.org/advisories/
@@ -65,9 +65,9 @@
   tags:
   - security
   - rust
-  volume: ~25/month
-  radio_friendly: medium
+  volume: ~90/month
+  radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'

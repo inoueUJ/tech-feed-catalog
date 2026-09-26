@@ -11,7 +11,7 @@
   has_timestamps: true
   latest_post: '2026-09-08'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Chrome for Developers
   url: https://developer.chrome.com/static/blog/feed.xml
   site: https://developer.chrome.com/blog
@@ -25,7 +25,7 @@
   has_timestamps: true
   latest_post: '2026-06-22'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Mozilla Hacks
   url: https://hacks.mozilla.org/feed/
   site: https://hacks.mozilla.org/
@@ -39,7 +39,7 @@
   has_timestamps: true
   latest_post: '2026-08-24'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Next.js
   url: https://nextjs.org/feed.xml
   site: https://nextjs.org/blog
@@ -53,9 +53,9 @@
   volume: ~5/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-04'
+  latest_post: '2026-09-23'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: React
   url: https://react.dev/rss.xml
   site: https://react.dev/blog
@@ -64,12 +64,12 @@
   language: en
   tags:
   - react
-  volume: ~3/month
+  volume: ~2/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-09-09'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Svelte
   url: https://svelte.dev/blog/rss.xml
   site: https://svelte.dev/blog
@@ -83,7 +83,7 @@
   has_timestamps: true
   latest_post: '2026-09-01'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Tailwind CSS
   url: https://tailwindcss.com/feeds/feed.xml
   site: https://tailwindcss.com/blog
@@ -92,12 +92,12 @@
   language: en
   tags:
   - css
-  volume: ~3/month
+  volume: ~2/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-09-09'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Vite
   url: https://vite.dev/blog.rss
   site: https://vite.dev/blog
@@ -111,7 +111,7 @@
   has_timestamps: true
   latest_post: '2026-06-23'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Vue.js
   url: https://blog.vuejs.org/feed.rss
   site: https://blog.vuejs.org/
@@ -125,8 +125,8 @@
   has_timestamps: true
   latest_post: '2024-09-01'
   status: stale
-  last_checked: '2026-09-20'
-  status_detail: no new posts for 749 days
+  last_checked: '2026-09-26'
+  status_detail: no new posts for 755 days
 - name: WebKit
   url: https://webkit.org/feed/
   site: https://webkit.org/blog/
@@ -135,9 +135,9 @@
   language: en
   tags:
   - browsers
-  volume: ~4/month
+  volume: ~5/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-17'
+  latest_post: '2026-09-23'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'

@@ -6,12 +6,12 @@
   language: en
   tags:
   - aws
-  volume: ~20/month
+  volume: ~15/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-09-18'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: AWS News
   url: https://aws.amazon.com/about-aws/whats-new/recent/feed/
   site: https://aws.amazon.com/new/
@@ -20,12 +20,12 @@
   language: en
   tags:
   - aws
-  volume: ~250/month
+  volume: ~200/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Cloudflare Blog
   url: https://blog.cloudflare.com/rss/
   site: https://blog.cloudflare.com/
@@ -37,9 +37,9 @@
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Cloudflare Changelog
   url: https://developers.cloudflare.com/changelog/rss.xml
   site: https://developers.cloudflare.com/changelog/
@@ -48,12 +48,12 @@
   language: en
   tags:
   - cloudflare
-  volume: ~90/month
+  volume: ~95/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Docker
   url: https://www.docker.com/blog/feed/
   site: https://www.docker.com/blog/
@@ -67,7 +67,7 @@
   has_timestamps: true
   latest_post: '2026-08-31'
   status: blocked
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
   status_detail: refuses automated clients (HTTP 403 from CI)
 - name: DuckDB
   url: https://duckdb.org/feed.xml
@@ -77,12 +77,12 @@
   language: en
   tags:
   - databases
-  volume: ~9/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Fly.io
   url: https://fly.io/blog/feed.xml
   site: https://fly.io/blog/
@@ -91,12 +91,12 @@
   language: en
   tags:
   - observability
-  volume: ~1/month
+  volume: <1/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-09-03'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: GitHub Changelog
   url: https://github.blog/changelog/feed/
   site: https://github.blog/changelog/
@@ -105,12 +105,12 @@
   language: en
   tags:
   - github
-  volume: ~100/month
+  volume: ~300/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Google Cloud Blog
   url: https://cloudblog.withgoogle.com/rss/
   site: https://cloud.google.com/blog
@@ -119,12 +119,12 @@
   language: en
   tags:
   - gcp
-  volume: ~120/month
+  volume: ~200/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Grafana
   url: https://grafana.com/blog/index.xml
   site: https://grafana.com/blog/
@@ -137,7 +137,7 @@
   radio_friendly: high
   has_timestamps: false
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: HashiCorp
   url: https://www.hashicorp.com/blog/feed.xml
   site: https://www.hashicorp.com/blog
@@ -149,9 +149,9 @@
   volume: ~9/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-17'
+  latest_post: '2026-09-29'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Kubernetes
   url: https://kubernetes.io/feed.xml
   site: https://kubernetes.io/blog/
@@ -163,9 +163,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-16'
+  latest_post: '2026-09-22'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: PlanetScale
   url: https://planetscale.com/blog/rss.xml
   site: https://planetscale.com/blog
@@ -174,12 +174,12 @@
   language: en
   tags:
   - databases
-  volume: ~8/month
+  volume: ~9/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Sentry
   url: https://blog.sentry.io/feed.xml
   site: https://blog.sentry.io/
@@ -191,9 +191,9 @@
   volume: ~7/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-11'
+  latest_post: '2026-09-24'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Supabase
   url: https://supabase.com/rss.xml
   site: https://supabase.com/blog
@@ -202,12 +202,12 @@
   language: en
   tags:
   - databases
-  volume: ~5/month
+  volume: ~4/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-09-09'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Vercel Blog
   url: https://vercel.com/blog/feed
   site: https://vercel.com/blog
@@ -220,9 +220,9 @@
   volume: ~110/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
 - name: Vercel Changelog
   url: https://vercel.com/atom
   same_as: https://vercel.com/blog/feed
@@ -236,6 +236,6 @@
   volume: ~110/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-20'
+  last_checked: '2026-09-26'
