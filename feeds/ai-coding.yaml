@@ -6,6 +6,9 @@
   category: ai-coding
   kind: blog
   language: en
+  tags:
+  - ai-coding
+  - gemini
   volume: unknown
   radio_friendly: high
   has_timestamps: false
@@ -19,6 +22,9 @@
   category: ai-coding
   kind: blog
   language: en
+  tags:
+  - claude
+  - ai-coding
   volume: ~55/month
   radio_friendly: medium
   has_timestamps: true
@@ -31,6 +37,10 @@
   category: ai-coding
   kind: release-notes
   language: en
+  tags:
+  - claude-code
+  - claude
+  - ai-coding
   volume: ~4/month
   radio_friendly: medium
   has_timestamps: true
@@ -43,6 +53,9 @@
   category: ai-coding
   kind: changelog
   language: en
+  tags:
+  - openai
+  - ai-coding
   volume: ~15/month
   radio_friendly: low
   has_timestamps: true
@@ -55,6 +68,8 @@
   category: ai-coding
   kind: changelog
   language: en
+  tags:
+  - ai-coding
   volume: ~5/month
   radio_friendly: medium
   has_timestamps: true
@@ -67,6 +82,9 @@
   category: ai-coding
   kind: blog
   language: en
+  tags:
+  - ai-coding
+  - github
   volume: ~8/month
   radio_friendly: high
   has_timestamps: true
@@ -79,6 +97,8 @@
   category: ai-coding
   kind: blog
   language: en
+  tags:
+  - ai-coding
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true

@@ -4,6 +4,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
@@ -16,6 +18,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~7/month
   radio_friendly: high
   has_timestamps: true
@@ -28,6 +32,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: ~4/month
   radio_friendly: high
   has_timestamps: true
@@ -40,6 +46,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: ~1/month
   radio_friendly: high
   has_timestamps: true
@@ -52,6 +60,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
@@ -64,6 +74,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~6/month
   radio_friendly: high
   has_timestamps: true
@@ -76,6 +88,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
@@ -88,6 +102,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
@@ -100,6 +116,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: ~4/month
   radio_friendly: high
   has_timestamps: true
@@ -112,6 +130,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -124,6 +144,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
@@ -136,6 +158,8 @@
   category: companies
   kind: blog
   language: en
+  tags:
+  - global-tech
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
@@ -148,6 +172,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
@@ -160,6 +186,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
@@ -172,6 +200,8 @@
   category: companies
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~8/month
   radio_friendly: high
   has_timestamps: true

@@ -4,6 +4,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - astro
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
@@ -16,6 +18,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - browsers
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -28,6 +32,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - browsers
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -40,6 +46,10 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - nextjs
+  - react
+  - vercel
   volume: ~5/month
   radio_friendly: high
   has_timestamps: true
@@ -52,6 +62,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - react
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
@@ -64,6 +76,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - svelte
   volume: ~1/month
   radio_friendly: high
   has_timestamps: true
@@ -76,6 +90,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - css
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
@@ -88,6 +104,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - vue
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -100,6 +118,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - vue
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -113,6 +133,8 @@
   category: frontend
   kind: blog
   language: en
+  tags:
+  - browsers
   volume: ~4/month
   radio_friendly: high
   has_timestamps: true

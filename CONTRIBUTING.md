@@ -13,6 +13,7 @@ Add an entry to the right file in `feeds/` with only these fields:
   category: languages
   kind: blog
   language: en
+  tags: [nodejs, typescript]
 ```
 
 - **name** — how it appears in the table and in notifications. Short and human: "Google AI Blog", not "google-ai-blog-rss".
@@ -21,6 +22,7 @@ Add an entry to the right file in `feeds/` with only these fields:
 - **category** — one of the files in `feeds/`. Put it where a reader would look for it.
 - **kind** — `blog` for narrative posts, `changelog` for many short entries, `release-notes` for version announcements. This feeds the radio-friendliness estimate, so be honest: a changelog labelled `blog` will mislead people.
 - **language** — `en` or `ja`.
+- **tags** — one or more ids from [`tags.yaml`](tags.yaml) (the technologies and topics a reader would name: `claude`, `rust`, `cloudflare`, `japan-tech` …). The config builder's first step is built from these, so a feed with no tag is invisible there. Add a new tag to `tags.yaml` only when several feeds would share it.
 
 **Do not fill in `volume`, `radio_friendly`, `has_timestamps`, `latest_post`, `status`, or `last_checked`.** Those are measurements; CI writes them by actually fetching the feed. Hand-written values would be exactly the kind of stale claim this catalog exists to avoid.
 
@@ -37,6 +39,7 @@ Point at the sitemap and pick a URL prefix:
   category: ai-models
   kind: blog
   language: en
+  tags: [claude]
 ```
 
 Several entries may share one sitemap with different prefixes — that is supported and correct.

@@ -4,6 +4,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - aws
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
@@ -16,6 +18,8 @@
   category: infra
   kind: changelog
   language: en
+  tags:
+  - aws
   volume: ~250/month
   radio_friendly: low
   has_timestamps: true
@@ -28,6 +32,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - cloudflare
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
@@ -40,6 +46,8 @@
   category: infra
   kind: changelog
   language: en
+  tags:
+  - cloudflare
   volume: ~90/month
   radio_friendly: low
   has_timestamps: true
@@ -52,6 +60,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - containers
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
@@ -65,6 +75,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - databases
   volume: ~9/month
   radio_friendly: high
   has_timestamps: true
@@ -77,6 +89,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - observability
   volume: ~1/month
   radio_friendly: high
   has_timestamps: true
@@ -89,6 +103,8 @@
   category: infra
   kind: changelog
   language: en
+  tags:
+  - github
   volume: ~100/month
   radio_friendly: low
   has_timestamps: true
@@ -101,6 +117,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - gcp
   volume: ~120/month
   radio_friendly: high
   has_timestamps: true
@@ -113,6 +131,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - observability
   volume: unknown
   radio_friendly: high
   has_timestamps: false
@@ -124,6 +144,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - observability
   volume: ~9/month
   radio_friendly: high
   has_timestamps: true
@@ -136,6 +158,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - containers
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
@@ -148,6 +172,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - databases
   volume: ~8/month
   radio_friendly: high
   has_timestamps: true
@@ -160,6 +186,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - observability
   volume: ~7/month
   radio_friendly: high
   has_timestamps: true
@@ -172,6 +200,8 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - databases
   volume: ~5/month
   radio_friendly: high
   has_timestamps: true
@@ -184,6 +214,9 @@
   category: infra
   kind: blog
   language: en
+  tags:
+  - vercel
+  - nextjs
   volume: ~110/month
   radio_friendly: medium
   has_timestamps: true
@@ -192,13 +225,14 @@
   last_checked: '2026-09-20'
 - name: Vercel Changelog
   url: https://vercel.com/atom
-  # Returns exactly the same entries as the blog feed (verified 2026-09: identical
-  # 169-entry windows); subscribing to both means every article twice.
   same_as: https://vercel.com/blog/feed
   site: https://vercel.com/changelog
   category: infra
   kind: changelog
   language: en
+  tags:
+  - vercel
+  - nextjs
   volume: ~110/month
   radio_friendly: low
   has_timestamps: true

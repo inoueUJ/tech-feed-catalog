@@ -4,6 +4,9 @@
   category: security
   kind: blog
   language: en
+  tags:
+  - security
+  - cloudflare
   volume: ~3/month
   radio_friendly: high
   has_timestamps: true
@@ -16,6 +19,9 @@
   category: security
   kind: blog
   language: en
+  tags:
+  - security
+  - github
   volume: ~4/month
   radio_friendly: high
   has_timestamps: true
@@ -28,6 +34,8 @@
   category: security
   kind: blog
   language: en
+  tags:
+  - security
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
@@ -40,6 +48,8 @@
   category: security
   kind: blog
   language: en
+  tags:
+  - security
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -52,6 +62,9 @@
   category: security
   kind: changelog
   language: en
+  tags:
+  - security
+  - rust
   volume: ~25/month
   radio_friendly: medium
   has_timestamps: true

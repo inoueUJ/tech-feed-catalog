@@ -5,7 +5,7 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["name", "url", "site", "category", "kind", "language"],
+    "required": ["name", "url", "site", "category", "kind", "language", "tags"],
     "additionalProperties": false,
     "properties": {
       "name": {
@@ -42,6 +42,13 @@
       },
       "language": {
         "enum": ["en", "ja"]
+      },
+      "tags": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "description": "Technology / topic ids from tags.yaml at the repo root. The config builder's first step ('what do you follow?') is built from these, so every feed needs at least one."
       },
       "same_as": {
         "type": "string",

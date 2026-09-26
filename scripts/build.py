@@ -21,6 +21,7 @@ FEEDS_DIR = os.path.join(BASE_DIR, 'feeds')
 README_PATH = os.path.join(BASE_DIR, 'README.md')
 SITE_DATA_PATH = os.path.join(BASE_DIR, 'site', 'feeds.json')
 SCHEMA_PATH = os.path.join(BASE_DIR, 'schema.json')
+TAGS_PATH = os.path.join(BASE_DIR, 'tags.yaml')
 
 BEGIN = '<!-- BEGIN CATALOG -->'
 END = '<!-- END CATALOG -->'
@@ -41,10 +42,27 @@ RADIO_STARS = {'high': '★★★', 'medium': '★★', 'low': '★'}
 KIND_LABELS = {'blog': 'blog', 'changelog': 'changelog', 'release-notes': 'releases'}
 
 
-def load_feeds():
+def load_tags():
+    """The tag vocabulary (tags.yaml): the chips a newcomer picks from in the builder."""
+    with open(TAGS_PATH, encoding='utf-8') as f:
+        tags = yaml.safe_load(f) or []
+    ids = [t['id'] for t in tags]
+    if len(ids) != len(set(ids)):
+        print('tags.yaml: duplicate id', file=sys.stderr)
+        sys.exit(1)
+    for t in tags:
+        for key in ('id', 'group', 'label_en', 'label_ja'):
+            if not t.get(key):
+                print(f"tags.yaml: tag {t.get('id')!r} is missing {key}", file=sys.stderr)
+                sys.exit(1)
+    return tags
+
+
+def load_feeds(tags=None):
     """Return all entries, validated against schema.json, in catalog order."""
     with open(SCHEMA_PATH, encoding='utf-8') as f:
         validator = Draft202012Validator(json.load(f))
+    known_tags = {t['id'] for t in (tags if tags is not None else load_tags())}
 
     entries = []
     for category in CATEGORY_ORDER:
@@ -62,6 +80,10 @@ def load_feeds():
         for item in items:
             if item['category'] != category:
                 print(f"{category}.yaml: '{item['name']}' has category '{item['category']}'", file=sys.stderr)
+                sys.exit(1)
+            unknown = set(item.get('tags', [])) - known_tags
+            if unknown:
+                print(f"{category}.yaml: '{item['name']}' uses tags not in tags.yaml: {sorted(unknown)}", file=sys.stderr)
                 sys.exit(1)
         entries += items
     return entries
@@ -121,13 +143,16 @@ def render_readme(entries):
     return f'{head}{BEGIN}\n\n{summary}{render_table(entries)}{END}{tail}'
 
 
-def render_site_data(entries):
+def render_site_data(entries, tags):
+    used = {tag for e in entries for tag in e.get('tags', [])}
     payload = {
         'categories': [
             {'id': cid, 'label_en': en, 'label_ja': ja}
             for cid, (en, ja) in CATEGORY_LABELS.items()
             if any(e['category'] == cid for e in entries)
         ],
+        # Only tags that some feed actually carries; an empty chip helps nobody.
+        'tags': [t for t in tags if t['id'] in used],
         'feeds': entries,
     }
     return json.dumps(payload, ensure_ascii=False, indent=2) + '\n'
@@ -138,9 +163,10 @@ def main():
     parser.add_argument('--check', action='store_true', help='exit 1 if generated files are out of date')
     args = parser.parse_args()
 
-    entries = load_feeds()
+    tags = load_tags()
+    entries = load_feeds(tags)
     readme = render_readme(entries)
-    site_data = render_site_data(entries)
+    site_data = render_site_data(entries, tags)
 
     if args.check:
         stale = []

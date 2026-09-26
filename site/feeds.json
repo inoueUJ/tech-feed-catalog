@@ -41,6 +41,218 @@
       "label_ja": "アグリゲータ"
     }
   ],
+  "tags": [
+    {
+      "id": "claude",
+      "group": "ai",
+      "label_en": "Claude / Anthropic",
+      "label_ja": "Claude・Anthropic"
+    },
+    {
+      "id": "claude-code",
+      "group": "ai",
+      "label_en": "Claude Code",
+      "label_ja": "Claude Code"
+    },
+    {
+      "id": "openai",
+      "group": "ai",
+      "label_en": "OpenAI / Codex",
+      "label_ja": "OpenAI・Codex"
+    },
+    {
+      "id": "gemini",
+      "group": "ai",
+      "label_en": "Google AI / Gemini",
+      "label_ja": "Google AI・Gemini"
+    },
+    {
+      "id": "ai-coding",
+      "group": "ai",
+      "label_en": "AI coding tools",
+      "label_ja": "AI コーディング全般"
+    },
+    {
+      "id": "llm-research",
+      "group": "ai",
+      "label_en": "LLM research & open models",
+      "label_ja": "LLM 研究・オープンモデル"
+    },
+    {
+      "id": "react",
+      "group": "web",
+      "label_en": "React",
+      "label_ja": "React"
+    },
+    {
+      "id": "nextjs",
+      "group": "web",
+      "label_en": "Next.js",
+      "label_ja": "Next.js"
+    },
+    {
+      "id": "vue",
+      "group": "web",
+      "label_en": "Vue / Vite",
+      "label_ja": "Vue・Vite"
+    },
+    {
+      "id": "svelte",
+      "group": "web",
+      "label_en": "Svelte",
+      "label_ja": "Svelte"
+    },
+    {
+      "id": "astro",
+      "group": "web",
+      "label_en": "Astro",
+      "label_ja": "Astro"
+    },
+    {
+      "id": "css",
+      "group": "web",
+      "label_en": "CSS / Tailwind",
+      "label_ja": "CSS・Tailwind"
+    },
+    {
+      "id": "browsers",
+      "group": "web",
+      "label_en": "Browsers & web platform",
+      "label_ja": "ブラウザ・Web 標準"
+    },
+    {
+      "id": "typescript",
+      "group": "languages",
+      "label_en": "TypeScript",
+      "label_ja": "TypeScript"
+    },
+    {
+      "id": "nodejs",
+      "group": "languages",
+      "label_en": "Node.js / Bun / Deno",
+      "label_ja": "Node.js・Bun・Deno"
+    },
+    {
+      "id": "rust",
+      "group": "languages",
+      "label_en": "Rust",
+      "label_ja": "Rust"
+    },
+    {
+      "id": "go",
+      "group": "languages",
+      "label_en": "Go",
+      "label_ja": "Go"
+    },
+    {
+      "id": "python",
+      "group": "languages",
+      "label_en": "Python",
+      "label_ja": "Python"
+    },
+    {
+      "id": "ruby",
+      "group": "languages",
+      "label_en": "Ruby",
+      "label_ja": "Ruby"
+    },
+    {
+      "id": "php",
+      "group": "languages",
+      "label_en": "PHP",
+      "label_ja": "PHP"
+    },
+    {
+      "id": "swift",
+      "group": "languages",
+      "label_en": "Swift",
+      "label_ja": "Swift"
+    },
+    {
+      "id": "cloudflare",
+      "group": "cloud",
+      "label_en": "Cloudflare",
+      "label_ja": "Cloudflare"
+    },
+    {
+      "id": "vercel",
+      "group": "cloud",
+      "label_en": "Vercel",
+      "label_ja": "Vercel"
+    },
+    {
+      "id": "aws",
+      "group": "cloud",
+      "label_en": "AWS",
+      "label_ja": "AWS"
+    },
+    {
+      "id": "gcp",
+      "group": "cloud",
+      "label_en": "Google Cloud",
+      "label_ja": "Google Cloud"
+    },
+    {
+      "id": "github",
+      "group": "cloud",
+      "label_en": "GitHub",
+      "label_ja": "GitHub"
+    },
+    {
+      "id": "containers",
+      "group": "cloud",
+      "label_en": "Docker / Kubernetes",
+      "label_ja": "Docker・Kubernetes"
+    },
+    {
+      "id": "databases",
+      "group": "cloud",
+      "label_en": "Databases",
+      "label_ja": "データベース"
+    },
+    {
+      "id": "observability",
+      "group": "cloud",
+      "label_en": "Monitoring, IaC & hosting",
+      "label_ja": "監視・IaC・ホスティング"
+    },
+    {
+      "id": "security",
+      "group": "security",
+      "label_en": "Security",
+      "label_ja": "セキュリティ"
+    },
+    {
+      "id": "japan-tech",
+      "group": "community",
+      "label_en": "Japanese engineering blogs",
+      "label_ja": "日本語テックブログ"
+    },
+    {
+      "id": "global-tech",
+      "group": "community",
+      "label_en": "Engineering blogs (global)",
+      "label_ja": "海外企業のテックブログ"
+    },
+    {
+      "id": "zenn",
+      "group": "community",
+      "label_en": "Zenn trending",
+      "label_ja": "Zenn トレンド"
+    },
+    {
+      "id": "hatena",
+      "group": "community",
+      "label_en": "Hatena Bookmark (tech)",
+      "label_ja": "はてなブックマーク"
+    },
+    {
+      "id": "hacker-news",
+      "group": "community",
+      "label_en": "Hacker News",
+      "label_ja": "Hacker News"
+    }
+  ],
   "feeds": [
     {
       "name": "Anthropic Engineering",
@@ -51,6 +263,10 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "claude",
+        "llm-research"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -67,6 +283,9 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "claude"
+      ],
       "volume": "~60/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -81,6 +300,9 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "gemini"
+      ],
       "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -95,6 +317,10 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "gemini",
+        "llm-research"
+      ],
       "volume": "~8/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -109,6 +335,9 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "gemini"
+      ],
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -123,6 +352,9 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "llm-research"
+      ],
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -137,6 +369,9 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "openai"
+      ],
       "source_mode": "text",
       "volume": "~50/month",
       "radio_friendly": "medium",
@@ -152,6 +387,9 @@
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "llm-research"
+      ],
       "volume": "~100/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -168,6 +406,10 @@
       "category": "ai-coding",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "ai-coding",
+        "gemini"
+      ],
       "volume": "unknown",
       "radio_friendly": "high",
       "has_timestamps": false,
@@ -183,6 +425,10 @@
       "category": "ai-coding",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "claude",
+        "ai-coding"
+      ],
       "volume": "~55/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -197,6 +443,11 @@
       "category": "ai-coding",
       "kind": "release-notes",
       "language": "en",
+      "tags": [
+        "claude-code",
+        "claude",
+        "ai-coding"
+      ],
       "volume": "~4/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -211,6 +462,10 @@
       "category": "ai-coding",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "openai",
+        "ai-coding"
+      ],
       "volume": "~15/month",
       "radio_friendly": "low",
       "has_timestamps": true,
@@ -225,6 +480,9 @@
       "category": "ai-coding",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "ai-coding"
+      ],
       "volume": "~5/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -239,6 +497,10 @@
       "category": "ai-coding",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "ai-coding",
+        "github"
+      ],
       "volume": "~8/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -253,6 +515,9 @@
       "category": "ai-coding",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "ai-coding"
+      ],
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -267,6 +532,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "aws"
+      ],
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -281,6 +549,9 @@
       "category": "infra",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "aws"
+      ],
       "volume": "~250/month",
       "radio_friendly": "low",
       "has_timestamps": true,
@@ -295,6 +566,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "cloudflare"
+      ],
       "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -309,6 +583,9 @@
       "category": "infra",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "cloudflare"
+      ],
       "volume": "~90/month",
       "radio_friendly": "low",
       "has_timestamps": true,
@@ -323,6 +600,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "containers"
+      ],
       "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -338,6 +618,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "databases"
+      ],
       "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -352,6 +635,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "observability"
+      ],
       "volume": "~1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -366,6 +652,9 @@
       "category": "infra",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "github"
+      ],
       "volume": "~100/month",
       "radio_friendly": "low",
       "has_timestamps": true,
@@ -380,6 +669,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "gcp"
+      ],
       "volume": "~120/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -394,6 +686,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "observability"
+      ],
       "volume": "unknown",
       "radio_friendly": "high",
       "has_timestamps": false,
@@ -407,6 +702,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "observability"
+      ],
       "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -421,6 +719,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "containers"
+      ],
       "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -435,6 +736,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "databases"
+      ],
       "volume": "~8/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -449,6 +753,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "observability"
+      ],
       "volume": "~7/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -463,6 +770,9 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "databases"
+      ],
       "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -477,6 +787,10 @@
       "category": "infra",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "vercel",
+        "nextjs"
+      ],
       "volume": "~110/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -492,6 +806,10 @@
       "category": "infra",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "vercel",
+        "nextjs"
+      ],
       "volume": "~110/month",
       "radio_friendly": "low",
       "has_timestamps": true,
@@ -506,6 +824,10 @@
       "category": "languages",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "nodejs",
+        "typescript"
+      ],
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -520,6 +842,10 @@
       "category": "languages",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "nodejs",
+        "typescript"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -534,6 +860,9 @@
       "category": "languages",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "go"
+      ],
       "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -548,6 +877,9 @@
       "category": "languages",
       "kind": "release-notes",
       "language": "en",
+      "tags": [
+        "nodejs"
+      ],
       "volume": "~6/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -562,6 +894,9 @@
       "category": "languages",
       "kind": "release-notes",
       "language": "en",
+      "tags": [
+        "php"
+      ],
       "volume": "~9/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -576,6 +911,9 @@
       "category": "languages",
       "kind": "release-notes",
       "language": "en",
+      "tags": [
+        "python"
+      ],
       "volume": "~4/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -590,6 +928,9 @@
       "category": "languages",
       "kind": "release-notes",
       "language": "en",
+      "tags": [
+        "ruby"
+      ],
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -604,6 +945,9 @@
       "category": "languages",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "rust"
+      ],
       "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -618,6 +962,9 @@
       "category": "languages",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "swift"
+      ],
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -632,6 +979,9 @@
       "category": "languages",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "typescript"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -646,6 +996,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "astro"
+      ],
       "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -660,6 +1013,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "browsers"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -674,6 +1030,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "browsers"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -688,6 +1047,11 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "nextjs",
+        "react",
+        "vercel"
+      ],
       "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -702,6 +1066,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "react"
+      ],
       "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -716,6 +1083,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "svelte"
+      ],
       "volume": "~1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -730,6 +1100,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "css"
+      ],
       "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -744,6 +1117,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "vue"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -758,6 +1134,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "vue"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -773,6 +1152,9 @@
       "category": "frontend",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "browsers"
+      ],
       "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -787,6 +1169,10 @@
       "category": "security",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "security",
+        "cloudflare"
+      ],
       "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -801,6 +1187,10 @@
       "category": "security",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "security",
+        "github"
+      ],
       "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -815,6 +1205,9 @@
       "category": "security",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "security"
+      ],
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -829,6 +1222,9 @@
       "category": "security",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "security"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -843,6 +1239,10 @@
       "category": "security",
       "kind": "changelog",
       "language": "en",
+      "tags": [
+        "security",
+        "rust"
+      ],
       "volume": "~25/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -857,6 +1257,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -871,6 +1274,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~7/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -885,6 +1291,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -899,6 +1308,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "~1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -913,6 +1325,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -927,6 +1342,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~6/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -941,6 +1359,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -955,6 +1376,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -969,6 +1393,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -983,6 +1410,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -997,6 +1427,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -1011,6 +1444,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "global-tech"
+      ],
       "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -1025,6 +1461,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -1039,6 +1478,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -1053,6 +1495,9 @@
       "category": "companies",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~8/month",
       "radio_friendly": "high",
       "has_timestamps": true,
@@ -1068,6 +1513,9 @@
       "category": "aggregators",
       "kind": "blog",
       "language": "en",
+      "tags": [
+        "hacker-news"
+      ],
       "volume": "~600/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -1082,6 +1530,9 @@
       "category": "aggregators",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "japan-tech"
+      ],
       "volume": "~40/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -1096,6 +1547,10 @@
       "category": "aggregators",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "zenn",
+        "japan-tech"
+      ],
       "volume": "~150/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
@@ -1110,6 +1565,10 @@
       "category": "aggregators",
       "kind": "blog",
       "language": "ja",
+      "tags": [
+        "hatena",
+        "japan-tech"
+      ],
       "volume": "~450/month",
       "radio_friendly": "medium",
       "has_timestamps": true,

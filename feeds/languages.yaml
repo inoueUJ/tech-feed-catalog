@@ -4,6 +4,9 @@
   category: languages
   kind: blog
   language: en
+  tags:
+  - nodejs
+  - typescript
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
@@ -16,6 +19,9 @@
   category: languages
   kind: blog
   language: en
+  tags:
+  - nodejs
+  - typescript
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -28,6 +34,8 @@
   category: languages
   kind: blog
   language: en
+  tags:
+  - go
   volume: ~4/month
   radio_friendly: high
   has_timestamps: true
@@ -40,6 +48,8 @@
   category: languages
   kind: release-notes
   language: en
+  tags:
+  - nodejs
   volume: ~6/month
   radio_friendly: medium
   has_timestamps: true
@@ -52,6 +62,8 @@
   category: languages
   kind: release-notes
   language: en
+  tags:
+  - php
   volume: ~9/month
   radio_friendly: medium
   has_timestamps: true
@@ -64,6 +76,8 @@
   category: languages
   kind: release-notes
   language: en
+  tags:
+  - python
   volume: ~4/month
   radio_friendly: medium
   has_timestamps: true
@@ -76,6 +90,8 @@
   category: languages
   kind: release-notes
   language: en
+  tags:
+  - ruby
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
@@ -88,6 +104,8 @@
   category: languages
   kind: blog
   language: en
+  tags:
+  - rust
   volume: ~5/month
   radio_friendly: high
   has_timestamps: true
@@ -100,6 +118,8 @@
   category: languages
   kind: blog
   language: en
+  tags:
+  - swift
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
@@ -112,6 +132,8 @@
   category: languages
   kind: blog
   language: en
+  tags:
+  - typescript
   volume: <1/month
   radio_friendly: high
   has_timestamps: true

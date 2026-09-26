@@ -6,6 +6,9 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - claude
+  - llm-research
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
@@ -20,6 +23,8 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - claude
   volume: ~60/month
   radio_friendly: medium
   has_timestamps: true
@@ -32,6 +37,8 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - gemini
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
@@ -44,6 +51,9 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - gemini
+  - llm-research
   volume: ~8/month
   radio_friendly: high
   has_timestamps: true
@@ -56,6 +66,8 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - gemini
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
@@ -68,6 +80,8 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - llm-research
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
@@ -80,6 +94,8 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - openai
   source_mode: text
   volume: ~50/month
   radio_friendly: medium
@@ -93,6 +109,8 @@
   category: ai-models
   kind: blog
   language: en
+  tags:
+  - llm-research
   volume: ~100/month
   radio_friendly: medium
   has_timestamps: true

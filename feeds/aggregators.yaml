@@ -4,6 +4,8 @@
   category: aggregators
   kind: blog
   language: en
+  tags:
+  - hacker-news
   volume: ~600/month
   radio_friendly: medium
   has_timestamps: true
@@ -16,6 +18,8 @@
   category: aggregators
   kind: blog
   language: ja
+  tags:
+  - japan-tech
   volume: ~40/month
   radio_friendly: medium
   has_timestamps: true
@@ -28,6 +32,9 @@
   category: aggregators
   kind: blog
   language: ja
+  tags:
+  - zenn
+  - japan-tech
   volume: ~150/month
   radio_friendly: medium
   has_timestamps: true
@@ -40,6 +47,9 @@
   category: aggregators
   kind: blog
   language: ja
+  tags:
+  - hatena
+  - japan-tech
   volume: ~450/month
   radio_friendly: medium
   has_timestamps: true

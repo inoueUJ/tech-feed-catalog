@@ -20,6 +20,7 @@ interface Feed {
   category: string
   kind: string
   language: string
+  tags?: string[]
   source_mode?: string
   same_as?: string
   volume?: string
@@ -33,6 +34,7 @@ interface Feed {
 
 interface Catalog {
   categories: { id: string; label_en: string; label_ja: string }[]
+  tags?: { id: string; group: string; label_en: string; label_ja: string }[]
   feeds: Feed[]
 }
 
@@ -40,6 +42,7 @@ const DATA = catalog as Catalog
 const PROTOCOL_VERSION = '2025-06-18'
 
 const CATEGORY_IDS = DATA.categories.map((c) => c.id)
+const TAG_IDS = (DATA.tags ?? []).map((t) => t.id)
 
 const TOOLS = [
   {
@@ -54,6 +57,11 @@ const TOOLS = [
       properties: {
         query: { type: 'string', description: 'Free text matched against the feed name and site URL.' },
         category: { type: 'string', enum: CATEGORY_IDS, description: 'Restrict to one category.' },
+        tag: {
+          type: 'string',
+          enum: TAG_IDS,
+          description: 'Restrict to feeds about one technology or topic (e.g. claude, rust, cloudflare). See list_categories for the vocabulary.',
+        },
         kind: {
           type: 'string',
           enum: ['blog', 'changelog', 'release-notes'],
@@ -75,7 +83,7 @@ const TOOLS = [
   },
   {
     name: 'list_categories',
-    description: 'List the catalog categories with how many feeds each contains.',
+    description: 'List the catalog categories with how many feeds each contains, and the tag vocabulary (technology / topic ids usable with search_feeds).',
     inputSchema: { type: 'object', properties: {} },
   },
   {
@@ -133,6 +141,7 @@ function searchFeeds(args: Record<string, unknown>) {
 
   let results = DATA.feeds.filter((feed) => {
     if (args.category && feed.category !== args.category) return false
+    if (args.tag && !(feed.tags ?? []).includes(args.tag as string)) return false
     if (args.kind && feed.kind !== args.kind) return false
     if (args.language && feed.language !== args.language) return false
     if (args.radio_friendly) {
@@ -165,6 +174,10 @@ function listCategories() {
     categories: DATA.categories.map((category) => ({
       ...category,
       feed_count: DATA.feeds.filter((feed) => feed.category === category.id).length,
+    })),
+    tags: (DATA.tags ?? []).map((tag) => ({
+      ...tag,
+      feed_count: DATA.feeds.filter((feed) => (feed.tags ?? []).includes(tag.id)).length,
     })),
   }
 }
