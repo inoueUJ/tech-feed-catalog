@@ -11,7 +11,7 @@
   has_timestamps: true
   latest_post: '2026-09-18'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: AWS News
   url: https://aws.amazon.com/about-aws/whats-new/recent/feed/
   site: https://aws.amazon.com/new/
@@ -20,12 +20,12 @@
   language: en
   tags:
   - aws
-  volume: ~200/month
+  volume: ~190/month
   radio_friendly: low
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Cloudflare Blog
   url: https://blog.cloudflare.com/rss/
   site: https://blog.cloudflare.com/
@@ -39,7 +39,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Cloudflare Changelog
   url: https://developers.cloudflare.com/changelog/rss.xml
   site: https://developers.cloudflare.com/changelog/
@@ -53,7 +53,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Docker
   url: https://www.docker.com/blog/feed/
   site: https://www.docker.com/blog/
@@ -67,7 +67,7 @@
   has_timestamps: true
   latest_post: '2026-08-31'
   status: blocked
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
   status_detail: refuses automated clients (HTTP 403 from CI)
 - name: DuckDB
   url: https://duckdb.org/feed.xml
@@ -82,7 +82,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Fly.io
   url: https://fly.io/blog/feed.xml
   site: https://fly.io/blog/
@@ -96,7 +96,7 @@
   has_timestamps: true
   latest_post: '2026-09-03'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: GitHub Changelog
   url: https://github.blog/changelog/feed/
   site: https://github.blog/changelog/
@@ -105,12 +105,12 @@
   language: en
   tags:
   - github
-  volume: ~300/month
+  volume: ~150/month
   radio_friendly: low
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Google Cloud Blog
   url: https://cloudblog.withgoogle.com/rss/
   site: https://cloud.google.com/blog
@@ -124,7 +124,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Grafana
   url: https://grafana.com/blog/index.xml
   site: https://grafana.com/blog/
@@ -137,7 +137,7 @@
   radio_friendly: high
   has_timestamps: false
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: HashiCorp
   url: https://www.hashicorp.com/blog/feed.xml
   site: https://www.hashicorp.com/blog
@@ -151,7 +151,7 @@
   has_timestamps: true
   latest_post: '2026-09-29'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Kubernetes
   url: https://kubernetes.io/feed.xml
   site: https://kubernetes.io/blog/
@@ -165,7 +165,7 @@
   has_timestamps: true
   latest_post: '2026-09-22'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: PlanetScale
   url: https://planetscale.com/blog/rss.xml
   site: https://planetscale.com/blog
@@ -179,7 +179,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Sentry
   url: https://blog.sentry.io/feed.xml
   site: https://blog.sentry.io/
@@ -193,7 +193,7 @@
   has_timestamps: true
   latest_post: '2026-09-24'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Supabase
   url: https://supabase.com/rss.xml
   site: https://supabase.com/blog
@@ -207,7 +207,7 @@
   has_timestamps: true
   latest_post: '2026-09-09'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Vercel Blog
   url: https://vercel.com/blog/feed
   site: https://vercel.com/blog
@@ -222,7 +222,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Vercel Changelog
   url: https://vercel.com/atom
   same_as: https://vercel.com/blog/feed
@@ -238,4 +238,4 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
