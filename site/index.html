@@ -11,16 +11,18 @@
   --bg: #fbfaf7;
   --surface: #ffffff;
   --surface-2: #f4f2ed;
+  --btn-ghost-bg: #f1eee8;
   --border: #e2ded4;
-  --border-strong: #c9c3b5;
+  --border-strong: #86816f;
   --text: #1c1a17;
   --text-dim: #6b655c;
-  --text-faint: #948d81;
+  --text-faint: #726b5f;
   --accent: #b4560f;
   --accent-soft: #fdf0e4;
-  --ok: #3f7d3f;
+  --on-accent: #ffffff; --on-accent-dim: rgb(255 255 255 / 75%);
+  --ok: #2f6b2f;
   --ok-soft: #e6f2e6;
-  --warn: #9a6b12;
+  --warn: #8a5f0f;
   --warn-soft: #fbf3df;
   --bad: #a33a2a;
   --bad-soft: #fbe9e5;
@@ -30,14 +32,14 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #16150f; --surface: #1e1d16; --surface-2: #26241c; --border: #35322a; --border-strong: #4b4740;
-    --text: #efece4; --text-dim: #a9a397; --text-faint: #7c766b; --accent: #e8944a; --accent-soft: #2e2317;
+    --bg: #16150f; --surface: #1e1d16; --surface-2: #26241c; --btn-ghost-bg: #2a2820; --border: #35322a; --border-strong: #7a7569;
+    --text: #efece4; --text-dim: #a9a397; --text-faint: #948e82; --accent: #e8944a; --accent-soft: #2e2317; --on-accent: #16150f; --on-accent-dim: rgb(22 21 15 / 65%);
     --ok: #7db87d; --ok-soft: #1d2d1d; --warn: #d0a44a; --warn-soft: #2c2616; --bad: #e0705e; --bad-soft: #301c18;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #16150f; --surface: #1e1d16; --surface-2: #26241c; --border: #35322a; --border-strong: #4b4740;
-  --text: #efece4; --text-dim: #a9a397; --text-faint: #7c766b; --accent: #e8944a; --accent-soft: #2e2317;
+  --bg: #16150f; --surface: #1e1d16; --surface-2: #26241c; --btn-ghost-bg: #2a2820; --border: #35322a; --border-strong: #7a7569;
+  --text: #efece4; --text-dim: #a9a397; --text-faint: #948e82; --accent: #e8944a; --accent-soft: #2e2317; --on-accent: #16150f; --on-accent-dim: rgb(22 21 15 / 65%);
   --ok: #7db87d; --ok-soft: #1d2d1d; --warn: #d0a44a; --warn-soft: #2c2616; --bad: #e0705e; --bad-soft: #301c18;
 }
 
@@ -61,7 +63,7 @@ h1 .dot { color: var(--accent); }
 .header-links { display: flex; gap: 16px; font-size: 13px; flex-wrap: wrap; }
 .switches { display: flex; gap: 8px; flex-wrap: wrap; }
 .seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 999px; overflow: hidden; }
-.seg button { border: 0; background: var(--surface); color: var(--text-dim); font-size: 12.5px; padding: 5px 12px; cursor: pointer; }
+.seg button { border: 0; background: var(--btn-ghost-bg); color: var(--text-dim); font-size: 12.5px; padding: 5px 12px; cursor: pointer; }
 .seg button[aria-pressed="true"] { background: var(--text); color: var(--surface); }
 .seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .linkbtn { background: none; border: none; color: var(--text-faint); font-size: 12px; cursor: pointer; padding: 0; }
@@ -73,10 +75,8 @@ h1 .dot { color: var(--accent); }
 .intro h2 { margin: 0; font-size: 24px; letter-spacing: -0.01em; }
 .intro p { margin: 0; color: var(--text-dim); max-width: 60ch; }
 .intro .cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.btn { padding: 10px 18px; border-radius: 999px; font-size: 14px; cursor: pointer; font-weight: 600; background: var(--accent); color: #fff; border: 1px solid var(--accent); }
-:root[data-theme="dark"] .btn, :root:not([data-theme="light"]) .btn { color: #16150f; }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .btn { color: #fff; } }
-.btn.ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
+.btn { padding: 10px 18px; border-radius: 999px; font-size: 14px; cursor: pointer; font-weight: 600; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.ghost { background: var(--btn-ghost-bg); color: var(--text); border-color: var(--border-strong); }
 .btn.ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .btn:disabled { opacity: .45; cursor: default; }
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -111,11 +111,8 @@ h1 .dot { color: var(--accent); }
 .tchip { border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); padding: 7px 13px; border-radius: 999px; font-size: 13.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: border-color .15s, background .15s; }
 .tchip .n { font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
 .tchip:hover { border-color: var(--accent); }
-.tchip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-.tchip[aria-pressed="true"] .n { color: rgb(255 255 255 / 75%); }
-:root[data-theme="dark"] .tchip[aria-pressed="true"], :root:not([data-theme="light"]) .tchip[aria-pressed="true"] { color: #16150f; }
-:root[data-theme="dark"] .tchip[aria-pressed="true"] .n, :root:not([data-theme="light"]) .tchip[aria-pressed="true"] .n { color: rgb(22 21 15 / 65%); }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .tchip[aria-pressed="true"] { color: #fff; } :root:not([data-theme="dark"]) .tchip[aria-pressed="true"] .n { color: rgb(255 255 255 / 75%); } }
+.tchip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.tchip[aria-pressed="true"] .n { color: var(--on-accent-dim); }
 .tchip[aria-pressed="mixed"] { border-color: var(--accent); background: var(--accent-soft); }
 .tchip.pop { animation: pop .3s cubic-bezier(.3,1.6,.5,1); }
 @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.12); } 100% { transform: scale(1); } }
@@ -151,12 +148,10 @@ h1 .dot { color: var(--accent); }
 .custom-result { font-size: 12.5px; min-height: 1.4em; overflow-wrap: anywhere; }
 .custom-result .ok { color: var(--ok); }
 .custom-result .bad { color: var(--bad); }
-.btn-sm { padding: 6px 11px; font-size: 12.5px; cursor: pointer; font-weight: 600; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 7px; }
+.btn-sm { padding: 6px 11px; font-size: 12.5px; cursor: pointer; font-weight: 600; background: var(--btn-ghost-bg); color: var(--text); border: 1px solid var(--border-strong); border-radius: 7px; }
 .btn-sm:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .btn-sm:disabled { opacity: .45; cursor: default; }
-.btn-sm.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-:root[data-theme="dark"] .btn-sm.primary, :root:not([data-theme="light"]) .btn-sm.primary { color: #16150f; }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .btn-sm.primary { color: #fff; } }
+.btn-sm.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
 .nb { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; background: var(--surface-2); display: grid; gap: 8px; }
 .nb-head { display: flex; align-items: center; gap: 8px; }
@@ -213,11 +208,9 @@ pre { margin: 0; padding: 12px; background: var(--surface-2); border: 1px solid 
 .search { flex: 1 1 220px; min-width: 0; padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); font-size: 14px; font-family: inherit; }
 .search:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-.chip { border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-dim); padding: 5px 11px; border-radius: 999px; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+.chip { border: 1px solid var(--border-strong); background: var(--btn-ghost-bg); color: var(--text-dim); padding: 5px 11px; border-radius: 999px; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
 .chip:hover { border-color: var(--accent); color: var(--text); }
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 500; }
-:root[data-theme="dark"] .chip[aria-pressed="true"], :root:not([data-theme="light"]) .chip[aria-pressed="true"] { color: #16150f; }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .chip[aria-pressed="true"] { color: #fff; } }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 500; }
 .chip .n { opacity: .65; margin-left: 5px; font-variant-numeric: tabular-nums; }
 .layout { display: grid; grid-template-columns: minmax(0,1fr) 430px; gap: 28px; align-items: start; padding: 24px 0 80px; }
 @media (max-width: 960px) { .layout { grid-template-columns: 1fr; padding-bottom: 120px; } }
@@ -398,8 +391,8 @@ const T = {
     yaml_h: 'config.yaml（丸ごと置き換える）', cron_h: 'cron の 2 行（.github/workflows/rss-radio.yml の schedule: の下に）',
     copy: 'コピー', copied: 'コピーしました', download: 'ダウンロード', share: '共有リンク', shared: 'リンクをコピーしました',
     next_h: '次にやること',
-    next: ['<a href="https://github.com/inoueUJ/notebooklm-radio" target="_blank" rel="noopener">notebooklm-radio</a> を <b>Use this template</b> で自分の GitHub に複製（Private）', 'そのリポジトリの <code>config.yaml</code> をこのファイルで置き換え、<code>rss-radio.yml</code> の cron 2 行を差し替える', 'PC で <code>python scripts/setup.py</code> を実行（ログイン・secret 登録・初回実行まで一気に）'],
-    guide: '迷ったら使い方ガイド',
+    next: ['<a href="guide/?lang=ja#repo">notebooklm-radio を <b>Use this template</b> で自分の GitHub に複製（Private）</a>', '<a href="guide/?lang=ja#config">そのリポジトリの <code>config.yaml</code> をこのファイルで置き換え、<code>rss-radio.yml</code> の cron 2 行を差し替える</a>', '<a href="guide/?lang=ja#wizard">PC で <code>python scripts/setup.py</code> を実行（ログイン・secret 登録・初回実行まで一気に）</a>'],
+    guide: 'スクリーンショット付きの導入ガイド',
     warn_h: '知っておくこと',
     back: '戻る', nextbtn: '次へ', to_done: 'できあがりを見る', edit_again: '選び直す',
     shared_banner: '共有された設定を開いています。変えたいところは「戻る」から。',
@@ -468,8 +461,8 @@ const T = {
     yaml_h: 'config.yaml (replace the whole file)', cron_h: 'cron lines (under schedule: in .github/workflows/rss-radio.yml)',
     copy: 'Copy', copied: 'Copied', download: 'Download', share: 'Share link', shared: 'Link copied',
     next_h: 'Next',
-    next: ['Create your repo from <a href="https://github.com/inoueUJ/notebooklm-radio" target="_blank" rel="noopener">notebooklm-radio</a> with <b>Use this template</b> (Private)', 'Replace its <code>config.yaml</code> with this file, and the two cron lines in <code>rss-radio.yml</code>', 'On your PC run <code>python scripts/setup.py</code> (login, secrets, first run in one go)'],
-    guide: 'The user guide if you get stuck',
+    next: ['<a href="guide/?lang=en#repo">Create your repo from notebooklm-radio with <b>Use this template</b> (Private)</a>', '<a href="guide/?lang=en#config">Replace its <code>config.yaml</code> with this file, and the two cron lines in <code>rss-radio.yml</code></a>', '<a href="guide/?lang=en#wizard">On your PC run <code>python scripts/setup.py</code> (login, secrets, first run in one go)</a>'],
+    guide: 'Step-by-step setup guide with screenshots',
     warn_h: 'Things to know',
     back: 'Back', nextbtn: 'Next', to_done: 'Show the result', edit_again: 'Change something',
     shared_banner: 'You opened a shared setup. Use "Back" to change anything.',
@@ -977,7 +970,7 @@ function stepHtml() {
       <div class="out"><div class="oh"><strong>${esc(t('yaml_h'))}</strong><div class="acts"><button class="btn-sm" id="g-copy-yaml">${esc(t('copy'))}</button><button class="btn-sm primary" id="g-dl-yaml">${esc(t('download'))}</button></div></div><pre id="g-yaml">${esc(buildConfigYaml())}</pre></div>
       <div class="out"><div class="oh"><strong>${esc(t('cron_h'))}</strong><div class="acts"><button class="btn-sm" id="g-copy-cron">${esc(t('copy'))}</button></div></div><pre id="g-cron">${esc(buildCron())}</pre></div>
       ${w ? `<div class="out"><strong>${esc(t('warn_h'))}</strong><ul class="warnings">${w}</ul></div>` : ''}
-      <div class="next"><strong>${esc(t('next_h'))}</strong><ol>${t('next').map(x => `<li>${x}</li>`).join('')}</ol><a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/docs/${S.lang === 'ja' ? 'GUIDE.ja.md' : 'GUIDE.md'}" target="_blank" rel="noopener">${esc(t('guide'))} →</a></div>
+      <div class="next"><strong>${esc(t('next_h'))}</strong><ol>${t('next').map(x => `<li>${x}</li>`).join('')}</ol><a href="guide/?lang=${S.lang}">${esc(t('guide'))} →</a></div>
       <div class="navrow"><button class="btn ghost" id="g-share">${esc(t('share'))}</button></div>
     </div>`;
 }

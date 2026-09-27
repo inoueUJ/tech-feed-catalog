@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>notebooklm-radio 導入ガイド</title>
+<meta name="description" content="Step-by-step, with screenshots: from picking feeds to hearing your first episode, and what to do every morning and every 3.5 weeks.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --surface-2: #f4f2ed; --btn-ghost-bg: #f1eee8;
+  --border: #e2ded4; --border-strong: #86816f;
+  --text: #1c1a17; --text-dim: #6b655c; --text-faint: #726b5f;
+  --accent: #b4560f; --accent-soft: #fdf0e4; --on-accent: #ffffff; --link: #1264a3;
+  --ok: #2f6b2f; --ok-soft: #e6f2e6; --warn: #8a5f0f; --warn-soft: #fbf3df; --bad: #a33a2a; --bad-soft: #fbe9e5;
+  --radius: 10px;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16150f; --surface: #1e1d16; --surface-2: #26241c; --btn-ghost-bg: #2a2820; --border: #35322a; --border-strong: #7a7569;
+    --text: #efece4; --text-dim: #a9a397; --text-faint: #948e82; --accent: #e8944a; --accent-soft: #2e2317; --on-accent: #16150f; --link: #6cb1ea;
+    --ok: #7db87d; --ok-soft: #1d2d1d; --warn: #d0a44a; --warn-soft: #2c2616; --bad: #e0705e; --bad-soft: #301c18;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #16150f; --surface: #1e1d16; --surface-2: #26241c; --btn-ghost-bg: #2a2820; --border: #35322a; --border-strong: #7a7569;
+  --text: #efece4; --text-dim: #a9a397; --text-faint: #948e82; --accent: #e8944a; --accent-soft: #2e2317; --on-accent: #16150f; --link: #6cb1ea;
+  --ok: #7db87d; --ok-soft: #1d2d1d; --warn: #d0a44a; --warn-soft: #2c2616; --bad: #e0705e; --bad-soft: #301c18;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); }
+code { font-family: var(--mono); font-size: .9em; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+button { font-family: inherit; }
+h1, h2, h3 { margin: 0; line-height: 1.35; letter-spacing: -0.01em; }
+p { margin: 0; }
+[hidden] { display: none !important; }
+html[lang="ja"] [lang="en"], html[lang="en"] [lang="ja"] { display: none; }
+
+header.site { border-bottom: 1px solid var(--border); background: var(--surface); }
+.bar { max-width: 1180px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.brand { font-family: var(--mono); font-size: 15px; }
+.brand a { color: var(--text); text-decoration: none; }
+.brand .dot { color: var(--accent); }
+.brand .sub { color: var(--text-dim); font-family: var(--sans); font-size: 13px; margin-left: 10px; }
+.seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: var(--btn-ghost-bg); color: var(--text-dim); font-size: 12.5px; padding: 5px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--text); color: var(--surface); }
+.seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.linkbtn { background: none; border: none; color: var(--text-faint); font-size: 12px; cursor: pointer; padding: 0; }
+.linkbtn:hover { color: var(--accent); text-decoration: underline; }
+
+.shell { max-width: 1180px; margin: 0 auto; padding: 24px 20px 90px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (max-width: 860px) { .shell { grid-template-columns: minmax(0, 1fr); } }
+nav.toc { position: sticky; top: 16px; display: grid; gap: 2px; }
+@media (max-width: 860px) { nav.toc { position: static; display: flex; overflow-x: auto; gap: 6px; padding-bottom: 6px; border-bottom: 1px solid var(--border); } }
+nav.toc a { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; color: var(--text-dim); text-decoration: none; font-size: 13.5px; white-space: nowrap; }
+nav.toc a:hover { background: var(--surface-2); color: var(--text); }
+nav.toc a.current { background: var(--accent-soft); color: var(--text); font-weight: 600; }
+nav.toc a .n { font-family: var(--mono); font-size: 11px; color: var(--text-faint); width: 1.4em; }
+nav.toc a .done { margin-left: auto; color: var(--ok); font-size: 12px; visibility: hidden; }
+nav.toc a.is-done .done { visibility: visible; }
+nav.toc .meta { font-size: 12px; color: var(--text-faint); padding: 8px 10px 0; }
+@media (max-width: 860px) { nav.toc .meta { display: none; } }
+
+main { display: grid; gap: 40px; min-width: 0; }
+section.step { display: grid; gap: 16px; scroll-margin-top: 16px; min-width: 0; }
+.stephead { display: grid; gap: 4px; }
+.stepnum { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+section.step h2 { font-size: 24px; }
+.lead { color: var(--text-dim); max-width: 66ch; }
+.goal { border-left: 3px solid var(--accent); padding: 4px 14px; background: var(--surface); border-radius: 0 8px 8px 0; font-size: 14px; }
+.goal b { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+ol.do, ul.do { margin: 0; padding-left: 22px; display: grid; gap: 6px; max-width: 70ch; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; display: grid; gap: 10px; }
+.card h3 { font-size: 14px; }
+.tip { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: 8px; padding: 10px 14px; font-size: 13.5px; }
+.tip b { color: var(--warn); }
+.check { display: flex; gap: 10px; align-items: flex-start; background: var(--ok-soft); border: 1px solid var(--ok); border-radius: 8px; padding: 10px 14px; font-size: 14px; cursor: pointer; }
+.check input { margin: 5px 0 0; accent-color: var(--ok); }
+.check b { color: var(--ok); }
+
+figure.shot { margin: 0; display: grid; gap: 8px; align-content: start; }
+figure.shot .frame { position: relative; margin: 6px 6px 0; }
+figure.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 2px 10px rgb(0 0 0 / 6%); }
+figure.shot .box { position: absolute; border: 2.5px solid var(--accent); border-radius: 8px; box-shadow: 0 0 0 3px rgb(255 255 255 / 80%), 0 4px 14px rgb(0 0 0 / 35%); pointer-events: none; }
+figure.shot .mark { position: absolute; transform: translate(calc(-100% + 3px), calc(-100% + 3px)); width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 12px/22px var(--mono); text-align: center; box-shadow: 0 0 0 3px rgb(255 255 255 / 85%), 0 2px 8px rgb(0 0 0 / 35%); font-style: normal; z-index: 1; }
+figure.shot .cap { display: grid; gap: 5px; font-size: 13.5px; color: var(--text); padding-top: 4px; }
+figure.shot .cap div { display: flex; gap: 8px; align-items: flex-start; }
+figure.shot .cap .mark { position: static; transform: none; flex: none; width: 18px; height: 18px; font: 700 11px/18px var(--mono); box-shadow: none; margin-top: 3px; }
+.shots2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+@media (max-width: 700px) { .shots2 { grid-template-columns: 1fr; } }
+
+pre.term { margin: 0; background: #201f19; color: #e9e5da; border-radius: 10px; padding: 14px 16px; font-family: var(--mono); font-size: 12.5px; line-height: 1.6; overflow-x: auto; white-space: pre; border: 1px solid #3d3a31; }
+pre.term .p { color: #9a9385; }
+pre.term .ok { color: #8fce8f; }
+pre.term .warn { color: #e2b45a; }
+pre.term .bad { color: #ef8a78; }
+pre.term .c { color: #7c8fb5; white-space: pre-wrap; }
+pre.term .k { color: #f0b46b; }
+
+.slack { min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: grid; grid-template-columns: 40px 1fr; gap: 12px; font-size: 14px; line-height: 1.55; }
+.slack .av { width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #b4560f, #e8944a); }
+.slack .who { display: flex; gap: 8px; align-items: baseline; }
+.slack .who b { font-size: 14.5px; }
+.slack .who .app { font-size: 10px; font-family: var(--mono); background: var(--surface-2); border: 1px solid var(--border); padding: 0 5px; border-radius: 3px; color: var(--text-dim); }
+.slack .who .t { color: var(--text-faint); font-size: 12px; }
+.slack .msg { white-space: pre-wrap; overflow-wrap: anywhere; }
+.slack .msg a { color: var(--link); }
+.slack .msg code.blk { display: block; white-space: pre-wrap; overflow-wrap: anywhere; padding: 8px 10px; border-radius: 6px; font-size: 12.5px; margin: 4px 0 6px; border: 1px solid var(--border); }
+.slack.err .av { background: linear-gradient(135deg, #a33a2a, #e0705e); }
+.callouts { display: grid; gap: 6px; font-size: 13.5px; }
+.slack .msg .mark { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 11px/18px var(--mono); text-align: center; margin-left: 6px; vertical-align: middle; font-style: normal; }
+.callouts .mark { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 11px/18px var(--mono); text-align: center; margin-right: 8px; font-style: normal; }
+
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--text-dim); font-weight: 500; }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 4px 8px; }
+.tablewrap table { min-width: 560px; }
+@media (max-width: 700px) { pre.term { font-size: 11.5px; } }
+dl.terms { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin: 0; }
+@media (max-width: 700px) { dl.terms { grid-template-columns: 1fr; } }
+dl.terms div { border-top: 1px solid var(--border); padding-top: 8px; }
+dl.terms dt { font-weight: 700; font-size: 14px; }
+dl.terms dd { margin: 0; font-size: 13.5px; color: var(--text-dim); }
+.navrow { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-top: 6px; }
+.btn { padding: 9px 16px; border-radius: 999px; font-size: 13.5px; cursor: pointer; font-weight: 600; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); text-decoration: none; display: inline-block; }
+.btn.ghost { background: var(--btn-ghost-bg); color: var(--text); border-color: var(--border-strong); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.req { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.req div { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 13.5px; }
+.req b { display: block; font-size: 14px; }
+.req span { color: var(--text-dim); }
+footer { border-top: 1px solid var(--border); padding: 20px; text-align: center; color: var(--text-faint); font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="bar">
+    <div class="brand"><a href="../">tech-feed-catalog<span class="dot">.</span></a><span class="sub"><span lang="ja">notebooklm-radio 導入ガイド</span><span lang="en">notebooklm-radio setup guide</span></span></div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="../" style="font-size:13px"><span lang="ja">← ビルダー</span><span lang="en">← Builder</span></a>
+      <div class="seg" role="group" aria-label="language"><button id="lang-ja" aria-pressed="true">日本語</button><button id="lang-en" aria-pressed="false">English</button></div>
+      <button class="linkbtn" id="theme">theme</button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="toc" id="toc" aria-label="steps">
+  <a href="#start"><span class="n">0</span><span lang="ja">はじめに</span><span lang="en">Before you start</span><span class="done">✓</span></a>
+  <a href="#build" data-step="build"><span class="n">1</span><span lang="ja">設定を作る</span><span lang="en">Build the config</span><span class="done">✓</span></a>
+  <a href="#repo" data-step="repo"><span class="n">2</span><span lang="ja">リポジトリを作る</span><span lang="en">Create the repo</span><span class="done">✓</span></a>
+  <a href="#config" data-step="config"><span class="n">3</span><span lang="ja">設定を入れる</span><span lang="en">Put the config in</span><span class="done">✓</span></a>
+  <a href="#wizard" data-step="wizard"><span class="n">4</span><span lang="ja">ウィザードを走らせる</span><span lang="en">Run the wizard</span><span class="done">✓</span></a>
+  <a href="#firstrun" data-step="firstrun"><span class="n">5</span><span lang="ja">初回実行を確かめる</span><span lang="en">Check the first run</span><span class="done">✓</span></a>
+  <a href="#mornings"><span class="n">6</span><span lang="ja">毎朝の見方</span><span lang="en">Every morning</span><span class="done">✓</span></a>
+  <a href="#change"><span class="n">7</span><span lang="ja">設定を変える</span><span lang="en">Changing things</span><span class="done">✓</span></a>
+  <a href="#renew"><span class="n">8</span><span lang="ja">3.5 週ごとの更新</span><span lang="en">Every 3.5 weeks</span><span class="done">✓</span></a>
+  <a href="#trouble"><span class="n">9</span><span lang="ja">困ったとき</span><span lang="en">When something looks wrong</span><span class="done">✓</span></a>
+  <a href="#terms"><span class="n">10</span><span lang="ja">用語</span><span lang="en">Terms</span><span class="done">✓</span></a>
+  <div class="meta"><span lang="ja">チェックはこのブラウザに保存されます。</span><span lang="en">Checks are saved in this browser.</span> <button class="linkbtn" id="reset"><span lang="ja">リセット</span><span lang="en">reset</span></button></div>
+</nav>
+
+<main>
+
+<!-- 0 ------------------------------------------------------------------ -->
+<section class="step" id="start">
+  <div class="stephead"><div class="stepnum">0 / 10</div>
+    <h2><span lang="ja">はじめに</span><span lang="en">Before you start</span></h2>
+    <p class="lead" lang="ja">追っている技術の新着記事を、毎朝 NotebookLM の音声ラジオにして届ける仕組みを、自分の GitHub に作ります。作業は約 20 分。最初の音声ができるまでさらに 20 分ほどです。</p>
+    <p class="lead" lang="en">You'll set up, in your own GitHub account, a job that turns new articles from the feeds you follow into a NotebookLM audio show every morning. About 20 minutes of work, then another 20 while the first episode renders.</p>
+  </div>
+  <div class="goal" lang="ja"><b>流れ</b>ビルダーで設定を作る → GitHub にコピーを作る → 設定を入れる → PC でウィザードを一度だけ走らせる → 翌朝から勝手に届く。</div>
+  <div class="goal" lang="en"><b>The flow</b>Build a config → copy the template into your GitHub → drop the config in → run the wizard once on your PC → episodes arrive by themselves from then on.</div>
+  <div class="req">
+    <div><b>GitHub</b><span lang="ja">無料アカウント。ここで毎朝の処理が動く</span><span lang="en">A free account. This is where the daily job runs</span></div>
+    <div><b>Google / NotebookLM</b><span lang="ja">https://notebooklm.google.com が開けること。無料枠でも動く</span><span lang="en">Any account that can open NotebookLM. The free tier works</span></div>
+    <div><b>Slack <span lang="ja">か</span><span lang="en">or</span> Discord</b><span lang="ja">通知先。無くても動くが、エラーも届かなくなる</span><span lang="en">For notifications. Optional, but then errors are silent too</span></div>
+    <div><b>PC + <span lang="ja">ブラウザ</span><span lang="en">a browser</span></b><span lang="ja">初回と 3.5 週ごとの Google ログイン用。常駐はしない</span><span lang="en">For the first login and each renewal. Nothing stays running</span></div>
+  </div>
+  <p class="lead" lang="ja">PC には Python 3.10 以上、<a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noopener">uv</a>、<a href="https://cli.github.com/" target="_blank" rel="noopener">GitHub CLI</a>(入れたら一度 <code>gh auth login</code>)が要りますが、足りなければステップ 4 のウィザードが教えてくれます。</p>
+  <p class="lead" lang="en">Your PC needs Python 3.10 or newer, <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noopener">uv</a> and the <a href="https://cli.github.com/" target="_blank" rel="noopener">GitHub CLI</a> (run <code>gh auth login</code> once). If something's missing, the wizard in step 4 will tell you.</p>
+  <div class="tip" lang="ja"><b>知っておくこと</b> NotebookLM に公式 API は無く、非公式の CLI であなた自身の Google セッションを使います。Google 側の変更で止まることがあり、約 3.5 週ごとに再ログインが要ります(ステップ 8)。音声の生成には上限があり、番組の数 × 1 日の実行回数がその日の本数です。</div>
+  <div class="tip" lang="en"><b>Good to know</b> NotebookLM has no official API; this uses an unofficial CLI with your own Google session. Google can break it without notice, and the session needs renewing about every 3.5 weeks (step 8). Audio generation is capped; shows × runs per day is your daily count.</div>
+  <div class="navrow"><span></span><a class="btn" href="#build"><span lang="ja">1. 設定を作る →</span><span lang="en">1. Build the config →</span></a></div>
+</section>
+
+<!-- 1 ------------------------------------------------------------------ -->
+<section class="step" id="build">
+  <div class="stephead"><div class="stepnum">1 / 10</div>
+    <h2><span lang="ja">設定を作る</span><span lang="en">Build the config</span></h2>
+    <p class="lead" lang="ja">設定ファイルは <code>config.yaml</code> の 1 枚だけ。<a href="../">ビルダー</a>で 3 分で作れます。ブラウザだけで完結します(外に問い合わせるのは、カタログ外フィードの「確認」だけ)。</p>
+    <p class="lead" lang="en">The whole configuration is one file, <code>config.yaml</code>. The <a href="../">builder</a> makes it in three minutes, entirely in your browser (only "Check" on a feed outside the catalog contacts the checker).</p>
+  </div>
+  <figure class="shot"><div class="frame"><img src="img/builder-intro.jpg" alt="ビルダーの最初の画面" loading="lazy"><b class="box" style="left:16%;top:59%;width:10.5%;height:12%"></b><i class="mark" style="left:16%;top:59%">1</i></div><figcaption class="cap"><div><i class="mark">1</i><span><span lang="ja">「はじめる」を押す(前回の続きがあれば「続きから」になる)</span><span lang="en">Press "Start" (it says "Resume" if you have been here before)</span></span></div></figcaption></figure>
+    <figure class="shot"><div class="frame"><img src="img/builder-pick.jpg" alt="技術名のチップとおすすめセット" loading="lazy"><b class="box" style="left:16.2%;top:51%;width:17.5%;height:9.5%"></b><i class="mark" style="left:16.2%;top:51%">2</i><b class="box" style="left:29%;top:72%;width:11%;height:6%"></b><i class="mark" style="left:29%;top:72%">3</i><b class="box" style="left:73%;top:24.5%;width:13%;height:6%"></b><i class="mark" style="left:73%;top:24.5%">4</i></div><figcaption class="cap"><div><i class="mark">2</i><span><span lang="ja">おすすめセットを押す → 5 フィードが 1 つの番組として入る</span><span lang="en">Tap a starter pack: five feeds go in as one show</span></span></div><div><i class="mark">3</i><span><span lang="ja">技術名のチップを押して足す</span><span lang="en">Add more with the technology chips</span></span></div><div><i class="mark">4</i><span><span lang="ja">右上の件数が増えるのを確認</span><span lang="en">The counter at the top right ticks up</span></span></div></figcaption></figure>
+  <ol class="do" lang="ja">
+    <li><b>何を追う?</b> — おすすめセットかチップを押す。カタログに無いもの(Zenn のトピック、Qiita のタグ、任意の URL)は同じ画面の下から。「確認」で本当にフィードかを見に行く。</li>
+    <li><b>番組に分ける</b> — 番組 = NotebookLM のノートブック 1 冊 = 1 日 1 本のラジオ。混ぜて違和感がある話題は分ける。名前は自由、雰囲気は「じっくり / 手短に」。</li>
+    <li><b>いつ聴く?</b> — 朝の時刻、2 回目の有無、NotebookLM のプラン。「番組数 × 実行回数 = 1 日の本数」が上限を超えると赤くなる。</li>
+    <li><b>できあがり</b> — <code>config.yaml</code> をダウンロードし、cron の 2 行をコピーしておく。</li>
+  </ol>
+  <ol class="do" lang="en">
+    <li><b>What do you follow?</b> — tap a starter pack or technology chips. Anything not in the catalog (a Zenn topic, a Qiita tag, any URL) goes in at the bottom of the same step; "Check" fetches it once.</li>
+    <li><b>Group into shows</b> — a show = one NotebookLM notebook = one episode a day. Keep unrelated topics apart. Rename freely; pick "In depth" or "Brief".</li>
+    <li><b>When do you listen?</b> — morning time, optional second run, your NotebookLM plan. "Shows × runs = episodes per day" turns red when it exceeds the cap.</li>
+    <li><b>Done</b> — download <code>config.yaml</code> and copy the two cron lines.</li>
+  </ol>
+  <figure class="shot"><div class="frame"><img src="img/builder-done.jpg" alt="できあがり画面" loading="lazy"><b class="box" style="left:82%;top:33%;width:11.5%;height:5.5%"></b><i class="mark" style="left:82%;top:33%">5</i><b class="box" style="left:86%;top:70.3%;width:7.5%;height:5.5%"></b><i class="mark" style="left:86%;top:70.3%">6</i></div><figcaption class="cap"><div><i class="mark">5</i><span><span lang="ja">「ダウンロード」で config.yaml を保存</span><span lang="en">Press "Download" to save config.yaml</span></span></div><div><i class="mark">6</i><span><span lang="ja">cron の「コピー」を押す(ステップ 3 で貼る)</span><span lang="en">Press "Copy" on the cron lines (pasted in step 3)</span></span></div></figcaption></figure>
+  <div class="tip" lang="ja"><b>共有リンク</b> 「共有リンク」を押すと、この構成を丸ごと復元できる URL がコピーされます。あとで足し引きするときはそこから。</div>
+  <div class="tip" lang="en"><b>Share link</b> copies a URL that restores this whole setup. Come back to it when you want to add or remove feeds later.</div>
+  <label class="check"><input type="checkbox" data-check="build"><span><b lang="ja">確認:</b><b lang="en">Check:</b> <span lang="ja">手元に <code>config.yaml</code> があり、cron の 2 行がコピーできている。</span><span lang="en">You have <code>config.yaml</code> on disk and the two cron lines copied.</span></span></label>
+  <div class="navrow"><a class="btn ghost" href="#start">←</a><a class="btn" href="#repo"><span lang="ja">2. リポジトリを作る →</span><span lang="en">2. Create the repo →</span></a></div>
+</section>
+
+<!-- 2 ------------------------------------------------------------------ -->
+<section class="step" id="repo">
+  <div class="stephead"><div class="stepnum">2 / 10</div>
+    <h2><span lang="ja">GitHub に自分のコピーを作る</span><span lang="en">Create your own copy on GitHub</span></h2>
+    <p class="lead" lang="ja">notebooklm-radio はテンプレートリポジトリです。「Use this template」で、あなたのアカウントの下に同じ中身の新しいリポジトリができます。fork ではなく、作者との繋がりの無い完全に自分のものです。</p>
+    <p class="lead" lang="en">notebooklm-radio is a template repository. "Use this template" creates a new repository with the same contents under your account: not a fork, fully yours.</p>
+  </div>
+  <figure class="shot"><div class="frame"><img src="img/github-template.jpg" alt="notebooklm-radio リポジトリのページ" loading="lazy"><b class="box" style="left:86.6%;top:19%;width:11.4%;height:5.5%"></b><i class="mark" style="left:86.6%;top:19%">1</i></div><figcaption class="cap"><div><i class="mark">1</i><span><span lang="ja">緑の「Use this template」→「Create a new repository」を押す</span><span lang="en">Press the green "Use this template" → "Create a new repository"</span></span></div></figcaption></figure>
+  <figure class="shot"><div class="frame"><img src="img/github-new.jpg" alt="Create a new repository のフォーム" loading="lazy"><b class="box" style="left:62.3%;top:28.8%;width:33%;height:6.5%"></b><i class="mark" style="left:62.3%;top:28.8%">2</i><b class="box" style="left:8.9%;top:59.8%;width:13.4%;height:6%"></b><i class="mark" style="left:8.9%;top:59.8%">3</i></div><figcaption class="cap"><div><i class="mark">2</i><span><span lang="ja">テンプレートが inoueUJ/notebooklm-radio になっているか確認</span><span lang="en">Check that the template reads inoueUJ/notebooklm-radio</span></span></div><div><i class="mark">3</i><span><span lang="ja">Owner が自分になっているか確認し、名前を入れる(例: my-radio)</span><span lang="en">Check that Owner is you, then type a name (e.g. my-radio)</span></span></div></figcaption></figure>
+  <figure class="shot"><div class="frame"><img src="img/github-new-visibility.jpg" alt="Choose visibility の欄" loading="lazy"><b class="box" style="left:80%;top:34%;width:15.4%;height:22%"></b><i class="mark" style="left:80%;top:34%">4</i></div><figcaption class="cap"><div><i class="mark">4</i><span><span lang="ja">Choose visibility を Private にしてから「Create repository」を押す</span><span lang="en">Set Choose visibility to Private, then press "Create repository"</span></span></div></figcaption></figure>
+  <div class="tip" lang="ja"><b>なぜ Private?</b> 毎朝の処理が「どこまで読んだか」の記録(<code>state.json</code>)をあなたのリポジトリにコミットし続けます。購読の履歴なので、公開しない方がよいものです。</div>
+  <div class="tip" lang="en"><b>Why Private?</b> The daily job keeps committing its read-state (<code>state.json</code>), which is your reading history, into your repository.</div>
+  <label class="check"><input type="checkbox" data-check="repo"><span><b lang="ja">確認:</b><b lang="en">Check:</b> <span lang="ja">自分の GitHub に Private のリポジトリができ、中に <code>radio_batch.py</code> と <code>config.yaml</code> が見える。</span><span lang="en">A private repository exists under your account, with <code>radio_batch.py</code> and <code>config.yaml</code> inside.</span></span></label>
+  <div class="navrow"><a class="btn ghost" href="#build">←</a><a class="btn" href="#config"><span lang="ja">3. 設定を入れる →</span><span lang="en">3. Put the config in →</span></a></div>
+</section>
+
+<!-- 3 ------------------------------------------------------------------ -->
+<section class="step" id="config">
+  <div class="stephead"><div class="stepnum">3 / 10</div>
+    <h2><span lang="ja">設定をコピーに入れる</span><span lang="en">Put the config into your copy</span></h2>
+    <p class="lead" lang="ja">リポジトリを PC に clone し、ステップ 1 のファイルで置き換えて push します。まだ何も動きません(ログイン情報が無いので、動いても止まります)。</p>
+    <p class="lead" lang="en">Clone the repository, replace the file from step 1, push. Nothing runs yet (without the login it would stop immediately).</p>
+  </div>
+<pre class="term"><span class="p">$</span> gh repo clone <span class="k">you/my-radio</span>
+<span class="p">$</span> cd my-radio
+<span class="c"># 1. ダウンロードした config.yaml で丸ごと置き換える（feeds: の下に貼るのではない）</span>
+<span class="p">$</span> cp ~/Downloads/config.yaml ./config.yaml
+<span class="c"># 2. .github/workflows/rss-radio.yml の "- cron:" 2 行を、ビルダー「できあがり」の cron 2 行に差し替える</span>
+<span class="c"># 3. 検査（何も実行しない。設定ファイルを読んで問題を列挙するだけ）</span>
+<span class="p">$</span> python radio_batch.py --check-config
+<span class="ok">config.yaml OK: 8 feed(s), topics: AI, インフラ, 言語</span>
+<span class="p">$</span> git add -A &amp;&amp; git commit -m "my feeds" &amp;&amp; git push</pre>
+  <ul class="do" lang="ja">
+    <li>直すのは 2 か所だけ: <b>config.yaml を丸ごと置き換える</b>(ダウンロードしたファイルで上書き。<code>feeds:</code> の下に貼るのではない)と、<b><code>.github/workflows/rss-radio.yml</code> の <code>- cron:</code> 2 行</b>をビルダーの 2 行に差し替える。</li>
+    <li>検査が <code>NG</code> と言ったら、列挙された箇所を直します。知らないキーはわざとエラーにしています(typo が黙って既定値に落ちるのが一番怖いため)。</li>
+    <li>手元に <code>yaml</code> などのパッケージが無くて検査が動かない場合は、<code>pip install -r requirements.txt</code> で入ります。CI でも毎回同じ検査が走るので、飛ばしても壊れたまま動くことはありません。</li>
+    <li>ファイルを GitHub の画面で直接編集しても構いません。clone するのはウィザードのためです。</li>
+  </ul>
+  <ul class="do" lang="en">
+    <li>Only two edits: <b>replace config.yaml as a whole</b> (overwrite it with the downloaded file; don't paste under <code>feeds:</code>) and <b>swap the two <code>- cron:</code> lines in <code>.github/workflows/rss-radio.yml</code></b> for the builder's.</li>
+    <li>If the check says <code>NG</code>, fix the listed items. Unknown keys are errors on purpose (a typo silently falling back to a default is the worst failure).</li>
+    <li>If the check can't run for lack of packages, <code>pip install -r requirements.txt</code> fixes that; CI runs the same check before every batch anyway.</li>
+    <li>Editing the files in GitHub's web UI works too; the clone is for the wizard.</li>
+  </ul>
+  <label class="check"><input type="checkbox" data-check="config"><span><b lang="ja">確認:</b><b lang="en">Check:</b> <span lang="ja">push 後、GitHub 上の <code>config.yaml</code> が自分のフィードになっている。</span><span lang="en">After the push, <code>config.yaml</code> on GitHub lists your feeds.</span></span></label>
+  <div class="navrow"><a class="btn ghost" href="#repo">←</a><a class="btn" href="#wizard"><span lang="ja">4. ウィザードを走らせる →</span><span lang="en">4. Run the wizard →</span></a></div>
+</section>
+
+<!-- 4 ------------------------------------------------------------------ -->
+<section class="step" id="wizard">
+  <div class="stephead"><div class="stepnum">4 / 10</div>
+    <h2><span lang="ja">ウィザードを一度だけ走らせる</span><span lang="en">Run the wizard, once</span></h2>
+    <p class="lead" lang="ja">NotebookLM に入るには、あなたの Google ログインが要ります。ブラウザでしか取れないので、PC で 1 回だけログインし、その結果をリポジトリの secret(GitHub Actions だけが読める秘密の置き場)に渡します。それを全部やるのが <code>setup.py</code> です。</p>
+    <p class="lead" lang="en">NotebookLM needs your Google login, which only a browser can produce. So you log in once on your PC and hand the result to your repository's secrets (values only GitHub Actions can read). <code>setup.py</code> does all of it.</p>
+  </div>
+<pre class="term"><span class="p">$</span> python scripts/setup.py
+notebooklm-radio setup
+
+1/6  Checking the machine
+  <span class="ok">✓</span> Python                       3.12.4
+  <span class="ok">✓</span> Repository                   you/my-radio
+  <span class="ok">✓</span> Workflow                     pins notebooklm-py 0.8.0
+  <span class="ok">✓</span> uv                           uv 0.9.24
+  <span class="ok">✓</span> GitHub CLI                   installed and logged in
+  <span class="bad">✗</span> notebooklm CLI               not installed
+    → uv tool install "notebooklm-py[browser]==0.8.0"  (this wizard can do it)
+  <span class="bad">✗</span> Login (ci profile)           no credential file yet
+    → notebooklm -p ci login  (this wizard can do it)
+  <span class="bad">✗</span> Secret NOTEBOOKLM_AUTH_JSON  not set
+    → the wizard sets it from the login above
+  <span class="warn">!</span> Secret NOTIFY_WEBHOOK_URL    not set
+    → without it you get no notifications, including errors
+  <span class="ok">✓</span> config.yaml                  config.yaml OK: 8 feed(s), topics: AI, インフラ, 言語
+
+2/6  notebooklm CLI
+Install the notebooklm CLI (notebooklm-py[browser]==0.8.0) with uv? [Y/n] <span class="k">y</span>
+  $ uv tool install --force "notebooklm-py[browser]==0.8.0"
+
+3/6  Google login (CI profile)
+  $ notebooklm -p ci login
+  A browser window opens. Sign in with the Google account that has NotebookLM access.
+  Use the "ci" profile only for CI; your everyday "default" profile stays separate,
+  because every local notebooklm call rotates cookies and would shorten the CI copy's life.
+  <span class="c">（ブラウザで普通にログインする。終わるとターミナルに戻る）</span>
+
+4/6  Repository secret NOTEBOOKLM_AUTH_JSON
+  $ gh secret set NOTEBOOKLM_AUTH_JSON -R you/my-radio  (from /Users/you/.notebooklm/profiles/ci/storage_state.json)
+  Recorded NOTEBOOKLM_AUTH_UPDATED=2026-09-27 (repository variable).
+
+5/6  Repository secret NOTIFY_WEBHOOK_URL
+  Paste your Slack incoming-webhook or Discord webhook URL (input is hidden).
+  Slack: api.slack.com/apps → your app → Incoming Webhooks → Add New Webhook to Workspace.
+  Discord: channel settings → Integrations → Webhooks → New Webhook → Copy Webhook URL.
+  Leave empty to skip (you will get no notifications, including error reports).
+  Webhook URL: <span class="c">（貼り付けても表示されない）</span>
+  $ gh secret set NOTIFY_WEBHOOK_URL -R you/my-radio
+
+6/6  First run
+Run the workflow now (creates today's notebook and starts the audio)? [Y/n] <span class="k">y</span>
+  $ gh workflow run rss-radio.yml -R you/my-radio
+  Started. Watch it: gh run watch -R you/my-radio   or   https://github.com/you/my-radio/actions
+
+Done. What happens next:
+  - Within a few minutes you get a webhook message with today's articles and a link to the notebook.
+  - The audio takes ~20 minutes to render inside NotebookLM (the notification says "started", not "finished").
+  - Every ~3.5 weeks the Google session expires; when the error message arrives, run: python scripts/setup.py renew
+  - Change feeds or style in config.yaml (or rebuild it at https://inoueuj.github.io/tech-feed-catalog/).</pre>
+  <div class="card">
+    <h3><span lang="ja">webhook URL の取り方</span><span lang="en">Where the webhook URL comes from</span></h3>
+    <ul class="do" lang="ja">
+      <li><b>Slack</b>: <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → Create New App → From scratch → 左メニュー Incoming Webhooks → On → Add New Webhook to Workspace → チャンネルを選ぶ → <code>https://hooks.slack.com/services/…</code> をコピー。</li>
+      <li><b>Discord</b>: 通知したいチャンネルの設定 → 連携サービス → ウェブフック → 新しいウェブフック → ウェブフック URL をコピー。</li>
+    </ul>
+    <ul class="do" lang="en">
+      <li><b>Slack</b>: <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → Create New App → From scratch → Incoming Webhooks → On → Add New Webhook to Workspace → pick a channel → copy the <code>https://hooks.slack.com/services/…</code> URL.</li>
+      <li><b>Discord</b>: channel settings → Integrations → Webhooks → New Webhook → Copy Webhook URL.</li>
+    </ul>
+  </div>
+  <div class="tip" lang="ja"><b>PC の役割はこれだけ</b> 何も常駐しません。ログインは普段使いと別の <code>ci</code> プロファイルに保存されます。分けるのは、混ぜると認証の寿命が 3.5 週から 3 日に縮むためです。認証ファイルの中身は画面にもシェルの履歴にも出ません。Windows(PowerShell)でも同じ手順です。</div>
+  <div class="tip" lang="en"><b>That's all the PC does.</b> Nothing keeps running. The login lives in a dedicated <code>ci</code> profile, separate from your everyday one; mixing them shortens the credential's life from 3.5 weeks to 3 days. The credential file's contents never appear on screen or in shell history. PowerShell works the same way.</div>
+  <ul class="do" lang="ja">
+    <li>「workflows are disabled」のような失敗 → テンプレートから作った直後は Actions が無効なことがあります。リポジトリの Actions タブで有効化して、<code>gh workflow run rss-radio.yml</code> かウィザードをもう一度。</li>
+    <li><code>notebooklm</code> が見つからない → 新しいターミナルを開く(インストール後に PATH が変わる)。</li>
+    <li><code>python scripts/setup.py doctor</code> はいつでも実行でき、何も変えません。</li>
+  </ul>
+  <ul class="do" lang="en">
+    <li>"workflows are disabled" → a repo made from a template may have Actions off. Enable them in the Actions tab, then <code>gh workflow run rss-radio.yml</code> or the wizard again.</li>
+    <li><code>notebooklm</code> not found → open a new terminal (the install changes PATH).</li>
+    <li><code>python scripts/setup.py doctor</code> runs the checks alone and changes nothing.</li>
+  </ul>
+  <label class="check"><input type="checkbox" data-check="wizard"><span><b lang="ja">確認:</b><b lang="en">Check:</b> <span lang="ja">ウィザードが 6/6 まで進み、「Started」と出た。</span><span lang="en">The wizard reached 6/6 and printed "Started".</span></span></label>
+  <div class="navrow"><a class="btn ghost" href="#config">←</a><a class="btn" href="#firstrun"><span lang="ja">5. 初回実行を確かめる →</span><span lang="en">5. Check the first run →</span></a></div>
+</section>
+
+<!-- 5 ------------------------------------------------------------------ -->
+<section class="step" id="firstrun">
+  <div class="stephead"><div class="stepnum">5 / 10</div>
+    <h2><span lang="ja">初回実行を確かめる</span><span lang="en">Check the first run</span></h2>
+    <p class="lead" lang="ja">3 か所で確かめます。GitHub の Actions、通知、NotebookLM。初回は既読状態の初期化として各フィードの最新 1 件だけを処理し、過去分は読んだことにします(洪水は起きません)。</p>
+    <p class="lead" lang="en">Three places to look: GitHub Actions, your notifications, NotebookLM. The first run initializes read-state: it processes only the newest article per feed and marks the backlog as read (no flood).</p>
+  </div>
+  <figure class="shot"><div class="frame"><img src="img/github-actions.jpg" alt="Actions タブの RSS Radio Automation" loading="lazy"><b class="box" style="left:87%;top:43.5%;width:10.5%;height:6.5%"></b><i class="mark" style="left:87%;top:43.5%">1</i><b class="box" style="left:28.6%;top:53.5%;width:69.6%;height:12%"></b><i class="mark" style="left:28.6%;top:53.5%">2</i></div><figcaption class="cap"><div><i class="mark">1</i><span><span lang="ja">手動で動かすときは「Run workflow」を押す</span><span lang="en">To start a run by hand, press "Run workflow"</span></span></div><div><i class="mark">2</i><span><span lang="ja">緑のチェックなら成功(1〜4 分で終わる)</span><span lang="en">A green check means success (runs take 1–4 minutes)</span></span></div></figcaption></figure>
+  <div class="card">
+    <h3><span lang="ja">届く通知(Slack の例)</span><span lang="en">The notification (Slack shown)</span></h3>
+    <div class="slack"><div class="av"></div><div><div class="who"><b>Tech Radio</b><span class="app">APP</span><span class="t">09:12</span></div><div class="msg">🎙️ Claude Code、OpenAI、Cloudflare が新しい記事出してたよ（3件）
+ラジオの生成を開始したよ〜<i class="mark">A</i>
+《AI》 <a href="#firstrun" onclick="return false">Tech Radio AI 2026-09-27</a><i class="mark">B</i>
+・<a href="#firstrun" onclick="return false">Claude Code 2.1: background agents and the new /review command</a>（Claude Code）
+・<a href="#firstrun" onclick="return false">Introducing GPT-6 Sol</a>（OpenAI・要約のみ）<i class="mark">C</i>
+《インフラ》 <a href="#firstrun" onclick="return false">Tech Radio インフラ 2026-09-27</a>
+・<a href="#firstrun" onclick="return false">Workers AI: new models and lower latency</a>（Cloudflare）</div></div></div>
+    <div class="callouts">
+      <div><i class="mark">A</i><span lang="ja">「生成を開始した」であって「できた」ではない。音声は NotebookLM 側で 10〜20 分かけて作られる。</span><span lang="en">"Started", not "finished": the audio renders inside NotebookLM over 10–20 minutes.</span></div>
+      <div><i class="mark">B</i><span lang="ja">番組の見出しがノートブックへのリンク。アプリで探さなくていい。</span><span lang="en">Each show heading links to its notebook; no hunting by name.</span></div>
+      <div><i class="mark">C</i><span lang="ja">「要約のみ」は、記事ページがボット対策で取れず、フィードの要約だけを入れた記事。ラジオもそう断って話す。</span><span lang="en">"要約のみ" (summary only) marks an article whose page is bot-protected; only the feed summary went in.</span></div>
+    </div>
+  </div>
+  <figure class="shot"><div class="frame"><img src="img/nlm-notebook.jpg" alt="NotebookLM のノートブック画面" loading="lazy"><b class="box" style="left:1.5%;top:43.5%;width:23.5%;height:12%"></b><i class="mark" style="left:1.5%;top:43.5%">3</i><b class="box" style="left:74%;top:57.5%;width:24.5%;height:18.5%"></b><i class="mark" style="left:74%;top:57.5%">4</i></div><figcaption class="cap"><div><i class="mark">3</i><span><span lang="ja">左: その回に入った記事(ソース)</span><span lang="en">Left: the articles (sources) added in that run</span></span></div><div><i class="mark">4</i><span><span lang="ja">右の Studio: 音声。▶ で聴く(1 回の実行につき 1 本)</span><span lang="en">Right, in Studio: the audio. Press ▶ to listen (one per run)</span></span></div></figcaption></figure>
+  <figure class="shot"><div class="frame"><img src="img/nlm-list.jpg" alt="NotebookLM のノートブック一覧" loading="lazy"><b class="box" style="left:2.2%;top:46.5%;width:31.5%;height:51%"></b><i class="mark" style="left:2.2%;top:46.5%">5</i></div><figcaption class="cap"><div><i class="mark">5</i><span><span lang="ja">「Tech Radio 番組名 日付」のノートブックが 1 日 1 冊ずつ増える(7 日で自動削除。最初は予告の通知だけ)</span><span lang="en">A "Tech Radio show date" notebook appears each day (deleted after 7 days; as a dry run at first)</span></span></div></figcaption></figure>
+  <label class="check"><input type="checkbox" data-check="firstrun"><span><b lang="ja">確認:</b><b lang="en">Check:</b> <span lang="ja">Actions が緑、通知にリンク付きの一覧が来て、NotebookLM に今日のノートブックがある。20 分後に音声が聴ける。</span><span lang="en">Actions is green, the notification arrived with links, today's notebook exists in NotebookLM, and the audio is playable 20 minutes later.</span></span></label>
+  <div class="navrow"><a class="btn ghost" href="#wizard">←</a><a class="btn" href="#mornings"><span lang="ja">6. 毎朝の見方 →</span><span lang="en">6. Every morning →</span></a></div>
+</section>
+
+<!-- 6 ------------------------------------------------------------------ -->
+<section class="step" id="mornings">
+  <div class="stephead"><div class="stepnum">6 / 10</div>
+    <h2><span lang="ja">毎朝の見方</span><span lang="en">Every morning</span></h2>
+    <p class="lead" lang="ja">ここからは何もしなくても、予約した時刻に GitHub が動きます。</p>
+    <p class="lead" lang="en">From here on GitHub runs at the times you set, with nothing to do on your side.</p>
+  </div>
+  <ul class="do" lang="ja">
+    <li>通知のリンクからノートブックを開き、NotebookLM アプリで聴く。アプリの通知を有効にしておくと、音声の完了が分かる。</li>
+    <li>新着が無い回は「😪 今回は新着なしだったよ。ラジオはおやすみ〜」が来る。<b>何も来ないのは異常</b>(ステップ 9)。</li>
+    <li>2 回目の実行では、その回に新しく入った記事だけで別の音声ができる。朝の記事は再放送されない。</li>
+    <li>見出しに「（音声は未生成）」と付いていたら、記事は入ったが音声を始められなかった。理由は別の通知に出る(多くは生成の上限)。アプリから手動で「音声解説」を作れる。</li>
+    <li>1 週間ほどで「🧹 [ドライラン] 7日より古いラジオ 2件が削除対象だよ（まだ消してない）」が来る。挙がったのが古いラジオだけなら、<code>config.yaml</code> の <code>cleanup.dry_run</code> を <code>false</code> に。削除対象は「このバッチの命名に完全一致するノートブック」だけで、手で作ったものには触らない。</li>
+  </ul>
+  <ul class="do" lang="en">
+    <li>Open the notebook from the notification link and listen in the NotebookLM app; turn on the app's notifications to hear when the audio is ready.</li>
+    <li>A quiet run posts "😪 今回は新着なしだったよ。ラジオはおやすみ〜" (nothing new). <b>Silence is abnormal</b> (step 9).</li>
+    <li>The second run of a day makes a separate episode from that run's new articles only.</li>
+    <li>"（音声は未生成）" on a heading means the sources went in but the audio couldn't be started; a separate message says why (usually the cap). You can generate it by hand in the app.</li>
+    <li>After about a week you'll see "🧹 [ドライラン] 7日より古いラジオ 2件が削除対象だよ（まだ消してない）", listing the notebooks it would delete. If they are only old episodes, set <code>cleanup.dry_run: false</code> in <code>config.yaml</code>. Only notebooks matching this batch's naming are ever deleted.</li>
+  </ul>
+  <div class="navrow"><a class="btn ghost" href="#firstrun">←</a><a class="btn" href="#change"><span lang="ja">7. 設定を変える →</span><span lang="en">7. Changing things →</span></a></div>
+</section>
+
+<!-- 7 ------------------------------------------------------------------ -->
+<section class="step" id="change">
+  <div class="stephead"><div class="stepnum">7 / 10</div>
+    <h2><span lang="ja">設定を変える</span><span lang="en">Changing things</span></h2>
+    <p class="lead" lang="ja">すべて <code>config.yaml</code> です。変えて push すれば次の実行から反映されます(push しても即実行はされません)。迷ったらビルダーで作り直して丸ごと置き換えるのが確実です。</p>
+    <p class="lead" lang="en">Everything is in <code>config.yaml</code>. Push a change and the next run picks it up (a push doesn't trigger a run). When in doubt, rebuild on the builder and replace the whole file.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th lang="ja">やりたいこと</th><th lang="en">Want to</th><th lang="ja">どこを変えるか</th><th lang="en">Change</th></tr></thead>
+    <tbody>
+      <tr><td lang="ja">フィードを足す・外す</td><td lang="en">Add or remove a feed</td><td lang="ja"><code>feeds:</code> の項目。ビルダーの共有リンクから作り直すと楽</td><td lang="en">The <code>feeds:</code> list; the builder's share link makes rebuilding easy</td></tr>
+      <tr><td lang="ja">フィードを別の番組へ</td><td lang="en">Move a feed to another show</td><td lang="ja">そのフィードの <code>topic:</code></td><td lang="en">Its <code>topic:</code></td></tr>
+      <tr><td lang="ja">番組の形式・長さ・指示文</td><td lang="en">A show's format, length, instructions</td><td lang="ja"><code>topics:</code> → その番組 → <code>audio:</code></td><td lang="en"><code>topics:</code> → that show → <code>audio:</code></td></tr>
+      <tr><td lang="ja">実行時刻</td><td lang="en">Run times</td><td lang="ja"><code>.github/workflows/rss-radio.yml</code> の <code>- cron:</code> 2 行(UTC)。ビルダーの「できあがり」が UTC に変換した 2 行を出す</td><td lang="en">The two <code>- cron:</code> lines in <code>.github/workflows/rss-radio.yml</code> (UTC); the builder's Done step gives them already converted</td></tr>
+      <tr><td lang="ja">1 回に処理する記事数</td><td lang="en">Articles per run</td><td lang="ja"><code>settings.limits.per_feed</code>(既定 3)と <code>total</code>(既定 15)。超えた分は次回へ</td><td lang="en"><code>settings.limits.per_feed</code> (3) and <code>total</code> (15); overflow carries over</td></tr>
+      <tr><td lang="ja">流量の多いフィード</td><td lang="en">A firehose feed</td><td lang="ja">そのフィードに <code>mode: latest</code>(最新 N 件だけ拾い、残りは読んだことにする)</td><td lang="en"><code>mode: latest</code> on that feed (newest N per run, the rest marked read)</td></tr>
+      <tr><td lang="ja">音声の言語</td><td lang="en">Audio language</td><td><code>settings.language</code></td></tr>
+      <tr><td lang="ja">記事ページがボット対策で取れないサイト</td><td lang="en">A host that blocks fetchers</td><td lang="ja">そのフィードに <code>source_mode: text</code></td><td lang="en"><code>source_mode: text</code> on that feed</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" lang="ja">変えたあとは <code>python radio_batch.py --check-config</code> で検査できます。使えるキーは <a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/config.schema.json" target="_blank" rel="noopener">config.schema.json</a> に全部書いてあります。</p>
+  <p class="lead" lang="en">Validate with <code>python radio_batch.py --check-config</code>. Every accepted key is in <a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/config.schema.json" target="_blank" rel="noopener">config.schema.json</a>.</p>
+  <div class="navrow"><a class="btn ghost" href="#mornings">←</a><a class="btn" href="#renew"><span lang="ja">8. 3.5 週ごとの更新 →</span><span lang="en">8. Every 3.5 weeks →</span></a></div>
+</section>
+
+<!-- 8 ------------------------------------------------------------------ -->
+<section class="step" id="renew">
+  <div class="stephead"><div class="stepnum">8 / 10</div>
+    <h2><span lang="ja">約 3.5 週ごと: ログインを更新する</span><span lang="en">About every 3.5 weeks: renew the login</span></h2>
+    <p class="lead" lang="ja">手元の Google セッションは生き続けますが、secret に凍結したコピーは約 3.5 週で切れます。コードでは直せません。切れると、原因と手順つきのエラー通知が届きます。</p>
+    <p class="lead" lang="en">Your local Google session keeps itself alive; the frozen copy in the secret does not, and dies after about 3.5 weeks. No code can fix that. When it happens, an error message arrives with the cause and the fix.</p>
+  </div>
+  <div class="slack err"><div class="av"></div><div><div class="who"><b>Tech Radio</b><span class="app">APP</span><span class="t">06:52</span></div><div class="msg"><b>⚠️ Tech Radio 実行エラー発生</b>
+ノートブック「<b>Tech Radio AI 2026-10-21</b>」 の処理中にエラーが発生しました。
+<b>エラー内容:</b>
+<code class="blk">NotebookLM command failed.
+Command: notebooklm list --json
+Exit code: 2
+UNEXPECTED_ERROR: Unexpected error: Authentication expired or invalid. Run 'notebooklm login' to re-authenticate.
+
+認証切れ。CI 専用プロファイルで `notebooklm -p ci login` をやり直し、`gh secret set NOTEBOOKLM_AUTH_JSON &lt; ~/.notebooklm/profiles/ci/storage_state.json` でシークレットを更新すること。環境変数モードは書き戻し先が無く自動更新されないため、放置しても直らない。…</code>
+<b>実行ログ:</b> <a href="#renew" onclick="return false">GitHub Actions Run</a></div></div></div>
+<pre class="term"><span class="p">$</span> python scripts/setup.py renew
+notebooklm-radio credential renewal
+
+1/3  Google login (CI profile)
+  $ notebooklm -p ci login
+  A browser window opens. Sign in with the Google account that has NotebookLM access.
+  <span class="c">（ブラウザが開く。ログインし直す）</span>
+
+2/3  Repository secret NOTEBOOKLM_AUTH_JSON
+  $ gh secret set NOTEBOOKLM_AUTH_JSON -R you/my-radio  (from /Users/you/.notebooklm/profiles/ci/storage_state.json)
+  Recorded NOTEBOOKLM_AUTH_UPDATED=2026-10-21 (repository variable).
+
+3/3  Re-run
+Run the workflow now (creates today's notebook and starts the audio)? [Y/n] <span class="k">y</span>
+  $ gh workflow run rss-radio.yml -R you/my-radio
+  Started. Watch it: gh run watch -R you/my-radio   or   https://github.com/you/my-radio/actions</pre>
+  <ul class="do" lang="ja">
+    <li>2 分ほどで終わります。<code>python scripts/setup.py doctor</code> でログインの古さがいつでも見られ、21 日を超えると先に警告します。</li>
+    <li>普段 <code>notebooklm</code> を手元で使うときは <code>-p ci</code> を付けないでください。CI 用と混ぜると寿命が 3 日に縮みます。</li>
+    <li><code>state.json</code> は bot のものです。手で編集もコミットもしないでください。</li>
+  </ul>
+  <ul class="do" lang="en">
+    <li>About two minutes. <code>python scripts/setup.py doctor</code> shows the credential's age any time and warns past 21 days.</li>
+    <li>Don't use <code>-p ci</code> for everyday local <code>notebooklm</code> use; mixing profiles shortens the life to 3 days.</li>
+    <li><code>state.json</code> belongs to the bot. Never edit or commit it by hand.</li>
+  </ul>
+  <div class="navrow"><a class="btn ghost" href="#change">←</a><a class="btn" href="#trouble"><span lang="ja">9. 困ったとき →</span><span lang="en">9. When something looks wrong →</span></a></div>
+</section>
+
+<!-- 9 ------------------------------------------------------------------ -->
+<section class="step" id="trouble">
+  <div class="stephead"><div class="stepnum">9 / 10</div>
+    <h2><span lang="ja">困ったとき</span><span lang="en">When something looks wrong</span></h2>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th lang="ja">見えたもの</th><th lang="en">You see</th><th lang="ja">意味</th><th lang="en">Meaning</th><th lang="ja">やること</th><th lang="en">Do</th></tr></thead>
+    <tbody>
+      <tr><td lang="ja">何も届かない日が続く</td><td lang="en">Nothing for days</td><td lang="ja">通知の仕組みごと止まっている</td><td lang="en">The notification path itself is down</td><td lang="ja">Actions タブで最後の実行を見る。<code>NOTIFY_WEBHOOK_URL</code> が入っているか <code>doctor</code> で確認</td><td lang="en">Check the last run in the Actions tab; check <code>NOTIFY_WEBHOOK_URL</code> with <code>doctor</code></td></tr>
+      <tr><td>🚨 テスト/lint が失敗した…</td><td lang="ja">テスト・lint・config.yaml の検査で止まった。ラジオは作られない</td><td lang="en">Tests, lint or the config check failed; no episode</td><td lang="ja">リンク先の実行ログを見る。config.yaml の誤りなら <code>config.yaml NG</code> と原因が出ている</td><td lang="en">Open the linked run; a bad config.yaml shows <code>config.yaml NG</code> and why</td></tr>
+      <tr><td>実行エラー + Authentication expired</td><td lang="ja">認証切れ</td><td lang="en">Credential expired</td><td><code>python scripts/setup.py renew</code></td></tr>
+      <tr><td>（音声は未生成）+ rate_limited</td><td lang="ja">音声生成の上限に当たった</td><td lang="en">Audio generation cap</td><td lang="ja">番組を減らす、2 回目を切る、プランを上げる。記事は入っているので手動生成もできる</td><td lang="en">Fewer shows, drop the second run, or a bigger plan; generate by hand if you like</td></tr>
+      <tr><td>⚠️ RSSフィードの取得に問題があるよ ・X: HTTP 403</td><td lang="ja">そのフィードが取れない</td><td lang="en">That feed can't be fetched</td><td lang="ja">一時的なら放置。続くなら URL を見直す。403 が続くならボット拒否</td><td lang="en">Transient: ignore. Persistent 403: the host refuses bots</td></tr>
+      <tr><td>⚠️ 以下はサイトのボット対策で本文を取り込めなかったから…</td><td lang="ja">記事ページがボット対策ページだった</td><td lang="en">Article pages were challenge pages</td><td lang="ja">そのフィードに <code>source_mode: text</code></td><td lang="en">Add <code>source_mode: text</code> to that feed</td></tr>
+      <tr><td lang="ja">同じ記事が 2 つ入る</td><td lang="en">The same article twice</td><td lang="ja">2 つのフィードが同じ記事を別 URL で配信している(同一 URL なら自動で 1 つにまとまる)</td><td lang="en">Two feeds carry the same article under different URLs (identical URLs are merged automatically)</td><td lang="ja">片方を外す。ビルダーは選んだ時点で警告する</td><td lang="en">Drop one; the builder warns about this</td></tr>
+      <tr><td lang="ja">古い記事ばかり流れる</td><td lang="en">Only old articles</td><td lang="ja">流量が上限を超えていて古い順に消化している</td><td lang="en">Volume exceeds the limit; backlog drains oldest-first</td><td lang="ja"><code>mode: latest</code>、または <code>limits.per_feed</code> を上げる</td><td lang="en"><code>mode: latest</code>, or raise <code>limits.per_feed</code></td></tr>
+      <tr><td lang="ja">夕方の回が翌日のノートブックに入った</td><td lang="en">The evening episode landed in tomorrow's notebook</td><td lang="ja">GitHub の実行が数時間遅れて日付をまたいだ</td><td lang="en">GitHub started the run hours late</td><td lang="ja">cron を早める。:00 と :30 は特に混む</td><td lang="en">Move the cron earlier; avoid :00 and :30</td></tr>
+    </tbody>
+  </table></div>
+  <div class="navrow"><a class="btn ghost" href="#renew">←</a><a class="btn" href="#terms"><span lang="ja">10. 用語 →</span><span lang="en">10. Terms →</span></a></div>
+</section>
+
+<!-- 10 ----------------------------------------------------------------- -->
+<section class="step" id="terms">
+  <div class="stephead"><div class="stepnum">10 / 10</div>
+    <h2><span lang="ja">用語</span><span lang="en">Terms</span></h2>
+  </div>
+  <dl class="terms">
+    <div><dt lang="ja">フィード</dt><dt lang="en">Feed</dt><dd lang="ja">サイトが配っている「新着一覧」。RSS / Atom が普通の形式で、無いサイトは sitemap.xml で代用する。</dd><dd lang="en">A site's machine-readable "what's new" list. RSS/Atom normally; sitemap.xml for sites without one.</dd></div>
+    <div><dt>config.yaml</dt><dd lang="ja">設定ファイル。フィード、番組、音声の設定、掃除の設定がすべて入っている。</dd><dd lang="en">The one configuration file: feeds, shows, audio settings, cleanup.</dd></div>
+    <div><dt>state.json</dt><dd lang="ja">「どこまで読んだか」の記録。bot が毎回コミットする。</dd><dd lang="en">The record of what has been read. Committed by the bot every run.</dd></div>
+    <div><dt lang="ja">番組 / トピック / ノートブック</dt><dt lang="en">Show / topic / notebook</dt><dd lang="ja">フィードのまとまり。1 日 × 1 番組で NotebookLM に 1 冊でき、1 冊につき実行ごとに 1 本の音声ができる。</dd><dd lang="en">A group of feeds. One notebook per day per show; one audio per run per notebook.</dd></div>
+    <div><dt lang="ja">音声解説(音声概要)</dt><dt lang="en">Audio Overview</dt><dd lang="ja">NotebookLM が生成する二人の対談形式のラジオ。生成には上限がある。</dd><dd lang="en">NotebookLM's generated two-host show. Generation is capped.</dd></div>
+    <div><dt>cron</dt><dd lang="ja">GitHub Actions に「この時刻に実行」と予約する行。UTC で書く。</dd><dd lang="en">The line that tells GitHub Actions when to run. Always UTC.</dd></div>
+    <div><dt>secret</dt><dd lang="ja">GitHub Actions だけが読める秘密の値。認証(<code>NOTEBOOKLM_AUTH_JSON</code>)と通知先(<code>NOTIFY_WEBHOOK_URL</code>)の 2 つ。</dd><dd lang="en">A value only GitHub Actions can read. Two here: the login and the webhook.</dd></div>
+    <div><dt>webhook</dt><dd lang="ja">Slack や Discord に外から投稿するための URL。</dd><dd lang="en">A URL that lets outside software post into a Slack or Discord channel.</dd></div>
+    <div><dt lang="ja">プロファイル(ci / default)</dt><dt lang="en">Profile (ci / default)</dt><dd lang="ja">notebooklm CLI のログイン保存先。CI 用と普段用を分ける。</dd><dd lang="en">Where the notebooklm CLI stores a login. CI and everyday use are kept apart.</dd></div>
+    <div><dt lang="ja">最新だけ / mode: latest</dt><dt lang="en">Newest only / mode: latest</dt><dd lang="ja">流量の多いフィードで、最新 N 件だけ拾って残りを読んだことにする設定。</dd><dd lang="en">For firehose feeds: take the newest N per run and mark the rest read.</dd></div>
+  </dl>
+  <div class="navrow"><a class="btn ghost" href="#trouble">←</a><a class="btn" href="../"><span lang="ja">ビルダーへ戻る</span><span lang="en">Back to the builder</span></a></div>
+</section>
+
+</main>
+</div>
+
+<footer><span lang="ja">notebooklm-radio は MIT ライセンスの個人プロジェクトです。生成された音声は個人で聴く範囲で。設計の理由は <a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/docs/DESIGN.md">DESIGN.md</a>、認証の仕組みと事故の記録は <a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/docs/OPERATIONS.md">OPERATIONS.md</a>。</span><span lang="en">notebooklm-radio is a personal MIT-licensed project; generated audio is for personal listening. Design rationale: <a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/docs/DESIGN.md">DESIGN.md</a>; auth model and incident log: <a href="https://github.com/inoueUJ/notebooklm-radio/blob/main/docs/OPERATIONS.md">OPERATIONS.md</a>.</span></footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+// language: browser default, remembered per browser
+let lang = (navigator.language || 'en').toLowerCase().startsWith('ja') ? 'ja' : 'en';
+try { const saved = localStorage.getItem('guide-lang'); if (saved === 'ja' || saved === 'en') lang = saved; } catch {}
+const q = new URLSearchParams(location.search).get('lang'); if (q === 'ja' || q === 'en') lang = q;
+function setLang(l) { lang = l; document.documentElement.lang = l; $('#lang-ja').setAttribute('aria-pressed', l === 'ja'); $('#lang-en').setAttribute('aria-pressed', l === 'en'); try { localStorage.setItem('guide-lang', l); } catch {} }
+$('#lang-ja').onclick = () => setLang('ja'); $('#lang-en').onclick = () => setLang('en');
+setLang(lang);
+$('#theme').onclick = () => { const dark = matchMedia('(prefers-color-scheme: dark)').matches; const now = document.documentElement.getAttribute('data-theme') || (dark ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', now === 'dark' ? 'light' : 'dark'); };
+
+// checklist, remembered per browser
+let checks = {};
+try { checks = JSON.parse(localStorage.getItem('guide-checks') || '{}') || {}; } catch {}
+function paint() {
+  document.querySelectorAll('[data-check]').forEach(cb => { cb.checked = !!checks[cb.dataset.check]; });
+  document.querySelectorAll('#toc a[data-step]').forEach(a => a.classList.toggle('is-done', !!checks[a.dataset.step]));
+}
+document.querySelectorAll('[data-check]').forEach(cb => cb.onchange = () => { checks[cb.dataset.check] = cb.checked; try { localStorage.setItem('guide-checks', JSON.stringify(checks)); } catch {} paint(); });
+$('#reset').onclick = () => { checks = {}; try { localStorage.removeItem('guide-checks'); } catch {} paint(); };
+paint();
+
+// current step in the toc
+const links = [...document.querySelectorAll('#toc a[href^="#"]')];
+const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const io = new IntersectionObserver((entries) => {
+  const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+  if (!visible.length) return;
+  const id = visible[0].target.id;
+  links.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + id));
+}, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
+sections.forEach(s => io.observe(s));
+</script>
+</body>
+</html>

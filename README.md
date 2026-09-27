@@ -6,6 +6,8 @@ Every feed here is fetched weekly by CI. Dead ones get flagged in the table belo
 
 **→ [Build your notebooklm-radio config](https://inoueuj.github.io/tech-feed-catalog/)** — tick feeds (or add your own: a Zenn topic, a Qiita tag, any feed URL, checked live), group them into notebooks, pick a conversation style per notebook, set your timezone and run times, and download a complete `config.yaml` plus the matching cron lines. The page keeps your setup in its URL, so a configuration is a link you can share. It also warns about the things that bite later: a plan's daily Audio Overview quota vs. notebooks × runs, firehose feeds that can never drain, two feeds that publish the same articles, bot-blocked hosts.
 
+**→ [Setup guide with screenshots](https://inoueuj.github.io/tech-feed-catalog/guide/)** (日本語 / English) — from the builder to your first episode in ten steps, plus what to do every morning and every 3.5 weeks.
+
 Machine-readable data: [`feeds/*.yaml`](feeds/) · [`site/feeds.json`](site/feeds.json) (single JSON blob, CORS-enabled) · [`schema.json`](schema.json) · `GET https://tech-feed-catalog-mcp.yuji-inoue11.workers.dev/check?url=<feed>` checks any public feed URL once and reports kind, entry count, timestamps and an estimated monthly volume (the builder uses it for feeds outside the catalog).
 
 ## Why the extra columns

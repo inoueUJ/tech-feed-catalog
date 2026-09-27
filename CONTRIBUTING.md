@@ -62,6 +62,7 @@ Before pushing, run both locally:
 pip install -r requirements.txt
 python scripts/validate.py     # fetches feeds, fills in measurements
 python scripts/build.py        # regenerates README.md and site/feeds.json
+python scripts/contrast_check.py --check   # site colors (builder + guide) pass WCAG AA in both themes
 ```
 
 Commit whatever those two commands change.
