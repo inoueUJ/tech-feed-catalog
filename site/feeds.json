@@ -551,10 +551,10 @@
         "openai",
         "ai-coding"
       ],
-      "volume": "~10/month",
-      "radio_friendly": "low",
+      "volume": "~15/month",
+      "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-09-23",
+      "latest_post": "2026-09-26",
       "status": "ok",
       "last_checked": "2026-09-27"
     },
@@ -841,7 +841,7 @@
       "tags": [
         "observability"
       ],
-      "volume": "~7/month",
+      "volume": "~6/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-09-24",
@@ -1654,7 +1654,7 @@
         "hatena",
         "japan-tech"
       ],
-      "volume": "~45/month",
+      "volume": "~150/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
       "latest_post": "2026-09-27",

@@ -47,7 +47,7 @@
 | [Antigravity](https://antigravity.google/blog) | ブログ | unknown | ★★★ | en | [sitemap](https://antigravity.google/sitemap.xml) | ✅ 2026-09-27 |
 | [Claude Blog](https://claude.com/blog) | ブログ | ~50/month | ★★ | en | [sitemap](https://claude.com/sitemap.xml) | ✅ 2026-09-27 |
 | [Claude Code](https://code.claude.com/docs/en/whats-new) | リリース | ~4/month | ★★ | en | [RSS](https://code.claude.com/docs/en/whats-new/rss.xml) | ✅ 2026-09-27 |
-| [Codex Changelog](https://developers.openai.com/codex/changelog) | 変更履歴 | ~10/month | ★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-09-27 |
+| [Codex Changelog](https://developers.openai.com/codex/changelog) | 変更履歴 | ~15/month | ★★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-09-27 |
 | [Cursor Changelog](https://cursor.com/changelog) | 変更履歴 | ~5/month | ★★ | en | [RSS](https://cursor.com/changelog/rss.xml) | ✅ 2026-09-27 |
 | [GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/) | ブログ | ~10/month | ★★★ | en | [RSS](https://github.blog/ai-and-ml/github-copilot/feed/) | ✅ 2026-09-27 |
 | [Zed](https://zed.dev/blog) | ブログ | ~2/month | ★★★ | en | [RSS](https://zed.dev/blog.rss) | ✅ 2026-09-27 |
@@ -69,7 +69,7 @@
 | [HashiCorp](https://www.hashicorp.com/blog) | ブログ | ~9/month | ★★★ | en | [RSS](https://www.hashicorp.com/blog/feed.xml) | ✅ 2026-09-27 |
 | [Kubernetes](https://kubernetes.io/blog/) | ブログ | ~10/month | ★★★ | en | [RSS](https://kubernetes.io/feed.xml) | ✅ 2026-09-27 |
 | [PlanetScale](https://planetscale.com/blog) | ブログ | ~9/month | ★★★ | en | [RSS](https://planetscale.com/blog/rss.xml) | ✅ 2026-09-27 |
-| [Sentry](https://blog.sentry.io/) | ブログ | ~7/month | ★★★ | en | [RSS](https://blog.sentry.io/feed.xml) | ✅ 2026-09-27 |
+| [Sentry](https://blog.sentry.io/) | ブログ | ~6/month | ★★★ | en | [RSS](https://blog.sentry.io/feed.xml) | ✅ 2026-09-27 |
 | [Supabase](https://supabase.com/blog) | ブログ | ~4/month | ★★★ | en | [RSS](https://supabase.com/rss.xml) | ✅ 2026-09-27 |
 | [Vercel Blog](https://vercel.com/blog) | ブログ | ~110/month | ★★ | en | [RSS](https://vercel.com/blog/feed) | ✅ 2026-09-27 |
 | [Vercel Changelog](https://vercel.com/changelog) | 変更履歴 | ~110/month | ★ | en | [RSS](https://vercel.com/atom) | ✅ 2026-09-27 |
@@ -141,7 +141,7 @@
 | [Hacker News Front Page](https://news.ycombinator.com/) | ブログ | ~600/month | ★★ | en | [RSS](https://hnrss.org/frontpage) | ✅ 2026-09-27 |
 | [Publickey](https://www.publickey1.jp/) | ブログ | ~25/month | ★★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-09-27 |
 | [Zenn Trending](https://zenn.dev/) | ブログ | ~150/month | ★★ | ja | [RSS](https://zenn.dev/feed) | ✅ 2026-09-27 |
-| [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | ブログ | ~45/month | ★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-09-27 |
+| [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | ブログ | ~150/month | ★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-09-27 |
 
 ¹ 記事ページがボット対策で自動取得を弾くため、URL ではなくフィードの要約文で購読する。
 <!-- END CATALOG -->
