@@ -25,7 +25,7 @@ Built for [notebooklm-radio](https://github.com/inoueUJ/notebooklm-radio), which
 
 <!-- BEGIN CATALOG -->
 
-**76 feeds** across 8 categories · 72 verified working
+**76 feeds** across 8 categories · 73 verified working
 
 ### AI models & research / AI モデル・研究
 
@@ -36,7 +36,7 @@ Built for [notebooklm-radio](https://github.com/inoueUJ/notebooklm-radio), which
 | [Google AI Blog](https://blog.google/technology/ai/) | blog | ~15/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-09-27 |
 | [Google DeepMind](https://deepmind.google/discover/blog/) | blog | ~9/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-09-27 |
 | [Google Gemini](https://blog.google/products/gemini/) | blog | ~15/month | ★★★ | en | [RSS](https://blog.google/products/gemini/rss/) | ✅ 2026-09-27 |
-| [Hugging Face](https://huggingface.co/blog) | blog | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ⚠️ fetch failed: ReadTimeout |
+| [Hugging Face](https://huggingface.co/blog) | blog | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ✅ 2026-09-27 |
 | [OpenAI News](https://openai.com/news) | blog | ~55/month | ★★ | en | [RSS](https://openai.com/news/rss.xml) ¹ | ✅ 2026-09-27 |
 | [Simon Willison](https://simonwillison.net/) | blog | ~100/month | ★★ | en | [RSS](https://simonwillison.net/atom/everything/) | ✅ 2026-09-27 |
 

@@ -25,7 +25,7 @@
 
 <!-- BEGIN CATALOG -->
 
-**76 フィード**・8 カテゴリ・72 件が稼働確認済み
+**76 フィード**・8 カテゴリ・73 件が稼働確認済み
 
 ### AI モデル・研究 / AI models & research
 
@@ -36,7 +36,7 @@
 | [Google AI Blog](https://blog.google/technology/ai/) | ブログ | ~15/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-09-27 |
 | [Google DeepMind](https://deepmind.google/discover/blog/) | ブログ | ~9/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-09-27 |
 | [Google Gemini](https://blog.google/products/gemini/) | ブログ | ~15/month | ★★★ | en | [RSS](https://blog.google/products/gemini/rss/) | ✅ 2026-09-27 |
-| [Hugging Face](https://huggingface.co/blog) | ブログ | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ⚠️ fetch failed: ReadTimeout |
+| [Hugging Face](https://huggingface.co/blog) | ブログ | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ✅ 2026-09-27 |
 | [OpenAI News](https://openai.com/news) | ブログ | ~55/month | ★★ | en | [RSS](https://openai.com/news/rss.xml) ¹ | ✅ 2026-09-27 |
 | [Simon Willison](https://simonwillison.net/) | ブログ | ~100/month | ★★ | en | [RSS](https://simonwillison.net/atom/everything/) | ✅ 2026-09-27 |
 

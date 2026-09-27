@@ -444,9 +444,8 @@
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-09-24",
-      "status": "broken",
-      "last_checked": "2026-09-27",
-      "status_detail": "fetch failed: ReadTimeout"
+      "status": "ok",
+      "last_checked": "2026-09-27"
     },
     {
       "name": "OpenAI News",
@@ -1640,7 +1639,7 @@
       "volume": "~150/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-09-25",
+      "latest_post": "2026-09-26",
       "status": "ok",
       "last_checked": "2026-09-27"
     },
