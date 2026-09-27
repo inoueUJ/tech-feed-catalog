@@ -5,7 +5,7 @@ on:
     # Weekly, Sunday 03:20 UTC. A link list rots silently; this is what stops it.
     - cron: '20 3 * * 0'
   pull_request:
-    paths: ['feeds/**', 'schema.json', 'scripts/**', 'README.md', 'site/feeds.json']
+    paths: ['feeds/**', 'schema.json', 'scripts/**', 'README.md', 'README.en.md', 'site/feeds.json']
   push:
     branches: [main]
     paths: ['feeds/**', 'schema.json', 'scripts/**']
@@ -77,7 +77,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feeds site/feeds.json README.md
+          git add feeds site/feeds.json README.md README.en.md
           if git diff --staged --quiet; then
             echo "Catalog unchanged."
             exit 0

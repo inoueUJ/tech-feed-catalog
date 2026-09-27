@@ -53,7 +53,7 @@ If the article pages return a challenge to non-browser clients (Cloudflare's "Ju
 Every pull request runs:
 
 1. **Schema check** — required fields, valid category/kind/language, `prefix` present for sitemap entries.
-2. **Generated-files check** — `README.md` and `site/feeds.json` must match the data.
+2. **Generated-files check** — `README.md`, `README.en.md` and `site/feeds.json` must match the data.
 3. **Reachability** — the feed URL is fetched. If it doesn't return parseable entries, the PR fails.
 
 Before pushing, run both locally:
@@ -61,7 +61,7 @@ Before pushing, run both locally:
 ```bash
 pip install -r requirements.txt
 python scripts/validate.py     # fetches feeds, fills in measurements
-python scripts/build.py        # regenerates README.md and site/feeds.json
+python scripts/build.py        # regenerates README.md, README.en.md and site/feeds.json
 python scripts/contrast_check.py --check   # site colors (builder + guide) pass WCAG AA in both themes
 ```
 

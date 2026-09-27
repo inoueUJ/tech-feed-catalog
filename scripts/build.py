@@ -1,11 +1,11 @@
-"""Regenerate everything derived from feeds/*.yaml: the README table and site/feeds.json.
+"""Regenerate everything derived from feeds/*.yaml: the README tables (ja + en) and site/feeds.json.
 
 The catalog data is the single source of truth. Nothing here reaches the network —
 measurements come from scripts/validate.py.
 
 Usage:
-    python scripts/build.py              # rewrite README.md and site/feeds.json
-    python scripts/build.py --check      # exit 1 if either is out of date (CI)
+    python scripts/build.py              # rewrite README.md, README.en.md and site/feeds.json
+    python scripts/build.py --check      # exit 1 if any of them is out of date (CI)
 """
 
 import argparse
@@ -18,7 +18,8 @@ from jsonschema import Draft202012Validator
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FEEDS_DIR = os.path.join(BASE_DIR, 'feeds')
-README_PATH = os.path.join(BASE_DIR, 'README.md')
+# README.md is Japanese (the default view on GitHub); README.en.md is English. Both carry the table.
+README_PATHS = {'ja': os.path.join(BASE_DIR, 'README.md'), 'en': os.path.join(BASE_DIR, 'README.en.md')}
 SITE_DATA_PATH = os.path.join(BASE_DIR, 'site', 'feeds.json')
 SCHEMA_PATH = os.path.join(BASE_DIR, 'schema.json')
 TAGS_PATH = os.path.join(BASE_DIR, 'tags.yaml')
@@ -40,7 +41,24 @@ CATEGORY_LABELS = {
 CATEGORY_ORDER = list(CATEGORY_LABELS)
 
 RADIO_STARS = {'high': '★★★', 'medium': '★★', 'low': '★'}
-KIND_LABELS = {'blog': 'blog', 'changelog': 'changelog', 'release-notes': 'releases'}
+TEXT = {
+    'en': {
+        'summary': '**{n} feeds** across {k} categories · {ok} verified working',
+        'heading': '{en} / {ja}',
+        'header': '| Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |',
+        'kind': {'blog': 'blog', 'changelog': 'changelog', 'release-notes': 'releases'},
+        'blocked': '🤖 blocks bots',
+        'footnote': '¹ Article pages block automated fetchers — subscribe using the feed summary, not the URL.',
+    },
+    'ja': {
+        'summary': '**{n} フィード**・{k} カテゴリ・{ok} 件が稼働確認済み',
+        'heading': '{ja} / {en}',
+        'header': '| フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |',
+        'kind': {'blog': 'ブログ', 'changelog': '変更履歴', 'release-notes': 'リリース'},
+        'blocked': '🤖 ボット拒否',
+        'footnote': '¹ 記事ページがボット対策で自動取得を弾くため、URL ではなくフィードの要約文で購読する。',
+    },
+}
 
 
 def load_tags():
@@ -109,7 +127,7 @@ def load_feeds(tags=None):
     return entries
 
 
-def status_cell(entry):
+def status_cell(entry, lang='en'):
     status = entry.get('status', 'ok')
     checked = entry.get('last_checked', '?')
     if status == 'ok':
@@ -117,19 +135,20 @@ def status_cell(entry):
     if status == 'stale':
         return f'💤 {entry.get("status_detail", "stale")}'
     if status == 'blocked':
-        return '🤖 blocks bots'
+        return TEXT[lang]['blocked']
     return f'⚠️ {entry.get("status_detail", "broken")}'
 
 
-def render_table(entries):
+def render_table(entries, lang='en'):
+    text = TEXT[lang]
     lines = []
     for category in CATEGORY_ORDER:
         items = [e for e in entries if e['category'] == category]
         if not items:
             continue
         en, ja = CATEGORY_LABELS[category]
-        lines.append(f'### {en} / {ja}\n')
-        lines.append('| Feed | Kind | Volume | Radio | Lang | Feed URL | Checked |')
+        lines.append('### ' + text['heading'].format(en=en, ja=ja) + '\n')
+        lines.append(text['header'])
         lines.append('|---|---|---|---|---|---|---|')
         for e in items:
             feed_link = f"[{'sitemap' if e.get('type') == 'sitemap' else 'RSS'}]({e['url']})"
@@ -137,30 +156,31 @@ def render_table(entries):
                 feed_link += ' ¹'
             lines.append(
                 f"| [{e['name']}]({e['site']}) "
-                f"| {KIND_LABELS[e['kind']]} "
+                f"| {text['kind'][e['kind']]} "
                 f"| {e.get('volume', '?')} "
                 f"| {RADIO_STARS.get(e.get('radio_friendly'), '?')} "
                 f"| {e['language']} "
                 f"| {feed_link} "
-                f"| {status_cell(e)} |"
+                f"| {status_cell(e, lang)} |"
             )
         lines.append('')
-    lines.append('¹ Article pages block automated fetchers — subscribe using the feed summary, not the URL.\n')
+    lines.append(text['footnote'] + '\n')
     return '\n'.join(lines)
 
 
-def render_readme(entries):
-    with open(README_PATH, encoding='utf-8') as f:
+def render_readme(entries, lang):
+    path = README_PATHS[lang]
+    with open(path, encoding='utf-8') as f:
         current = f.read()
     if BEGIN not in current or END not in current:
-        print(f'README.md is missing the {BEGIN} / {END} markers', file=sys.stderr)
+        print(f'{os.path.basename(path)} is missing the {BEGIN} / {END} markers', file=sys.stderr)
         sys.exit(1)
     head, rest = current.split(BEGIN, 1)
     _stale, tail = rest.split(END, 1)
 
     ok = sum(1 for e in entries if e.get('status') == 'ok')
-    summary = f'**{len(entries)} feeds** across {len(CATEGORY_ORDER)} categories · {ok} verified working\n\n'
-    return f'{head}{BEGIN}\n\n{summary}{render_table(entries)}{END}{tail}'
+    summary = TEXT[lang]['summary'].format(n=len(entries), k=len(CATEGORY_ORDER), ok=ok) + '\n\n'
+    return f'{head}{BEGIN}\n\n{summary}{render_table(entries, lang)}{END}{tail}'
 
 
 def render_site_data(entries, tags, packs):
@@ -187,14 +207,15 @@ def main():
     tags = load_tags()
     entries = load_feeds(tags)
     packs = load_packs(entries)
-    readme = render_readme(entries)
+    readmes = {lang: render_readme(entries, lang) for lang in README_PATHS}
     site_data = render_site_data(entries, tags, packs)
 
     if args.check:
         stale = []
-        with open(README_PATH, encoding='utf-8') as f:
-            if f.read() != readme:
-                stale.append('README.md')
+        for lang, path in README_PATHS.items():
+            with open(path, encoding='utf-8') as f:
+                if f.read() != readmes[lang]:
+                    stale.append(os.path.basename(path))
         if not os.path.exists(SITE_DATA_PATH):
             stale.append('site/feeds.json')
         else:
@@ -207,12 +228,13 @@ def main():
         print(f'Generated files are up to date ({len(entries)} feeds).')
         return
 
-    with open(README_PATH, 'w', encoding='utf-8') as f:
-        f.write(readme)
+    for lang, path in README_PATHS.items():
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(readmes[lang])
     os.makedirs(os.path.dirname(SITE_DATA_PATH), exist_ok=True)
     with open(SITE_DATA_PATH, 'w', encoding='utf-8') as f:
         f.write(site_data)
-    print(f'Wrote README.md and site/feeds.json ({len(entries)} feeds).')
+    print(f'Wrote README.md, README.en.md and site/feeds.json ({len(entries)} feeds).')
 
 
 if __name__ == '__main__':
