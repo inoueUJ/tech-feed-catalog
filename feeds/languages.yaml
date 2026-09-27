@@ -12,7 +12,7 @@
   has_timestamps: true
   latest_post: '2026-09-05'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Deno
   url: https://deno.com/feed
   site: https://deno.com/blog
@@ -27,7 +27,7 @@
   has_timestamps: true
   latest_post: '2026-06-25'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Go Blog
   url: https://go.dev/blog/feed.atom
   site: https://go.dev/blog/
@@ -41,7 +41,7 @@
   has_timestamps: true
   latest_post: '2026-09-24'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Node.js
   url: https://nodejs.org/en/feed/blog.xml
   site: https://nodejs.org/en/blog
@@ -55,7 +55,7 @@
   has_timestamps: true
   latest_post: '2026-09-23'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: PHP
   url: https://www.php.net/feed.atom
   site: https://www.php.net/
@@ -69,7 +69,7 @@
   has_timestamps: true
   latest_post: '2026-09-24'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Python Insider
   url: https://blog.python.org/feeds/posts/default
   site: https://blog.python.org/
@@ -78,12 +78,12 @@
   language: en
   tags:
   - python
-  volume: ~4/month
+  volume: ~5/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-09-23'
+  latest_post: '2026-09-26'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Ruby
   url: https://www.ruby-lang.org/en/feeds/news.rss
   site: https://www.ruby-lang.org/en/news/
@@ -97,7 +97,7 @@
   has_timestamps: true
   latest_post: '2026-09-23'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Rust Blog
   url: https://blog.rust-lang.org/feed.xml
   site: https://blog.rust-lang.org/
@@ -111,7 +111,7 @@
   has_timestamps: true
   latest_post: '2026-09-22'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: Swift
   url: https://www.swift.org/atom.xml
   site: https://www.swift.org/blog/
@@ -125,7 +125,7 @@
   has_timestamps: true
   latest_post: '2026-09-15'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
 - name: TypeScript
   url: https://devblogs.microsoft.com/typescript/feed/
   site: https://devblogs.microsoft.com/typescript/
@@ -139,4 +139,4 @@
   has_timestamps: true
   latest_post: '2026-07-08'
   status: ok
-  last_checked: '2026-09-26'
+  last_checked: '2026-09-27'
