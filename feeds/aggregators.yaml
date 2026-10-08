@@ -1,0 +1,58 @@
+- name: Hacker News Front Page
+  url: https://hnrss.org/frontpage
+  site: https://news.ycombinator.com/
+  category: aggregators
+  kind: blog
+  language: en
+  tags:
+  - hacker-news
+  volume: ~600/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-08'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Publickey
+  url: https://www.publickey1.jp/atom.xml
+  site: https://www.publickey1.jp/
+  category: aggregators
+  kind: blog
+  language: ja
+  tags:
+  - japan-tech
+  volume: ~50/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-08'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Zenn Trending
+  url: https://zenn.dev/feed
+  site: https://zenn.dev/
+  category: aggregators
+  kind: blog
+  language: ja
+  tags:
+  - zenn
+  - japan-tech
+  volume: ~200/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-08'
+  status: ok
+  last_checked: '2026-10-08'
+- name: はてなブックマーク テクノロジー
+  url: https://b.hatena.ne.jp/hotentry/it.rss
+  site: https://b.hatena.ne.jp/hotentry/it
+  category: aggregators
+  kind: blog
+  language: ja
+  tags:
+  - hatena
+  - japan-tech
+  volume: ~870/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-08'
+  status: ok
+  last_checked: '2026-10-08'

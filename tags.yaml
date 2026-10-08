@@ -1,0 +1,151 @@
+# Tag vocabulary. Every feed in feeds/*.yaml carries one or more of these ids
+# (`tags: [claude, ai-coding]`); the config builder's first step shows them as
+# the chips a newcomer picks from ("what do you follow?"). Keep ids short and
+# stable — they are referenced from the data and from shared builder links.
+#
+# group: how the chips are laid out on the page. label_ja / label_en: chip text.
+- id: claude
+  group: ai
+  label_en: Claude / Anthropic
+  label_ja: Claude・Anthropic
+- id: claude-code
+  group: ai
+  label_en: Claude Code
+  label_ja: Claude Code
+- id: openai
+  group: ai
+  label_en: OpenAI / Codex
+  label_ja: OpenAI・Codex
+- id: gemini
+  group: ai
+  label_en: Google AI / Gemini
+  label_ja: Google AI・Gemini
+- id: ai-coding
+  group: ai
+  label_en: AI coding tools
+  label_ja: AI コーディング全般
+- id: llm-research
+  group: ai
+  label_en: LLM research & open models
+  label_ja: LLM 研究・オープンモデル
+
+- id: react
+  group: web
+  label_en: React
+  label_ja: React
+- id: nextjs
+  group: web
+  label_en: Next.js
+  label_ja: Next.js
+- id: vue
+  group: web
+  label_en: Vue / Vite
+  label_ja: Vue・Vite
+- id: svelte
+  group: web
+  label_en: Svelte
+  label_ja: Svelte
+- id: astro
+  group: web
+  label_en: Astro
+  label_ja: Astro
+- id: css
+  group: web
+  label_en: CSS / Tailwind
+  label_ja: CSS・Tailwind
+- id: browsers
+  group: web
+  label_en: Browsers & web platform
+  label_ja: ブラウザ・Web 標準
+
+- id: typescript
+  group: languages
+  label_en: TypeScript
+  label_ja: TypeScript
+- id: nodejs
+  group: languages
+  label_en: Node.js / Bun / Deno
+  label_ja: Node.js・Bun・Deno
+- id: rust
+  group: languages
+  label_en: Rust
+  label_ja: Rust
+- id: go
+  group: languages
+  label_en: Go
+  label_ja: Go
+- id: python
+  group: languages
+  label_en: Python
+  label_ja: Python
+- id: ruby
+  group: languages
+  label_en: Ruby
+  label_ja: Ruby
+- id: php
+  group: languages
+  label_en: PHP
+  label_ja: PHP
+- id: swift
+  group: languages
+  label_en: Swift
+  label_ja: Swift
+
+- id: cloudflare
+  group: cloud
+  label_en: Cloudflare
+  label_ja: Cloudflare
+- id: vercel
+  group: cloud
+  label_en: Vercel
+  label_ja: Vercel
+- id: aws
+  group: cloud
+  label_en: AWS
+  label_ja: AWS
+- id: gcp
+  group: cloud
+  label_en: Google Cloud
+  label_ja: Google Cloud
+- id: github
+  group: cloud
+  label_en: GitHub
+  label_ja: GitHub
+- id: containers
+  group: cloud
+  label_en: Docker / Kubernetes
+  label_ja: Docker・Kubernetes
+- id: databases
+  group: cloud
+  label_en: Databases
+  label_ja: データベース
+- id: observability
+  group: cloud
+  label_en: Monitoring, IaC & hosting
+  label_ja: 監視・IaC・ホスティング
+
+- id: security
+  group: security
+  label_en: Security
+  label_ja: セキュリティ
+
+- id: japan-tech
+  group: community
+  label_en: Japanese engineering blogs
+  label_ja: 日本語テックブログ
+- id: global-tech
+  group: community
+  label_en: Engineering blogs (global)
+  label_ja: 海外企業のテックブログ
+- id: zenn
+  group: community
+  label_en: Zenn trending
+  label_ja: Zenn トレンド
+- id: hatena
+  group: community
+  label_en: Hatena Bookmark (tech)
+  label_ja: はてなブックマーク
+- id: hacker-news
+  group: community
+  label_en: Hacker News
+  label_ja: Hacker News

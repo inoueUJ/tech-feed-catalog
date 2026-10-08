@@ -1,0 +1,143 @@
+- name: Astro
+  url: https://astro.build/rss.xml
+  site: https://astro.build/blog/
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - astro
+  volume: ~3/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-09-30'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Chrome for Developers
+  url: https://developer.chrome.com/static/blog/feed.xml
+  site: https://developer.chrome.com/blog
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - browsers
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-06-22'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Mozilla Hacks
+  url: https://hacks.mozilla.org/feed/
+  site: https://hacks.mozilla.org/
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - browsers
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-08-24'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Next.js
+  url: https://nextjs.org/feed.xml
+  site: https://nextjs.org/blog
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - nextjs
+  - react
+  - vercel
+  volume: ~5/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-10-06'
+  status: ok
+  last_checked: '2026-10-08'
+- name: React
+  url: https://react.dev/rss.xml
+  site: https://react.dev/blog
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - react
+  volume: ~1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-09-09'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Svelte
+  url: https://svelte.dev/blog/rss.xml
+  site: https://svelte.dev/blog
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - svelte
+  volume: ~2/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-10-01'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Tailwind CSS
+  url: https://tailwindcss.com/feeds/feed.xml
+  site: https://tailwindcss.com/blog
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - css
+  volume: ~1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-09-09'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Vite
+  url: https://vite.dev/blog.rss
+  site: https://vite.dev/blog
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - vue
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-06-23'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Vue.js
+  url: https://blog.vuejs.org/feed.rss
+  site: https://blog.vuejs.org/
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - vue
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2024-09-01'
+  status: stale
+  last_checked: '2026-10-08'
+  status_detail: no new posts for 767 days
+- name: WebKit
+  url: https://webkit.org/feed/
+  site: https://webkit.org/blog/
+  category: frontend
+  kind: blog
+  language: en
+  tags:
+  - browsers
+  volume: ~4/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-09-23'
+  status: ok
+  last_checked: '2026-10-08'

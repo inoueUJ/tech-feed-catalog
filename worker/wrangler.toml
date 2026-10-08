@@ -1,0 +1,7 @@
+name = "tech-feed-catalog-mcp"
+main = "src/index.ts"
+compatibility_date = "2026-01-15"
+
+# The catalog is baked into the bundle by scripts/bundle_data.mjs (run automatically
+# before dev/deploy), so a request never depends on GitHub being reachable and there
+# is no KV/D1 to provision. Redeploy to publish catalog changes.

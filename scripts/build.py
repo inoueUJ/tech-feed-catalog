@@ -1,0 +1,232 @@
+"""Regenerate everything derived from feeds/*.yaml: the README table and site/feeds.json.
+
+The catalog data is the single source of truth. Nothing here reaches the network —
+measurements come from scripts/validate.py.
+
+Usage:
+    python scripts/build.py              # rewrite README.md and site/feeds.json
+    python scripts/build.py --check      # exit 1 if any of them is out of date (CI)
+"""
+
+import argparse
+import json
+import os
+import sys
+
+import yaml
+from jsonschema import Draft202012Validator
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FEEDS_DIR = os.path.join(BASE_DIR, 'feeds')
+README_PATHS = {'ja': os.path.join(BASE_DIR, 'README.md')}
+SITE_DATA_PATH = os.path.join(BASE_DIR, 'site', 'feeds.json')
+SCHEMA_PATH = os.path.join(BASE_DIR, 'schema.json')
+TAGS_PATH = os.path.join(BASE_DIR, 'tags.yaml')
+PACKS_PATH = os.path.join(BASE_DIR, 'packs.yaml')
+
+BEGIN = '<!-- BEGIN CATALOG -->'
+END = '<!-- END CATALOG -->'
+
+CATEGORY_LABELS = {
+    'ai-models': ('AI models & research', 'AI モデル・研究'),
+    'ai-coding': ('AI coding tools', 'AI コーディングツール'),
+    'infra': ('Cloud & infrastructure', 'クラウド・インフラ'),
+    'languages': ('Languages & runtimes', '言語・ランタイム'),
+    'frontend': ('Frontend', 'フロントエンド'),
+    'security': ('Security', 'セキュリティ'),
+    'companies': ('Company engineering blogs', '企業テックブログ'),
+    'aggregators': ('Aggregators', 'アグリゲータ'),
+}
+CATEGORY_ORDER = list(CATEGORY_LABELS)
+
+RADIO_STARS = {'high': '★★★', 'medium': '★★', 'low': '★'}
+TEXT = {
+    'ja': {
+        'summary': '**{n} フィード**・{k} カテゴリ・{ok} 件が稼働確認済み',
+        'heading': '{ja}',
+        'header': '| フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |',
+        'kind': {'blog': 'ブログ', 'changelog': '変更履歴', 'release-notes': 'リリース'},
+        'blocked': '🤖 ボット拒否',
+        'footnote': '¹ 記事ページがボット対策で自動取得を弾くため、URL ではなくフィードの要約文で購読する。',
+    },
+}
+
+
+def load_tags():
+    """The tag vocabulary (tags.yaml): the chips a newcomer picks from in the builder."""
+    with open(TAGS_PATH, encoding='utf-8') as f:
+        tags = yaml.safe_load(f) or []
+    ids = [t['id'] for t in tags]
+    if len(ids) != len(set(ids)):
+        print('tags.yaml: duplicate id', file=sys.stderr)
+        sys.exit(1)
+    for t in tags:
+        for key in ('id', 'group', 'label_en', 'label_ja'):
+            if not t.get(key):
+                print(f"tags.yaml: tag {t.get('id')!r} is missing {key}", file=sys.stderr)
+                sys.exit(1)
+    return tags
+
+
+def load_packs(entries):
+    """Starter packs (packs.yaml): curated bundles the builder offers as one tap."""
+    if not os.path.exists(PACKS_PATH):
+        return []
+    with open(PACKS_PATH, encoding='utf-8') as f:
+        packs = yaml.safe_load(f) or []
+    names = {e['name'] for e in entries}
+    for pack in packs:
+        for key in ('id', 'label_ja', 'label_en', 'show_ja', 'show_en', 'feeds'):
+            if not pack.get(key):
+                print(f"packs.yaml: pack {pack.get('id')!r} is missing {key}", file=sys.stderr)
+                sys.exit(1)
+        missing = [n for n in pack['feeds'] + pack.get('latest', []) if n not in names]
+        if missing:
+            print(f"packs.yaml: pack {pack['id']!r} names feeds not in the catalog: {missing}", file=sys.stderr)
+            sys.exit(1)
+    return packs
+
+
+def load_feeds(tags=None):
+    """Return all entries, validated against schema.json, in catalog order."""
+    with open(SCHEMA_PATH, encoding='utf-8') as f:
+        validator = Draft202012Validator(json.load(f))
+    known_tags = {t['id'] for t in (tags if tags is not None else load_tags())}
+
+    entries = []
+    for category in CATEGORY_ORDER:
+        path = os.path.join(FEEDS_DIR, f'{category}.yaml')
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding='utf-8') as f:
+            items = yaml.safe_load(f) or []
+        errors = sorted(validator.iter_errors(items), key=lambda e: e.path)
+        if errors:
+            for error in errors:
+                location = '/'.join(str(p) for p in error.path)
+                print(f'{category}.yaml [{location}]: {error.message}', file=sys.stderr)
+            sys.exit(1)
+        for item in items:
+            if item['category'] != category:
+                print(f"{category}.yaml: '{item['name']}' has category '{item['category']}'", file=sys.stderr)
+                sys.exit(1)
+            unknown = set(item.get('tags', [])) - known_tags
+            if unknown:
+                print(f"{category}.yaml: '{item['name']}' uses tags not in tags.yaml: {sorted(unknown)}", file=sys.stderr)
+                sys.exit(1)
+        entries += items
+    return entries
+
+
+def status_cell(entry, lang='ja'):
+    status = entry.get('status', 'ok')
+    checked = entry.get('last_checked', '?')
+    if status == 'ok':
+        return f'✅ {checked}'
+    if status == 'stale':
+        return f'💤 {entry.get("status_detail", "stale")}'
+    if status == 'blocked':
+        return TEXT[lang]['blocked']
+    return f'⚠️ {entry.get("status_detail", "broken")}'
+
+
+def render_table(entries, lang='ja'):
+    text = TEXT[lang]
+    lines = []
+    for category in CATEGORY_ORDER:
+        items = [e for e in entries if e['category'] == category]
+        if not items:
+            continue
+        en, ja = CATEGORY_LABELS[category]
+        lines.append('### ' + text['heading'].format(en=en, ja=ja) + '\n')
+        lines.append(text['header'])
+        lines.append('|---|---|---|---|---|---|---|')
+        for e in items:
+            feed_link = f"[{'sitemap' if e.get('type') == 'sitemap' else 'RSS'}]({e['url']})"
+            if e.get('source_mode') == 'text':
+                feed_link += ' ¹'
+            lines.append(
+                f"| [{e['name']}]({e['site']}) "
+                f"| {text['kind'][e['kind']]} "
+                f"| {e.get('volume', '?')} "
+                f"| {RADIO_STARS.get(e.get('radio_friendly'), '?')} "
+                f"| {e['language']} "
+                f"| {feed_link} "
+                f"| {status_cell(e, lang)} |"
+            )
+        lines.append('')
+    lines.append(text['footnote'] + '\n')
+    return '\n'.join(lines)
+
+
+def render_readme(entries, lang):
+    path = README_PATHS[lang]
+    with open(path, encoding='utf-8') as f:
+        current = f.read()
+    if BEGIN not in current or END not in current:
+        print(f'{os.path.basename(path)} is missing the {BEGIN} / {END} markers', file=sys.stderr)
+        sys.exit(1)
+    head, rest = current.split(BEGIN, 1)
+    _stale, tail = rest.split(END, 1)
+
+    ok = sum(1 for e in entries if e.get('status') == 'ok')
+    summary = TEXT[lang]['summary'].format(n=len(entries), k=len(CATEGORY_ORDER), ok=ok) + '\n\n'
+    return f'{head}{BEGIN}\n\n{summary}{render_table(entries, lang)}{END}{tail}'
+
+
+def render_site_data(entries, tags, packs):
+    used = {tag for e in entries for tag in e.get('tags', [])}
+    payload = {
+        'categories': [
+            {'id': cid, 'label_en': en, 'label_ja': ja}
+            for cid, (en, ja) in CATEGORY_LABELS.items()
+            if any(e['category'] == cid for e in entries)
+        ],
+        # Only tags that some feed actually carries; an empty chip helps nobody.
+        'tags': [t for t in tags if t['id'] in used],
+        'packs': packs,
+        'feeds': entries,
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2) + '\n'
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--check', action='store_true', help='exit 1 if generated files are out of date')
+    args = parser.parse_args()
+
+    tags = load_tags()
+    entries = load_feeds(tags)
+    packs = load_packs(entries)
+    readmes = {lang: render_readme(entries, lang) for lang in README_PATHS}
+    site_data = render_site_data(entries, tags, packs)
+
+    if args.check:
+        stale = []
+        for lang, path in README_PATHS.items():
+            with open(path, encoding='utf-8') as f:
+                if f.read() != readmes[lang]:
+                    stale.append(os.path.basename(path))
+        if not os.path.exists(SITE_DATA_PATH):
+            stale.append('site/feeds.json')
+        else:
+            with open(SITE_DATA_PATH, encoding='utf-8') as f:
+                if f.read() != site_data:
+                    stale.append('site/feeds.json')
+        if stale:
+            print(f'Out of date: {", ".join(stale)}. Run: python scripts/build.py', file=sys.stderr)
+            sys.exit(1)
+        print(f'Generated files are up to date ({len(entries)} feeds).')
+        return
+
+    for lang, path in README_PATHS.items():
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(readmes[lang])
+    os.makedirs(os.path.dirname(SITE_DATA_PATH), exist_ok=True)
+    with open(SITE_DATA_PATH, 'w', encoding='utf-8') as f:
+        f.write(site_data)
+    print(f'Wrote README.md and site/feeds.json ({len(entries)} feeds).')
+
+
+if __name__ == '__main__':
+    main()

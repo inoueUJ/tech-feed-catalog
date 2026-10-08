@@ -1,0 +1,119 @@
+- name: Anthropic Engineering
+  url: https://www.anthropic.com/sitemap.xml
+  type: sitemap
+  prefix: https://www.anthropic.com/engineering/
+  site: https://www.anthropic.com/engineering
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - claude
+  - llm-research
+  volume: <1/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-08-10'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Anthropic News
+  url: https://www.anthropic.com/sitemap.xml
+  type: sitemap
+  prefix: https://www.anthropic.com/news/
+  site: https://www.anthropic.com/news
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - claude
+  volume: ~60/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-07'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Google AI Blog
+  url: https://blog.google/technology/ai/rss/
+  site: https://blog.google/technology/ai/
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - gemini
+  volume: ~15/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-10-07'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Google DeepMind
+  url: https://deepmind.google/blog/rss.xml
+  site: https://deepmind.google/discover/blog/
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - gemini
+  - llm-research
+  volume: ~9/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-10-06'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Google Gemini
+  url: https://blog.google/products/gemini/rss/
+  site: https://blog.google/products/gemini/
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - gemini
+  volume: ~15/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-10-02'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Hugging Face
+  url: https://huggingface.co/blog/feed.xml
+  site: https://huggingface.co/blog
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - llm-research
+  volume: ~20/month
+  radio_friendly: high
+  has_timestamps: true
+  latest_post: '2026-10-07'
+  status: ok
+  last_checked: '2026-10-08'
+- name: OpenAI News
+  url: https://openai.com/news/rss.xml
+  site: https://openai.com/news
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - openai
+  source_mode: text
+  volume: ~60/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-07'
+  status: ok
+  last_checked: '2026-10-08'
+- name: Simon Willison
+  url: https://simonwillison.net/atom/everything/
+  site: https://simonwillison.net/
+  category: ai-models
+  kind: blog
+  language: en
+  tags:
+  - llm-research
+  volume: ~90/month
+  radio_friendly: medium
+  has_timestamps: true
+  latest_post: '2026-10-07'
+  status: ok
+  last_checked: '2026-10-08'
