@@ -148,7 +148,7 @@ notebooklm-radio の設定ファイルは、このカタログを元にしたビ
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
 | [Hacker News Front Page](https://news.ycombinator.com/) | ブログ | ~600/month | ★★ | en | [RSS](https://hnrss.org/frontpage) | ✅ 2026-10-08 |
-| [Publickey](https://www.publickey1.jp/) | ブログ | ~50/month | ★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-10-08 |
+| [Publickey](https://www.publickey1.jp/) | ブログ | ~45/month | ★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-10-08 |
 | [Zenn Trending](https://zenn.dev/) | ブログ | ~200/month | ★★ | ja | [RSS](https://zenn.dev/feed) | ✅ 2026-10-08 |
 | [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | ブログ | ~870/month | ★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-10-08 |
 
