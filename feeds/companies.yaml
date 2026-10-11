@@ -9,9 +9,9 @@
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-18'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: DeNA Engineering
   url: https://engineering.dena.com/index.xml
   site: https://engineering.dena.com/
@@ -20,12 +20,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~9/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-10-07'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Discord Engineering
   url: https://discord.com/blog/rss.xml
   site: https://discord.com/category/engineering
@@ -39,7 +39,7 @@
   has_timestamps: true
   latest_post: '2026-10-06'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Dropbox Tech
   url: https://dropbox.tech/feed
   site: https://dropbox.tech/
@@ -53,7 +53,7 @@
   has_timestamps: true
   latest_post: '2026-09-29'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Figma Engineering
   url: https://www.figma.com/blog/feed/atom.xml
   site: https://www.figma.com/blog/engineering/
@@ -65,9 +65,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-06'
+  latest_post: '2026-10-10'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: freee Developers Hub
   url: https://developers.freee.co.jp/feed
   site: https://developers.freee.co.jp/
@@ -79,9 +79,9 @@
   volume: ~7/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-29'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: LINE / LY Engineering
   url: https://techblog.lycorp.co.jp/ja/feed/index.xml
   site: https://techblog.lycorp.co.jp/ja
@@ -90,12 +90,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~9/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-10-08'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Netflix Tech Blog
   url: https://netflixtechblog.com/feed
   site: https://netflixtechblog.com/
@@ -109,7 +109,7 @@
   has_timestamps: true
   latest_post: '2026-09-25'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Shopify Engineering
   url: https://shopify.engineering/blog.atom
   site: https://shopify.engineering/
@@ -123,7 +123,7 @@
   has_timestamps: true
   latest_post: '2026-10-01'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Slack Engineering
   url: https://slack.engineering/feed/
   site: https://slack.engineering/
@@ -137,7 +137,7 @@
   has_timestamps: true
   latest_post: '2026-07-14'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: SmartHR Tech Blog
   url: https://tech.smarthr.jp/feed
   site: https://tech.smarthr.jp/
@@ -149,9 +149,9 @@
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-08'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Stripe Engineering
   url: https://stripe.com/blog/feed.rss
   site: https://stripe.com/blog/engineering
@@ -165,7 +165,7 @@
   has_timestamps: true
   latest_post: '2026-10-01'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: ZOZO TECH BLOG
   url: https://techblog.zozo.com/feed
   site: https://techblog.zozo.com/
@@ -177,9 +177,9 @@
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-06'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: クックパッド開発者ブログ
   url: https://techlife.cookpad.com/feed
   site: https://techlife.cookpad.com/
@@ -193,7 +193,7 @@
   has_timestamps: true
   latest_post: '2026-09-02'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: メルカリ engineering
   url: https://engineering.mercari.com/blog/feed.xml
   site: https://engineering.mercari.com/blog/
@@ -207,5 +207,5 @@
   has_timestamps: true
   latest_post: '2026-08-20'
   status: blocked
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
   status_detail: refuses automated clients (HTTP 403 from CI)

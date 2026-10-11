@@ -14,7 +14,7 @@
   has_timestamps: true
   latest_post: '2026-08-10'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Anthropic News
   url: https://www.anthropic.com/sitemap.xml
   type: sitemap
@@ -28,9 +28,9 @@
   volume: ~60/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-08'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Google AI Blog
   url: https://blog.google/technology/ai/rss/
   site: https://blog.google/technology/ai/
@@ -44,7 +44,7 @@
   has_timestamps: true
   latest_post: '2026-10-07'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Google DeepMind
   url: https://deepmind.google/blog/rss.xml
   site: https://deepmind.google/discover/blog/
@@ -59,7 +59,7 @@
   has_timestamps: true
   latest_post: '2026-10-06'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Google Gemini
   url: https://blog.google/products/gemini/rss/
   site: https://blog.google/products/gemini/
@@ -73,7 +73,7 @@
   has_timestamps: true
   latest_post: '2026-10-02'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Hugging Face
   url: https://huggingface.co/blog/feed.xml
   site: https://huggingface.co/blog
@@ -85,9 +85,9 @@
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-07'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: OpenAI News
   url: https://openai.com/news/rss.xml
   site: https://openai.com/news
@@ -100,9 +100,9 @@
   volume: ~60/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-07'
+  latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Simon Willison
   url: https://simonwillison.net/atom/everything/
   site: https://simonwillison.net/
@@ -114,6 +114,6 @@
   volume: ~90/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-07'
+  latest_post: '2026-10-11'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'

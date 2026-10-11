@@ -13,7 +13,7 @@
   radio_friendly: high
   has_timestamps: false
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Claude Blog
   url: https://claude.com/sitemap.xml
   type: sitemap
@@ -30,7 +30,7 @@
   has_timestamps: true
   latest_post: '2026-10-02'
   status: broken
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
   status_detail: 'no URLs under prefix: https://claude.com/blog/'
 - name: Claude Code
   url: https://code.claude.com/docs/en/whats-new/rss.xml
@@ -47,7 +47,7 @@
   has_timestamps: true
   latest_post: '2026-09-15'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Codex Changelog
   url: https://developers.openai.com/codex/changelog/rss.xml
   site: https://developers.openai.com/codex/changelog
@@ -60,9 +60,9 @@
   volume: ~10/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-10-07'
+  latest_post: '2026-10-08'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Cursor Changelog
   url: https://cursor.com/changelog/rss.xml
   site: https://cursor.com/changelog
@@ -76,7 +76,7 @@
   has_timestamps: true
   latest_post: '2026-10-06'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: GitHub Copilot
   url: https://github.blog/ai-and-ml/github-copilot/feed/
   site: https://github.blog/ai-and-ml/github-copilot/
@@ -86,12 +86,12 @@
   tags:
   - ai-coding
   - github
-  volume: ~9/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-10-07'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
 - name: Zed
   url: https://zed.dev/blog.rss
   site: https://zed.dev/blog
@@ -105,4 +105,4 @@
   has_timestamps: true
   latest_post: '2026-09-16'
   status: ok
-  last_checked: '2026-10-08'
+  last_checked: '2026-10-11'
