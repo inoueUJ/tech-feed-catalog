@@ -12,7 +12,7 @@
   has_timestamps: true
   latest_post: '2026-10-10'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Deno
   url: https://deno.com/feed
   site: https://deno.com/blog
@@ -22,12 +22,12 @@
   tags:
   - nodejs
   - typescript
-  volume: ~30/month
+  volume: ~4/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-10-09'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Go Blog
   url: https://go.dev/blog/feed.atom
   site: https://go.dev/blog/
@@ -36,12 +36,12 @@
   language: en
   tags:
   - go
-  volume: ~3/month
+  volume: ~4/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-02'
+  latest_post: '2026-10-16'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Node.js
   url: https://nodejs.org/en/feed/blog.xml
   site: https://nodejs.org/en/blog
@@ -50,12 +50,12 @@
   language: en
   tags:
   - nodejs
-  volume: ~7/month
+  volume: ~8/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-07'
+  latest_post: '2026-10-14'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: PHP
   url: https://www.php.net/feed.atom
   site: https://www.php.net/
@@ -69,7 +69,7 @@
   has_timestamps: true
   latest_post: '2026-10-08'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Python Insider
   url: https://blog.python.org/feeds/posts/default
   site: https://blog.python.org/
@@ -81,9 +81,9 @@
   volume: ~9/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-09'
+  latest_post: '2026-10-13'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Ruby
   url: https://www.ruby-lang.org/en/feeds/news.rss
   site: https://www.ruby-lang.org/en/news/
@@ -95,9 +95,9 @@
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-09-23'
+  latest_post: '2026-10-12'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Rust Blog
   url: https://blog.rust-lang.org/feed.xml
   site: https://blog.rust-lang.org/
@@ -109,9 +109,9 @@
   volume: ~6/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-02'
+  latest_post: '2026-10-15'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Swift
   url: https://www.swift.org/atom.xml
   site: https://www.swift.org/blog/
@@ -125,7 +125,7 @@
   has_timestamps: true
   latest_post: '2026-10-08'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: TypeScript
   url: https://devblogs.microsoft.com/typescript/feed/
   site: https://devblogs.microsoft.com/typescript/
@@ -139,4 +139,4 @@
   has_timestamps: true
   latest_post: '2026-07-08'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'

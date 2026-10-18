@@ -12,9 +12,9 @@
   volume: <1/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-08-10'
+  latest_post: '2026-10-15'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Anthropic News
   url: https://www.anthropic.com/sitemap.xml
   type: sitemap
@@ -28,9 +28,9 @@
   volume: ~60/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-09'
+  latest_post: '2026-10-16'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Google AI Blog
   url: https://blog.google/technology/ai/rss/
   site: https://blog.google/technology/ai/
@@ -42,9 +42,9 @@
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-07'
+  latest_post: '2026-10-13'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Google DeepMind
   url: https://deepmind.google/blog/rss.xml
   site: https://deepmind.google/discover/blog/
@@ -54,12 +54,12 @@
   tags:
   - gemini
   - llm-research
-  volume: ~9/month
+  volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-06'
+  latest_post: '2026-10-15'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Google Gemini
   url: https://blog.google/products/gemini/rss/
   site: https://blog.google/products/gemini/
@@ -71,9 +71,9 @@
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-02'
+  latest_post: '2026-10-15'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Hugging Face
   url: https://huggingface.co/blog/feed.xml
   site: https://huggingface.co/blog
@@ -85,9 +85,9 @@
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-09'
+  latest_post: '2026-10-16'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: OpenAI News
   url: https://openai.com/news/rss.xml
   site: https://openai.com/news
@@ -100,9 +100,9 @@
   volume: ~60/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-09'
+  latest_post: '2026-10-16'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
 - name: Simon Willison
   url: https://simonwillison.net/atom/everything/
   site: https://simonwillison.net/
@@ -111,9 +111,9 @@
   language: en
   tags:
   - llm-research
-  volume: ~90/month
+  volume: ~80/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-11'
+  latest_post: '2026-10-17'
   status: ok
-  last_checked: '2026-10-11'
+  last_checked: '2026-10-18'
