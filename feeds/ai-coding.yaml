@@ -13,7 +13,7 @@
   radio_friendly: high
   has_timestamps: false
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: Claude Blog
   url: https://claude.com/sitemap.xml
   type: sitemap
@@ -30,7 +30,7 @@
   has_timestamps: true
   latest_post: '2026-10-02'
   status: broken
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
   status_detail: 'no URLs under prefix: https://claude.com/blog/'
 - name: Claude Code
   url: https://code.claude.com/docs/en/whats-new/rss.xml
@@ -47,7 +47,7 @@
   has_timestamps: true
   latest_post: '2026-09-15'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: Codex Changelog
   url: https://developers.openai.com/codex/changelog/rss.xml
   site: https://developers.openai.com/codex/changelog
@@ -57,12 +57,12 @@
   tags:
   - openai
   - ai-coding
-  volume: ~20/month
-  radio_friendly: low
+  volume: ~30/month
+  radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-15'
+  latest_post: '2026-10-23'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: Cursor Changelog
   url: https://cursor.com/changelog/rss.xml
   site: https://cursor.com/changelog
@@ -71,12 +71,12 @@
   language: en
   tags:
   - ai-coding
-  volume: ~5/month
+  volume: ~4/month
   radio_friendly: medium
   has_timestamps: true
   latest_post: '2026-10-16'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: GitHub Copilot
   url: https://github.blog/ai-and-ml/github-copilot/feed/
   site: https://github.blog/ai-and-ml/github-copilot/
@@ -89,9 +89,9 @@
   volume: ~7/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-12'
+  latest_post: '2026-10-20'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: Zed
   url: https://zed.dev/blog.rss
   site: https://zed.dev/blog
@@ -100,9 +100,9 @@
   language: en
   tags:
   - ai-coding
-  volume: ~2/month
+  volume: ~1/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-09-16'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'

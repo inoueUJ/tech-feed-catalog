@@ -9,9 +9,9 @@
   volume: ~600/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-18'
+  latest_post: '2026-10-25'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: Publickey
   url: https://www.publickey1.jp/atom.xml
   site: https://www.publickey1.jp/
@@ -20,12 +20,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~30/month
+  volume: ~25/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-17'
+  latest_post: '2026-10-21'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: Zenn Trending
   url: https://zenn.dev/feed
   site: https://zenn.dev/
@@ -35,12 +35,12 @@
   tags:
   - zenn
   - japan-tech
-  volume: ~120/month
+  volume: ~100/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-18'
+  latest_post: '2026-10-24'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
 - name: はてなブックマーク テクノロジー
   url: https://b.hatena.ne.jp/hotentry/it.rss
   site: https://b.hatena.ne.jp/hotentry/it
@@ -50,9 +50,9 @@
   tags:
   - hatena
   - japan-tech
-  volume: ~450/month
+  volume: ~280/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-18'
+  latest_post: '2026-10-25'
   status: ok
-  last_checked: '2026-10-18'
+  last_checked: '2026-10-25'
