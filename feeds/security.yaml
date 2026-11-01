@@ -7,12 +7,12 @@
   tags:
   - security
   - cloudflare
-  volume: ~15/month
+  volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-22'
+  latest_post: '2026-10-30'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: GitHub Security
   url: https://github.blog/security/feed/
   site: https://github.blog/security/
@@ -27,7 +27,7 @@
   has_timestamps: true
   latest_post: '2026-10-22'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Google Project Zero
   url: https://googleprojectzero.blogspot.com/feeds/posts/default
   site: https://googleprojectzero.blogspot.com/
@@ -39,9 +39,9 @@
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-06'
+  latest_post: '2026-10-27'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Google Security Blog
   url: https://security.googleblog.com/feeds/posts/default
   site: https://security.googleblog.com/
@@ -55,8 +55,8 @@
   has_timestamps: true
   latest_post: '2026-04-23'
   status: stale
-  last_checked: '2026-10-25'
-  status_detail: no new posts for 184 days
+  last_checked: '2026-11-01'
+  status_detail: no new posts for 191 days
 - name: Rust Security Advisories
   url: https://rustsec.org/feed.xml
   site: https://rustsec.org/advisories/
@@ -66,9 +66,9 @@
   tags:
   - security
   - rust
-  volume: ~100/month
+  volume: ~170/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-10-23'
+  latest_post: '2026-10-30'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'

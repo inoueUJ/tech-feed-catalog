@@ -14,7 +14,7 @@
   has_timestamps: true
   latest_post: '2026-10-15'
   status: broken
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
   status_detail: 'no URLs under prefix: https://www.anthropic.com/engineering/'
 - name: Anthropic News
   url: https://www.anthropic.com/sitemap.xml
@@ -26,12 +26,12 @@
   language: en
   tags:
   - claude
-  volume: ~300/month
+  volume: ~240/month
   radio_friendly: medium
   has_timestamps: false
-  latest_post: '2026-10-22'
+  latest_post: '2026-10-29'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Google AI Blog
   url: https://blog.google/technology/ai/rss/
   site: https://blog.google/technology/ai/
@@ -43,9 +43,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-21'
+  latest_post: '2026-10-26'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Google DeepMind
   url: https://deepmind.google/blog/rss.xml
   site: https://deepmind.google/discover/blog/
@@ -55,12 +55,12 @@
   tags:
   - gemini
   - llm-research
-  volume: ~10/month
+  volume: ~9/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-22'
+  latest_post: '2026-10-28'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Google Gemini
   url: https://blog.google/products/gemini/rss/
   site: https://blog.google/products/gemini/
@@ -69,12 +69,12 @@
   language: en
   tags:
   - gemini
-  volume: ~15/month
+  volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-23'
+  latest_post: '2026-10-29'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Hugging Face
   url: https://huggingface.co/blog/feed.xml
   site: https://huggingface.co/blog
@@ -86,9 +86,9 @@
   volume: ~20/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-23'
+  latest_post: '2026-10-30'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: OpenAI News
   url: https://openai.com/news/rss.xml
   site: https://openai.com/news
@@ -98,12 +98,12 @@
   tags:
   - openai
   source_mode: text
-  volume: ~65/month
+  volume: ~70/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-23'
+  latest_post: '2026-10-30'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
 - name: Simon Willison
   url: https://simonwillison.net/atom/everything/
   site: https://simonwillison.net/
@@ -112,9 +112,9 @@
   language: en
   tags:
   - llm-research
-  volume: ~75/month
+  volume: ~65/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-10-24'
+  latest_post: '2026-10-31'
   status: ok
-  last_checked: '2026-10-25'
+  last_checked: '2026-11-01'
