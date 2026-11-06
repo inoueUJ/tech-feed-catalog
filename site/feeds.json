@@ -343,8 +343,8 @@
       "name": "Anthropic Engineering",
       "url": "https://www.anthropic.com/sitemap.xml",
       "type": "sitemap",
-      "prefix": "https://www.anthropic.com/engineering/",
-      "site": "https://www.anthropic.com/engineering",
+      "prefix": "https://www.anthropic.com/research/",
+      "site": "https://www.anthropic.com/research",
       "category": "ai-models",
       "kind": "blog",
       "language": "en",
@@ -358,7 +358,7 @@
       "latest_post": "2026-10-15",
       "status": "broken",
       "last_checked": "2026-11-01",
-      "status_detail": "no URLs under prefix: https://www.anthropic.com/engineering/"
+      "status_detail": "no URLs under prefix: https://www.anthropic.com/research/"
     },
     {
       "name": "Anthropic News",
@@ -506,8 +506,8 @@
       "name": "Claude Blog",
       "url": "https://claude.com/sitemap.xml",
       "type": "sitemap",
-      "prefix": "https://claude.com/blog/",
-      "site": "https://claude.com/blog",
+      "prefix": "https://claude.com/resources/articles/",
+      "site": "https://claude.com/resources/articles",
       "category": "ai-coding",
       "kind": "blog",
       "language": "en",

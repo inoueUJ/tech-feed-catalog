@@ -17,8 +17,8 @@
 - name: Claude Blog
   url: https://claude.com/sitemap.xml
   type: sitemap
-  prefix: https://claude.com/blog/
-  site: https://claude.com/blog
+  prefix: https://claude.com/resources/articles/
+  site: https://claude.com/resources/articles
   category: ai-coding
   kind: blog
   language: en
