@@ -9,13 +9,12 @@
   tags:
   - claude
   - llm-research
-  volume: <1/month
-  radio_friendly: high
+  volume: ~160/month
+  radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-10-15'
-  status: broken
+  latest_post: '2026-11-07'
+  status: ok
   last_checked: '2026-11-08'
-  status_detail: 'no URLs under prefix: https://www.anthropic.com/engineering/'
 - name: Anthropic News
   url: https://www.anthropic.com/sitemap.xml
   type: sitemap

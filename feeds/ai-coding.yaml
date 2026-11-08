@@ -25,13 +25,12 @@
   tags:
   - claude
   - ai-coding
-  volume: ~50/month
-  radio_friendly: medium
-  has_timestamps: true
+  volume: unknown
+  radio_friendly: high
+  has_timestamps: false
   latest_post: '2026-10-02'
-  status: broken
+  status: ok
   last_checked: '2026-11-08'
-  status_detail: 'no URLs under prefix: https://claude.com/blog/'
 - name: Claude Code
   url: https://code.claude.com/docs/en/whats-new/rss.xml
   site: https://code.claude.com/docs/en/whats-new

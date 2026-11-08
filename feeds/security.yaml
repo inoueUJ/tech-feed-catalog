@@ -66,7 +66,7 @@
   tags:
   - security
   - rust
-  volume: ~135/month
+  volume: ~120/month
   radio_friendly: low
   has_timestamps: true
   latest_post: '2026-11-06'
