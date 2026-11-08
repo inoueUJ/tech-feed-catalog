@@ -40,7 +40,7 @@ notebooklm-radio の設定ファイルは、このカタログを元にしたビ
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Anthropic Engineering](https://www.anthropic.com/engineering) | ブログ | <1/month | ★★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ⚠️ no URLs under prefix: https://www.anthropic.com/engineering/ |
+| [Anthropic Engineering](https://www.anthropic.com/research) | ブログ | <1/month | ★★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ⚠️ no URLs under prefix: https://www.anthropic.com/engineering/ |
 | [Anthropic News](https://www.anthropic.com/news) | ブログ | ~200/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-11-08 |
 | [Google AI Blog](https://blog.google/technology/ai/) | ブログ | ~10/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-11-08 |
 | [Google DeepMind](https://deepmind.google/discover/blog/) | ブログ | ~10/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-11-08 |
@@ -54,7 +54,7 @@ notebooklm-radio の設定ファイルは、このカタログを元にしたビ
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
 | [Antigravity](https://antigravity.google/blog) | ブログ | unknown | ★★★ | en | [sitemap](https://antigravity.google/sitemap.xml) | ✅ 2026-11-08 |
-| [Claude Blog](https://claude.com/blog) | ブログ | ~50/month | ★★ | en | [sitemap](https://claude.com/sitemap.xml) | ⚠️ no URLs under prefix: https://claude.com/blog/ |
+| [Claude Blog](https://claude.com/resources/articles) | ブログ | ~50/month | ★★ | en | [sitemap](https://claude.com/sitemap.xml) | ⚠️ no URLs under prefix: https://claude.com/blog/ |
 | [Claude Code](https://code.claude.com/docs/en/whats-new) | リリース | ~2/month | ★★ | en | [RSS](https://code.claude.com/docs/en/whats-new/rss.xml) | ✅ 2026-11-08 |
 | [Codex Changelog](https://developers.openai.com/codex/changelog) | 変更履歴 | ~25/month | ★★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-11-08 |
 | [Cursor Changelog](https://cursor.com/changelog) | 変更履歴 | ~4/month | ★★ | en | [RSS](https://cursor.com/changelog/rss.xml) | ✅ 2026-11-08 |

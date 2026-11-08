@@ -1,8 +1,8 @@
 - name: Anthropic Engineering
   url: https://www.anthropic.com/sitemap.xml
   type: sitemap
-  prefix: https://www.anthropic.com/engineering/
-  site: https://www.anthropic.com/engineering
+  prefix: https://www.anthropic.com/research/
+  site: https://www.anthropic.com/research
   category: ai-models
   kind: blog
   language: en
