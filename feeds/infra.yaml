@@ -6,12 +6,12 @@
   language: en
   tags:
   - aws
-  volume: ~25/month
+  volume: ~35/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-06'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: AWS News
   url: https://aws.amazon.com/about-aws/whats-new/recent/feed/
   site: https://aws.amazon.com/new/
@@ -20,12 +20,12 @@
   language: en
   tags:
   - aws
-  volume: ~275/month
+  volume: ~300/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-11-06'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Cloudflare Blog
   url: https://blog.cloudflare.com/rss/
   site: https://blog.cloudflare.com/
@@ -34,12 +34,12 @@
   language: en
   tags:
   - cloudflare
-  volume: ~30/month
+  volume: ~25/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-06'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Cloudflare Changelog
   url: https://developers.cloudflare.com/changelog/rss.xml
   site: https://developers.cloudflare.com/changelog/
@@ -48,12 +48,12 @@
   language: en
   tags:
   - cloudflare
-  volume: ~120/month
+  volume: ~125/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-11-06'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Docker
   url: https://www.docker.com/blog/feed/
   site: https://www.docker.com/blog/
@@ -62,12 +62,12 @@
   language: en
   tags:
   - containers
-  volume: ~20/month
+  volume: ~15/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-11-06'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: DuckDB
   url: https://duckdb.org/feed.xml
   site: https://duckdb.org/news/
@@ -79,9 +79,9 @@
   volume: ~9/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-05'
+  latest_post: '2026-11-12'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Fly.io
   url: https://fly.io/blog/feed.xml
   site: https://fly.io/blog/
@@ -93,9 +93,9 @@
   volume: ~2/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-06'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: GitHub Changelog
   url: https://github.blog/changelog/feed/
   site: https://github.blog/changelog/
@@ -104,12 +104,12 @@
   language: en
   tags:
   - github
-  volume: ~100/month
+  volume: ~75/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-11-07'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Google Cloud Blog
   url: https://cloudblog.withgoogle.com/rss/
   site: https://cloud.google.com/blog
@@ -121,9 +121,9 @@
   volume: ~120/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-06'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Grafana
   url: https://grafana.com/blog/index.xml
   site: https://grafana.com/blog/
@@ -132,12 +132,12 @@
   language: en
   tags:
   - observability
-  volume: ~15/month
+  volume: ~20/month
   radio_friendly: high
   has_timestamps: true
   status: ok
-  last_checked: '2026-11-08'
-  latest_post: '2026-11-06'
+  last_checked: '2026-11-15'
+  latest_post: '2026-11-13'
 - name: HashiCorp
   url: https://www.hashicorp.com/blog/feed.xml
   site: https://www.hashicorp.com/blog
@@ -146,12 +146,12 @@
   language: en
   tags:
   - observability
-  volume: ~10/month
+  volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-03'
+  latest_post: '2026-11-10'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Kubernetes
   url: https://kubernetes.io/feed.xml
   site: https://kubernetes.io/blog/
@@ -160,12 +160,12 @@
   language: en
   tags:
   - containers
-  volume: ~8/month
+  volume: ~9/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-10-29'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: PlanetScale
   url: https://planetscale.com/blog/rss.xml
   site: https://planetscale.com/blog
@@ -174,12 +174,12 @@
   language: en
   tags:
   - databases
-  volume: ~15/month
+  volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-05'
+  latest_post: '2026-11-11'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Sentry
   url: https://blog.sentry.io/feed.xml
   site: https://blog.sentry.io/
@@ -188,12 +188,12 @@
   language: en
   tags:
   - observability
-  volume: ~8/month
+  volume: ~9/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-03'
+  latest_post: '2026-11-12'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Supabase
   url: https://supabase.com/rss.xml
   site: https://supabase.com/blog
@@ -202,12 +202,12 @@
   language: en
   tags:
   - databases
-  volume: ~10/month
+  volume: ~9/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-03'
+  latest_post: '2026-11-10'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Vercel Blog
   url: https://vercel.com/blog/feed
   site: https://vercel.com/blog
@@ -217,12 +217,12 @@
   tags:
   - vercel
   - nextjs
-  volume: ~110/month
-  radio_friendly: medium
+  volume: ~130/month
+  radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-07'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'
 - name: Vercel Changelog
   url: https://vercel.com/atom
   same_as: https://vercel.com/blog/feed
@@ -233,9 +233,9 @@
   tags:
   - vercel
   - nextjs
-  volume: ~110/month
+  volume: ~130/month
   radio_friendly: low
   has_timestamps: true
-  latest_post: '2026-11-07'
+  latest_post: '2026-11-13'
   status: ok
-  last_checked: '2026-11-08'
+  last_checked: '2026-11-15'

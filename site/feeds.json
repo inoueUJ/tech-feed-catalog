@@ -352,12 +352,12 @@
         "claude",
         "llm-research"
       ],
-      "volume": "~160/month",
+      "volume": "~135/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-07",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Anthropic News",
@@ -371,12 +371,12 @@
       "tags": [
         "claude"
       ],
-      "volume": "~200/month",
+      "volume": "~170/month",
       "radio_friendly": "medium",
       "has_timestamps": false,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Google AI Blog",
@@ -391,9 +391,9 @@
       "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Google DeepMind",
@@ -409,9 +409,9 @@
       "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Google Gemini",
@@ -423,12 +423,12 @@
       "tags": [
         "gemini"
       ],
-      "volume": "~15/month",
+      "volume": "~35/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Hugging Face",
@@ -443,9 +443,9 @@
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "OpenAI News",
@@ -458,12 +458,12 @@
         "openai"
       ],
       "source_mode": "text",
-      "volume": "~70/month",
+      "volume": "~75/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Simon Willison",
@@ -475,12 +475,12 @@
       "tags": [
         "llm-research"
       ],
-      "volume": "~60/month",
+      "volume": "~75/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-07",
+      "latest_post": "2026-11-14",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Antigravity",
@@ -499,7 +499,7 @@
       "radio_friendly": "high",
       "has_timestamps": false,
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Claude Blog",
@@ -519,7 +519,7 @@
       "has_timestamps": false,
       "latest_post": "2026-10-02",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Claude Code",
@@ -538,7 +538,7 @@
       "has_timestamps": true,
       "latest_post": "2026-09-15",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Codex Changelog",
@@ -554,9 +554,9 @@
       "volume": "~25/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Cursor Changelog",
@@ -573,7 +573,7 @@
       "has_timestamps": true,
       "latest_post": "2026-11-06",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "GitHub Copilot",
@@ -589,9 +589,9 @@
       "volume": "~6/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Zed",
@@ -603,12 +603,12 @@
       "tags": [
         "ai-coding"
       ],
-      "volume": "~1/month",
+      "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-09-16",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "AWS Architecture Blog",
@@ -620,12 +620,12 @@
       "tags": [
         "aws"
       ],
-      "volume": "~25/month",
+      "volume": "~35/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "AWS News",
@@ -637,12 +637,12 @@
       "tags": [
         "aws"
       ],
-      "volume": "~275/month",
+      "volume": "~300/month",
       "radio_friendly": "low",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Cloudflare Blog",
@@ -654,12 +654,12 @@
       "tags": [
         "cloudflare"
       ],
-      "volume": "~30/month",
+      "volume": "~25/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Cloudflare Changelog",
@@ -671,12 +671,12 @@
       "tags": [
         "cloudflare"
       ],
-      "volume": "~120/month",
+      "volume": "~125/month",
       "radio_friendly": "low",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Docker",
@@ -688,12 +688,12 @@
       "tags": [
         "containers"
       ],
-      "volume": "~20/month",
+      "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-11-06",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "DuckDB",
@@ -708,9 +708,9 @@
       "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Fly.io",
@@ -725,9 +725,9 @@
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "GitHub Changelog",
@@ -739,12 +739,12 @@
       "tags": [
         "github"
       ],
-      "volume": "~100/month",
+      "volume": "~75/month",
       "radio_friendly": "low",
       "has_timestamps": true,
-      "latest_post": "2026-11-07",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Google Cloud Blog",
@@ -759,9 +759,9 @@
       "volume": "~120/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Grafana",
@@ -773,12 +773,12 @@
       "tags": [
         "observability"
       ],
-      "volume": "~15/month",
+      "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "status": "ok",
-      "last_checked": "2026-11-08",
-      "latest_post": "2026-11-06"
+      "last_checked": "2026-11-15",
+      "latest_post": "2026-11-13"
     },
     {
       "name": "HashiCorp",
@@ -790,12 +790,12 @@
       "tags": [
         "observability"
       ],
-      "volume": "~10/month",
+      "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-03",
+      "latest_post": "2026-11-10",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Kubernetes",
@@ -807,12 +807,12 @@
       "tags": [
         "containers"
       ],
-      "volume": "~8/month",
+      "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-10-29",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "PlanetScale",
@@ -824,12 +824,12 @@
       "tags": [
         "databases"
       ],
-      "volume": "~15/month",
+      "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-11",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Sentry",
@@ -841,12 +841,12 @@
       "tags": [
         "observability"
       ],
-      "volume": "~8/month",
+      "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-03",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Supabase",
@@ -858,12 +858,12 @@
       "tags": [
         "databases"
       ],
-      "volume": "~10/month",
+      "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-03",
+      "latest_post": "2026-11-10",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Vercel Blog",
@@ -876,12 +876,12 @@
         "vercel",
         "nextjs"
       ],
-      "volume": "~110/month",
-      "radio_friendly": "medium",
+      "volume": "~130/month",
+      "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-07",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Vercel Changelog",
@@ -895,12 +895,12 @@
         "vercel",
         "nextjs"
       ],
-      "volume": "~110/month",
+      "volume": "~130/month",
       "radio_friendly": "low",
       "has_timestamps": true,
-      "latest_post": "2026-11-07",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Bun",
@@ -918,7 +918,7 @@
       "has_timestamps": true,
       "latest_post": "2026-10-22",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Deno",
@@ -931,12 +931,12 @@
         "nodejs",
         "typescript"
       ],
-      "volume": "~1/month",
+      "volume": "<1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-10-09",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Go Blog",
@@ -951,9 +951,9 @@
       "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-04",
+      "latest_post": "2026-11-10",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Node.js",
@@ -965,12 +965,12 @@
       "tags": [
         "nodejs"
       ],
-      "volume": "~8/month",
+      "volume": "~9/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "PHP",
@@ -985,9 +985,9 @@
       "volume": "~10/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Python Insider",
@@ -999,12 +999,12 @@
       "tags": [
         "python"
       ],
-      "volume": "~9/month",
+      "volume": "~8/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-10-26",
+      "latest_post": "2026-11-10",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Ruby",
@@ -1016,12 +1016,12 @@
       "tags": [
         "ruby"
       ],
-      "volume": "~4/month",
+      "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-10-23",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Rust Blog",
@@ -1036,9 +1036,9 @@
       "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-03",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Swift",
@@ -1053,9 +1053,9 @@
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-11",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "TypeScript",
@@ -1067,12 +1067,12 @@
       "tags": [
         "typescript"
       ],
-      "volume": "~2/month",
+      "volume": "~1/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-10-20",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Astro",
@@ -1089,7 +1089,7 @@
       "has_timestamps": true,
       "latest_post": "2026-10-31",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Chrome for Developers",
@@ -1101,12 +1101,12 @@
       "tags": [
         "browsers"
       ],
-      "volume": "~6/month",
+      "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-10-07",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Mozilla Hacks",
@@ -1123,7 +1123,7 @@
       "has_timestamps": true,
       "latest_post": "2026-08-24",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Next.js",
@@ -1142,7 +1142,7 @@
       "has_timestamps": true,
       "latest_post": "2026-11-03",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "React",
@@ -1159,7 +1159,7 @@
       "has_timestamps": true,
       "latest_post": "2026-09-09",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Svelte",
@@ -1176,7 +1176,7 @@
       "has_timestamps": true,
       "latest_post": "2026-10-01",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Tailwind CSS",
@@ -1193,7 +1193,7 @@
       "has_timestamps": true,
       "latest_post": "2026-09-09",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Vite",
@@ -1210,7 +1210,7 @@
       "has_timestamps": true,
       "latest_post": "2026-06-23",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Vue.js",
@@ -1227,8 +1227,8 @@
       "has_timestamps": true,
       "latest_post": "2024-09-01",
       "status": "stale",
-      "last_checked": "2026-11-08",
-      "status_detail": "no new posts for 798 days"
+      "last_checked": "2026-11-15",
+      "status_detail": "no new posts for 805 days"
     },
     {
       "name": "WebKit",
@@ -1243,9 +1243,9 @@
       "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Cloudflare Security",
@@ -1261,9 +1261,9 @@
       "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "GitHub Security",
@@ -1276,12 +1276,12 @@
         "security",
         "github"
       ],
-      "volume": "~2/month",
+      "volume": "~3/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-10-22",
+      "latest_post": "2026-11-10",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Google Project Zero",
@@ -1296,9 +1296,9 @@
       "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-10-27",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Google Security Blog",
@@ -1315,8 +1315,8 @@
       "has_timestamps": true,
       "latest_post": "2026-04-23",
       "status": "stale",
-      "last_checked": "2026-11-08",
-      "status_detail": "no new posts for 198 days"
+      "last_checked": "2026-11-15",
+      "status_detail": "no new posts for 205 days"
     },
     {
       "name": "Rust Security Advisories",
@@ -1329,12 +1329,12 @@
         "security",
         "rust"
       ],
-      "volume": "~120/month",
+      "volume": "~520/month",
       "radio_friendly": "low",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Cybozu Engineering",
@@ -1351,7 +1351,7 @@
       "has_timestamps": true,
       "latest_post": "2026-10-30",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "DeNA Engineering",
@@ -1363,12 +1363,12 @@
       "tags": [
         "japan-tech"
       ],
-      "volume": "~10/month",
+      "volume": "~9/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-11-04",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Discord Engineering",
@@ -1380,12 +1380,12 @@
       "tags": [
         "global-tech"
       ],
-      "volume": "~5/month",
+      "volume": "~6/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Dropbox Tech",
@@ -1397,12 +1397,12 @@
       "tags": [
         "global-tech"
       ],
-      "volume": "~3/month",
+      "volume": "~2/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-11-05",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Figma Engineering",
@@ -1417,9 +1417,9 @@
       "volume": "~15/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "freee Developers Hub",
@@ -1431,12 +1431,12 @@
       "tags": [
         "japan-tech"
       ],
-      "volume": "~6/month",
+      "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-11-05",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "LINE / LY Engineering",
@@ -1451,9 +1451,9 @@
       "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-11",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Netflix Tech Blog",
@@ -1468,9 +1468,9 @@
       "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-10-26",
+      "latest_post": "2026-11-09",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Shopify Engineering",
@@ -1482,12 +1482,12 @@
       "tags": [
         "global-tech"
       ],
-      "volume": "~4/month",
+      "volume": "~5/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Slack Engineering",
@@ -1504,7 +1504,7 @@
       "has_timestamps": true,
       "latest_post": "2026-07-14",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "SmartHR Tech Blog",
@@ -1519,9 +1519,9 @@
       "volume": "~20/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-04",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Stripe Engineering",
@@ -1533,12 +1533,12 @@
       "tags": [
         "global-tech"
       ],
-      "volume": "~8/month",
+      "volume": "~7/month",
       "radio_friendly": "high",
       "has_timestamps": true,
       "latest_post": "2026-11-05",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "ZOZO TECH BLOG",
@@ -1550,12 +1550,12 @@
       "tags": [
         "japan-tech"
       ],
-      "volume": "~15/month",
+      "volume": "~10/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-06",
+      "latest_post": "2026-11-13",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "クックパッド開発者ブログ",
@@ -1572,7 +1572,7 @@
       "has_timestamps": true,
       "latest_post": "2026-09-02",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "メルカリ engineering",
@@ -1584,13 +1584,12 @@
       "tags": [
         "japan-tech"
       ],
-      "volume": "~8/month",
+      "volume": "~4/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-08-20",
-      "status": "blocked",
-      "last_checked": "2026-11-08",
-      "status_detail": "refuses automated clients (HTTP 403 from CI)"
+      "latest_post": "2026-11-10",
+      "status": "ok",
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Hacker News Front Page",
@@ -1605,9 +1604,9 @@
       "volume": "~600/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-08",
+      "latest_post": "2026-11-15",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Publickey",
@@ -1619,12 +1618,12 @@
       "tags": [
         "japan-tech"
       ],
-      "volume": "~25/month",
-      "radio_friendly": "high",
+      "volume": "~45/month",
+      "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-05",
+      "latest_post": "2026-11-12",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "Zenn Trending",
@@ -1640,9 +1639,9 @@
       "volume": "~100/month",
       "radio_friendly": "medium",
       "has_timestamps": true,
-      "latest_post": "2026-11-07",
+      "latest_post": "2026-11-14",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     },
     {
       "name": "はてなブックマーク テクノロジー",
@@ -1655,12 +1654,12 @@
         "hatena",
         "japan-tech"
       ],
-      "volume": "~20/month",
+      "volume": "~30/month",
       "radio_friendly": "high",
       "has_timestamps": true,
-      "latest_post": "2026-11-08",
+      "latest_post": "2026-11-15",
       "status": "ok",
-      "last_checked": "2026-11-08"
+      "last_checked": "2026-11-15"
     }
   ]
 }

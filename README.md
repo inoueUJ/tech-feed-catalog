@@ -34,123 +34,123 @@ notebooklm-radio の設定ファイルは、このカタログを元にしたビ
 
 <!-- BEGIN CATALOG -->
 
-**76 フィード**・8 カテゴリ・73 件が稼働確認済み
+**76 フィード**・8 カテゴリ・74 件が稼働確認済み
 
 ### AI モデル・研究
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Anthropic Engineering](https://www.anthropic.com/research) | ブログ | ~160/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-11-08 |
-| [Anthropic News](https://www.anthropic.com/news) | ブログ | ~200/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-11-08 |
-| [Google AI Blog](https://blog.google/technology/ai/) | ブログ | ~10/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-11-08 |
-| [Google DeepMind](https://deepmind.google/discover/blog/) | ブログ | ~10/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-11-08 |
-| [Google Gemini](https://blog.google/products/gemini/) | ブログ | ~15/month | ★★★ | en | [RSS](https://blog.google/products/gemini/rss/) | ✅ 2026-11-08 |
-| [Hugging Face](https://huggingface.co/blog) | ブログ | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ✅ 2026-11-08 |
-| [OpenAI News](https://openai.com/news) | ブログ | ~70/month | ★★ | en | [RSS](https://openai.com/news/rss.xml) ¹ | ✅ 2026-11-08 |
-| [Simon Willison](https://simonwillison.net/) | ブログ | ~60/month | ★★★ | en | [RSS](https://simonwillison.net/atom/everything/) | ✅ 2026-11-08 |
+| [Anthropic Engineering](https://www.anthropic.com/research) | ブログ | ~135/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-11-15 |
+| [Anthropic News](https://www.anthropic.com/news) | ブログ | ~170/month | ★★ | en | [sitemap](https://www.anthropic.com/sitemap.xml) | ✅ 2026-11-15 |
+| [Google AI Blog](https://blog.google/technology/ai/) | ブログ | ~10/month | ★★★ | en | [RSS](https://blog.google/technology/ai/rss/) | ✅ 2026-11-15 |
+| [Google DeepMind](https://deepmind.google/discover/blog/) | ブログ | ~10/month | ★★★ | en | [RSS](https://deepmind.google/blog/rss.xml) | ✅ 2026-11-15 |
+| [Google Gemini](https://blog.google/products/gemini/) | ブログ | ~35/month | ★★★ | en | [RSS](https://blog.google/products/gemini/rss/) | ✅ 2026-11-15 |
+| [Hugging Face](https://huggingface.co/blog) | ブログ | ~20/month | ★★★ | en | [RSS](https://huggingface.co/blog/feed.xml) | ✅ 2026-11-15 |
+| [OpenAI News](https://openai.com/news) | ブログ | ~75/month | ★★ | en | [RSS](https://openai.com/news/rss.xml) ¹ | ✅ 2026-11-15 |
+| [Simon Willison](https://simonwillison.net/) | ブログ | ~75/month | ★★★ | en | [RSS](https://simonwillison.net/atom/everything/) | ✅ 2026-11-15 |
 
 ### AI コーディングツール
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Antigravity](https://antigravity.google/blog) | ブログ | unknown | ★★★ | en | [sitemap](https://antigravity.google/sitemap.xml) | ✅ 2026-11-08 |
-| [Claude Blog](https://claude.com/resources/articles) | ブログ | unknown | ★★★ | en | [sitemap](https://claude.com/sitemap.xml) | ✅ 2026-11-08 |
-| [Claude Code](https://code.claude.com/docs/en/whats-new) | リリース | ~2/month | ★★ | en | [RSS](https://code.claude.com/docs/en/whats-new/rss.xml) | ✅ 2026-11-08 |
-| [Codex Changelog](https://developers.openai.com/codex/changelog) | 変更履歴 | ~25/month | ★★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-11-08 |
-| [Cursor Changelog](https://cursor.com/changelog) | 変更履歴 | ~4/month | ★★ | en | [RSS](https://cursor.com/changelog/rss.xml) | ✅ 2026-11-08 |
-| [GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/) | ブログ | ~6/month | ★★★ | en | [RSS](https://github.blog/ai-and-ml/github-copilot/feed/) | ✅ 2026-11-08 |
-| [Zed](https://zed.dev/blog) | ブログ | ~1/month | ★★★ | en | [RSS](https://zed.dev/blog.rss) | ✅ 2026-11-08 |
+| [Antigravity](https://antigravity.google/blog) | ブログ | unknown | ★★★ | en | [sitemap](https://antigravity.google/sitemap.xml) | ✅ 2026-11-15 |
+| [Claude Blog](https://claude.com/resources/articles) | ブログ | unknown | ★★★ | en | [sitemap](https://claude.com/sitemap.xml) | ✅ 2026-11-15 |
+| [Claude Code](https://code.claude.com/docs/en/whats-new) | リリース | ~2/month | ★★ | en | [RSS](https://code.claude.com/docs/en/whats-new/rss.xml) | ✅ 2026-11-15 |
+| [Codex Changelog](https://developers.openai.com/codex/changelog) | 変更履歴 | ~25/month | ★★ | en | [RSS](https://developers.openai.com/codex/changelog/rss.xml) | ✅ 2026-11-15 |
+| [Cursor Changelog](https://cursor.com/changelog) | 変更履歴 | ~4/month | ★★ | en | [RSS](https://cursor.com/changelog/rss.xml) | ✅ 2026-11-15 |
+| [GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/) | ブログ | ~6/month | ★★★ | en | [RSS](https://github.blog/ai-and-ml/github-copilot/feed/) | ✅ 2026-11-15 |
+| [Zed](https://zed.dev/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://zed.dev/blog.rss) | ✅ 2026-11-15 |
 
 ### クラウド・インフラ
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) | ブログ | ~25/month | ★★★ | en | [RSS](https://aws.amazon.com/blogs/architecture/feed/) | ✅ 2026-11-08 |
-| [AWS News](https://aws.amazon.com/new/) | 変更履歴 | ~275/month | ★ | en | [RSS](https://aws.amazon.com/about-aws/whats-new/recent/feed/) | ✅ 2026-11-08 |
-| [Cloudflare Blog](https://blog.cloudflare.com/) | ブログ | ~30/month | ★★★ | en | [RSS](https://blog.cloudflare.com/rss/) | ✅ 2026-11-08 |
-| [Cloudflare Changelog](https://developers.cloudflare.com/changelog/) | 変更履歴 | ~120/month | ★ | en | [RSS](https://developers.cloudflare.com/changelog/rss.xml) | ✅ 2026-11-08 |
-| [Docker](https://www.docker.com/blog/) | ブログ | ~20/month | ★★★ | en | [RSS](https://www.docker.com/blog/feed/) | ✅ 2026-11-08 |
-| [DuckDB](https://duckdb.org/news/) | ブログ | ~9/month | ★★★ | en | [RSS](https://duckdb.org/feed.xml) | ✅ 2026-11-08 |
-| [Fly.io](https://fly.io/blog/) | ブログ | ~2/month | ★★★ | en | [RSS](https://fly.io/blog/feed.xml) | ✅ 2026-11-08 |
-| [GitHub Changelog](https://github.blog/changelog/) | 変更履歴 | ~100/month | ★ | en | [RSS](https://github.blog/changelog/feed/) | ✅ 2026-11-08 |
-| [Google Cloud Blog](https://cloud.google.com/blog) | ブログ | ~120/month | ★★★ | en | [RSS](https://cloudblog.withgoogle.com/rss/) | ✅ 2026-11-08 |
-| [Grafana](https://grafana.com/blog/) | ブログ | ~15/month | ★★★ | en | [RSS](https://grafana.com/blog/index.xml) | ✅ 2026-11-08 |
-| [HashiCorp](https://www.hashicorp.com/blog) | ブログ | ~10/month | ★★★ | en | [RSS](https://www.hashicorp.com/blog/feed.xml) | ✅ 2026-11-08 |
-| [Kubernetes](https://kubernetes.io/blog/) | ブログ | ~8/month | ★★★ | en | [RSS](https://kubernetes.io/feed.xml) | ✅ 2026-11-08 |
-| [PlanetScale](https://planetscale.com/blog) | ブログ | ~15/month | ★★★ | en | [RSS](https://planetscale.com/blog/rss.xml) | ✅ 2026-11-08 |
-| [Sentry](https://blog.sentry.io/) | ブログ | ~8/month | ★★★ | en | [RSS](https://blog.sentry.io/feed.xml) | ✅ 2026-11-08 |
-| [Supabase](https://supabase.com/blog) | ブログ | ~10/month | ★★★ | en | [RSS](https://supabase.com/rss.xml) | ✅ 2026-11-08 |
-| [Vercel Blog](https://vercel.com/blog) | ブログ | ~110/month | ★★ | en | [RSS](https://vercel.com/blog/feed) | ✅ 2026-11-08 |
-| [Vercel Changelog](https://vercel.com/changelog) | 変更履歴 | ~110/month | ★ | en | [RSS](https://vercel.com/atom) | ✅ 2026-11-08 |
+| [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) | ブログ | ~35/month | ★★★ | en | [RSS](https://aws.amazon.com/blogs/architecture/feed/) | ✅ 2026-11-15 |
+| [AWS News](https://aws.amazon.com/new/) | 変更履歴 | ~300/month | ★ | en | [RSS](https://aws.amazon.com/about-aws/whats-new/recent/feed/) | ✅ 2026-11-15 |
+| [Cloudflare Blog](https://blog.cloudflare.com/) | ブログ | ~25/month | ★★★ | en | [RSS](https://blog.cloudflare.com/rss/) | ✅ 2026-11-15 |
+| [Cloudflare Changelog](https://developers.cloudflare.com/changelog/) | 変更履歴 | ~125/month | ★ | en | [RSS](https://developers.cloudflare.com/changelog/rss.xml) | ✅ 2026-11-15 |
+| [Docker](https://www.docker.com/blog/) | ブログ | ~15/month | ★★★ | en | [RSS](https://www.docker.com/blog/feed/) | ✅ 2026-11-15 |
+| [DuckDB](https://duckdb.org/news/) | ブログ | ~9/month | ★★★ | en | [RSS](https://duckdb.org/feed.xml) | ✅ 2026-11-15 |
+| [Fly.io](https://fly.io/blog/) | ブログ | ~2/month | ★★★ | en | [RSS](https://fly.io/blog/feed.xml) | ✅ 2026-11-15 |
+| [GitHub Changelog](https://github.blog/changelog/) | 変更履歴 | ~75/month | ★ | en | [RSS](https://github.blog/changelog/feed/) | ✅ 2026-11-15 |
+| [Google Cloud Blog](https://cloud.google.com/blog) | ブログ | ~120/month | ★★★ | en | [RSS](https://cloudblog.withgoogle.com/rss/) | ✅ 2026-11-15 |
+| [Grafana](https://grafana.com/blog/) | ブログ | ~20/month | ★★★ | en | [RSS](https://grafana.com/blog/index.xml) | ✅ 2026-11-15 |
+| [HashiCorp](https://www.hashicorp.com/blog) | ブログ | ~15/month | ★★★ | en | [RSS](https://www.hashicorp.com/blog/feed.xml) | ✅ 2026-11-15 |
+| [Kubernetes](https://kubernetes.io/blog/) | ブログ | ~9/month | ★★★ | en | [RSS](https://kubernetes.io/feed.xml) | ✅ 2026-11-15 |
+| [PlanetScale](https://planetscale.com/blog) | ブログ | ~10/month | ★★★ | en | [RSS](https://planetscale.com/blog/rss.xml) | ✅ 2026-11-15 |
+| [Sentry](https://blog.sentry.io/) | ブログ | ~9/month | ★★★ | en | [RSS](https://blog.sentry.io/feed.xml) | ✅ 2026-11-15 |
+| [Supabase](https://supabase.com/blog) | ブログ | ~9/month | ★★★ | en | [RSS](https://supabase.com/rss.xml) | ✅ 2026-11-15 |
+| [Vercel Blog](https://vercel.com/blog) | ブログ | ~130/month | ★★★ | en | [RSS](https://vercel.com/blog/feed) | ✅ 2026-11-15 |
+| [Vercel Changelog](https://vercel.com/changelog) | 変更履歴 | ~130/month | ★ | en | [RSS](https://vercel.com/atom) | ✅ 2026-11-15 |
 
 ### 言語・ランタイム
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Bun](https://bun.sh/blog) | ブログ | ~2/month | ★★★ | en | [RSS](https://bun.sh/rss.xml) | ✅ 2026-11-08 |
-| [Deno](https://deno.com/blog) | ブログ | ~1/month | ★★★ | en | [RSS](https://deno.com/feed) | ✅ 2026-11-08 |
-| [Go Blog](https://go.dev/blog/) | ブログ | ~4/month | ★★★ | en | [RSS](https://go.dev/blog/feed.atom) | ✅ 2026-11-08 |
-| [Node.js](https://nodejs.org/en/blog) | リリース | ~8/month | ★★ | en | [RSS](https://nodejs.org/en/feed/blog.xml) | ✅ 2026-11-08 |
-| [PHP](https://www.php.net/) | リリース | ~10/month | ★★ | en | [RSS](https://www.php.net/feed.atom) | ✅ 2026-11-08 |
-| [Python Insider](https://blog.python.org/) | リリース | ~9/month | ★★ | en | [RSS](https://blog.python.org/feeds/posts/default) | ✅ 2026-11-08 |
-| [Ruby](https://www.ruby-lang.org/en/news/) | リリース | ~4/month | ★★★ | en | [RSS](https://www.ruby-lang.org/en/feeds/news.rss) | ✅ 2026-11-08 |
-| [Rust Blog](https://blog.rust-lang.org/) | ブログ | ~5/month | ★★★ | en | [RSS](https://blog.rust-lang.org/feed.xml) | ✅ 2026-11-08 |
-| [Swift](https://www.swift.org/blog/) | ブログ | ~2/month | ★★★ | en | [RSS](https://www.swift.org/atom.xml) | ✅ 2026-11-08 |
-| [TypeScript](https://devblogs.microsoft.com/typescript/) | ブログ | ~2/month | ★★★ | en | [RSS](https://devblogs.microsoft.com/typescript/feed/) | ✅ 2026-11-08 |
+| [Bun](https://bun.sh/blog) | ブログ | ~2/month | ★★★ | en | [RSS](https://bun.sh/rss.xml) | ✅ 2026-11-15 |
+| [Deno](https://deno.com/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://deno.com/feed) | ✅ 2026-11-15 |
+| [Go Blog](https://go.dev/blog/) | ブログ | ~4/month | ★★★ | en | [RSS](https://go.dev/blog/feed.atom) | ✅ 2026-11-15 |
+| [Node.js](https://nodejs.org/en/blog) | リリース | ~9/month | ★★ | en | [RSS](https://nodejs.org/en/feed/blog.xml) | ✅ 2026-11-15 |
+| [PHP](https://www.php.net/) | リリース | ~10/month | ★★ | en | [RSS](https://www.php.net/feed.atom) | ✅ 2026-11-15 |
+| [Python Insider](https://blog.python.org/) | リリース | ~8/month | ★★ | en | [RSS](https://blog.python.org/feeds/posts/default) | ✅ 2026-11-15 |
+| [Ruby](https://www.ruby-lang.org/en/news/) | リリース | ~3/month | ★★★ | en | [RSS](https://www.ruby-lang.org/en/feeds/news.rss) | ✅ 2026-11-15 |
+| [Rust Blog](https://blog.rust-lang.org/) | ブログ | ~5/month | ★★★ | en | [RSS](https://blog.rust-lang.org/feed.xml) | ✅ 2026-11-15 |
+| [Swift](https://www.swift.org/blog/) | ブログ | ~2/month | ★★★ | en | [RSS](https://www.swift.org/atom.xml) | ✅ 2026-11-15 |
+| [TypeScript](https://devblogs.microsoft.com/typescript/) | ブログ | ~1/month | ★★★ | en | [RSS](https://devblogs.microsoft.com/typescript/feed/) | ✅ 2026-11-15 |
 
 ### フロントエンド
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Astro](https://astro.build/blog/) | ブログ | ~3/month | ★★★ | en | [RSS](https://astro.build/rss.xml) | ✅ 2026-11-08 |
-| [Chrome for Developers](https://developer.chrome.com/blog) | ブログ | ~6/month | ★★★ | en | [RSS](https://developer.chrome.com/static/blog/feed.xml) | ✅ 2026-11-08 |
-| [Mozilla Hacks](https://hacks.mozilla.org/) | ブログ | <1/month | ★★★ | en | [RSS](https://hacks.mozilla.org/feed/) | ✅ 2026-11-08 |
-| [Next.js](https://nextjs.org/blog) | ブログ | ~6/month | ★★★ | en | [RSS](https://nextjs.org/feed.xml) | ✅ 2026-11-08 |
-| [React](https://react.dev/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://react.dev/rss.xml) | ✅ 2026-11-08 |
-| [Svelte](https://svelte.dev/blog) | ブログ | ~1/month | ★★★ | en | [RSS](https://svelte.dev/blog/rss.xml) | ✅ 2026-11-08 |
-| [Tailwind CSS](https://tailwindcss.com/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://tailwindcss.com/feeds/feed.xml) | ✅ 2026-11-08 |
-| [Vite](https://vite.dev/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://vite.dev/blog.rss) | ✅ 2026-11-08 |
-| [Vue.js](https://blog.vuejs.org/) | ブログ | <1/month | ★★★ | en | [RSS](https://blog.vuejs.org/feed.rss) | 💤 no new posts for 798 days |
-| [WebKit](https://webkit.org/blog/) | ブログ | ~5/month | ★★★ | en | [RSS](https://webkit.org/feed/) | ✅ 2026-11-08 |
+| [Astro](https://astro.build/blog/) | ブログ | ~3/month | ★★★ | en | [RSS](https://astro.build/rss.xml) | ✅ 2026-11-15 |
+| [Chrome for Developers](https://developer.chrome.com/blog) | ブログ | ~5/month | ★★★ | en | [RSS](https://developer.chrome.com/static/blog/feed.xml) | ✅ 2026-11-15 |
+| [Mozilla Hacks](https://hacks.mozilla.org/) | ブログ | <1/month | ★★★ | en | [RSS](https://hacks.mozilla.org/feed/) | ✅ 2026-11-15 |
+| [Next.js](https://nextjs.org/blog) | ブログ | ~6/month | ★★★ | en | [RSS](https://nextjs.org/feed.xml) | ✅ 2026-11-15 |
+| [React](https://react.dev/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://react.dev/rss.xml) | ✅ 2026-11-15 |
+| [Svelte](https://svelte.dev/blog) | ブログ | ~1/month | ★★★ | en | [RSS](https://svelte.dev/blog/rss.xml) | ✅ 2026-11-15 |
+| [Tailwind CSS](https://tailwindcss.com/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://tailwindcss.com/feeds/feed.xml) | ✅ 2026-11-15 |
+| [Vite](https://vite.dev/blog) | ブログ | <1/month | ★★★ | en | [RSS](https://vite.dev/blog.rss) | ✅ 2026-11-15 |
+| [Vue.js](https://blog.vuejs.org/) | ブログ | <1/month | ★★★ | en | [RSS](https://blog.vuejs.org/feed.rss) | 💤 no new posts for 805 days |
+| [WebKit](https://webkit.org/blog/) | ブログ | ~5/month | ★★★ | en | [RSS](https://webkit.org/feed/) | ✅ 2026-11-15 |
 
 ### セキュリティ
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Cloudflare Security](https://blog.cloudflare.com/tag/security/) | ブログ | ~15/month | ★★★ | en | [RSS](https://blog.cloudflare.com/tag/security/rss/) | ✅ 2026-11-08 |
-| [GitHub Security](https://github.blog/security/) | ブログ | ~2/month | ★★★ | en | [RSS](https://github.blog/security/feed/) | ✅ 2026-11-08 |
-| [Google Project Zero](https://googleprojectzero.blogspot.com/) | ブログ | ~2/month | ★★★ | en | [RSS](https://googleprojectzero.blogspot.com/feeds/posts/default) | ✅ 2026-11-08 |
-| [Google Security Blog](https://security.googleblog.com/) | ブログ | <1/month | ★★★ | en | [RSS](https://security.googleblog.com/feeds/posts/default) | 💤 no new posts for 198 days |
-| [Rust Security Advisories](https://rustsec.org/advisories/) | 変更履歴 | ~120/month | ★ | en | [RSS](https://rustsec.org/feed.xml) | ✅ 2026-11-08 |
+| [Cloudflare Security](https://blog.cloudflare.com/tag/security/) | ブログ | ~15/month | ★★★ | en | [RSS](https://blog.cloudflare.com/tag/security/rss/) | ✅ 2026-11-15 |
+| [GitHub Security](https://github.blog/security/) | ブログ | ~3/month | ★★★ | en | [RSS](https://github.blog/security/feed/) | ✅ 2026-11-15 |
+| [Google Project Zero](https://googleprojectzero.blogspot.com/) | ブログ | ~2/month | ★★★ | en | [RSS](https://googleprojectzero.blogspot.com/feeds/posts/default) | ✅ 2026-11-15 |
+| [Google Security Blog](https://security.googleblog.com/) | ブログ | <1/month | ★★★ | en | [RSS](https://security.googleblog.com/feeds/posts/default) | 💤 no new posts for 205 days |
+| [Rust Security Advisories](https://rustsec.org/advisories/) | 変更履歴 | ~520/month | ★ | en | [RSS](https://rustsec.org/feed.xml) | ✅ 2026-11-15 |
 
 ### 企業テックブログ
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Cybozu Engineering](https://blog.cybozu.io/) | ブログ | ~8/month | ★★★ | ja | [RSS](https://blog.cybozu.io/feed) | ✅ 2026-11-08 |
-| [DeNA Engineering](https://engineering.dena.com/) | ブログ | ~10/month | ★★★ | ja | [RSS](https://engineering.dena.com/index.xml) | ✅ 2026-11-08 |
-| [Discord Engineering](https://discord.com/category/engineering) | ブログ | ~5/month | ★★★ | en | [RSS](https://discord.com/blog/rss.xml) | ✅ 2026-11-08 |
-| [Dropbox Tech](https://dropbox.tech/) | ブログ | ~3/month | ★★★ | en | [RSS](https://dropbox.tech/feed) | ✅ 2026-11-08 |
-| [Figma Engineering](https://www.figma.com/blog/engineering/) | ブログ | ~15/month | ★★★ | en | [RSS](https://www.figma.com/blog/feed/atom.xml) | ✅ 2026-11-08 |
-| [freee Developers Hub](https://developers.freee.co.jp/) | ブログ | ~6/month | ★★★ | ja | [RSS](https://developers.freee.co.jp/feed) | ✅ 2026-11-08 |
-| [LINE / LY Engineering](https://techblog.lycorp.co.jp/ja) | ブログ | ~10/month | ★★★ | ja | [RSS](https://techblog.lycorp.co.jp/ja/feed/index.xml) | ✅ 2026-11-08 |
-| [Netflix Tech Blog](https://netflixtechblog.com/) | ブログ | ~10/month | ★★★ | en | [RSS](https://netflixtechblog.com/feed) | ✅ 2026-11-08 |
-| [Shopify Engineering](https://shopify.engineering/) | ブログ | ~4/month | ★★★ | en | [RSS](https://shopify.engineering/blog.atom) | ✅ 2026-11-08 |
-| [Slack Engineering](https://slack.engineering/) | ブログ | <1/month | ★★★ | en | [RSS](https://slack.engineering/feed/) | ✅ 2026-11-08 |
-| [SmartHR Tech Blog](https://tech.smarthr.jp/) | ブログ | ~20/month | ★★★ | ja | [RSS](https://tech.smarthr.jp/feed) | ✅ 2026-11-08 |
-| [Stripe Engineering](https://stripe.com/blog/engineering) | ブログ | ~8/month | ★★★ | en | [RSS](https://stripe.com/blog/feed.rss) | ✅ 2026-11-08 |
-| [ZOZO TECH BLOG](https://techblog.zozo.com/) | ブログ | ~15/month | ★★★ | ja | [RSS](https://techblog.zozo.com/feed) | ✅ 2026-11-08 |
-| [クックパッド開発者ブログ](https://techlife.cookpad.com/) | ブログ | <1/month | ★★★ | ja | [RSS](https://techlife.cookpad.com/feed) | ✅ 2026-11-08 |
-| [メルカリ engineering](https://engineering.mercari.com/blog/) | ブログ | ~8/month | ★★★ | ja | [RSS](https://engineering.mercari.com/blog/feed.xml) | 🤖 ボット拒否 |
+| [Cybozu Engineering](https://blog.cybozu.io/) | ブログ | ~8/month | ★★★ | ja | [RSS](https://blog.cybozu.io/feed) | ✅ 2026-11-15 |
+| [DeNA Engineering](https://engineering.dena.com/) | ブログ | ~9/month | ★★★ | ja | [RSS](https://engineering.dena.com/index.xml) | ✅ 2026-11-15 |
+| [Discord Engineering](https://discord.com/category/engineering) | ブログ | ~6/month | ★★★ | en | [RSS](https://discord.com/blog/rss.xml) | ✅ 2026-11-15 |
+| [Dropbox Tech](https://dropbox.tech/) | ブログ | ~2/month | ★★★ | en | [RSS](https://dropbox.tech/feed) | ✅ 2026-11-15 |
+| [Figma Engineering](https://www.figma.com/blog/engineering/) | ブログ | ~15/month | ★★★ | en | [RSS](https://www.figma.com/blog/feed/atom.xml) | ✅ 2026-11-15 |
+| [freee Developers Hub](https://developers.freee.co.jp/) | ブログ | ~5/month | ★★★ | ja | [RSS](https://developers.freee.co.jp/feed) | ✅ 2026-11-15 |
+| [LINE / LY Engineering](https://techblog.lycorp.co.jp/ja) | ブログ | ~10/month | ★★★ | ja | [RSS](https://techblog.lycorp.co.jp/ja/feed/index.xml) | ✅ 2026-11-15 |
+| [Netflix Tech Blog](https://netflixtechblog.com/) | ブログ | ~10/month | ★★★ | en | [RSS](https://netflixtechblog.com/feed) | ✅ 2026-11-15 |
+| [Shopify Engineering](https://shopify.engineering/) | ブログ | ~5/month | ★★★ | en | [RSS](https://shopify.engineering/blog.atom) | ✅ 2026-11-15 |
+| [Slack Engineering](https://slack.engineering/) | ブログ | <1/month | ★★★ | en | [RSS](https://slack.engineering/feed/) | ✅ 2026-11-15 |
+| [SmartHR Tech Blog](https://tech.smarthr.jp/) | ブログ | ~20/month | ★★★ | ja | [RSS](https://tech.smarthr.jp/feed) | ✅ 2026-11-15 |
+| [Stripe Engineering](https://stripe.com/blog/engineering) | ブログ | ~7/month | ★★★ | en | [RSS](https://stripe.com/blog/feed.rss) | ✅ 2026-11-15 |
+| [ZOZO TECH BLOG](https://techblog.zozo.com/) | ブログ | ~10/month | ★★★ | ja | [RSS](https://techblog.zozo.com/feed) | ✅ 2026-11-15 |
+| [クックパッド開発者ブログ](https://techlife.cookpad.com/) | ブログ | <1/month | ★★★ | ja | [RSS](https://techlife.cookpad.com/feed) | ✅ 2026-11-15 |
+| [メルカリ engineering](https://engineering.mercari.com/blog/) | ブログ | ~4/month | ★★★ | ja | [RSS](https://engineering.mercari.com/blog/feed.xml) | ✅ 2026-11-15 |
 
 ### アグリゲータ
 
 | フィード | 種類 | 月あたり | ラジオ向き | 言語 | フィード URL | 確認日 |
 |---|---|---|---|---|---|---|
-| [Hacker News Front Page](https://news.ycombinator.com/) | ブログ | ~600/month | ★★ | en | [RSS](https://hnrss.org/frontpage) | ✅ 2026-11-08 |
-| [Publickey](https://www.publickey1.jp/) | ブログ | ~25/month | ★★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-11-08 |
-| [Zenn Trending](https://zenn.dev/) | ブログ | ~100/month | ★★ | ja | [RSS](https://zenn.dev/feed) | ✅ 2026-11-08 |
-| [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | ブログ | ~20/month | ★★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-11-08 |
+| [Hacker News Front Page](https://news.ycombinator.com/) | ブログ | ~600/month | ★★ | en | [RSS](https://hnrss.org/frontpage) | ✅ 2026-11-15 |
+| [Publickey](https://www.publickey1.jp/) | ブログ | ~45/month | ★★ | ja | [RSS](https://www.publickey1.jp/atom.xml) | ✅ 2026-11-15 |
+| [Zenn Trending](https://zenn.dev/) | ブログ | ~100/month | ★★ | ja | [RSS](https://zenn.dev/feed) | ✅ 2026-11-15 |
+| [はてなブックマーク テクノロジー](https://b.hatena.ne.jp/hotentry/it) | ブログ | ~30/month | ★★★ | ja | [RSS](https://b.hatena.ne.jp/hotentry/it.rss) | ✅ 2026-11-15 |
 
 ¹ 記事ページがボット対策で自動取得を弾くため、URL ではなくフィードの要約文で購読する。
 <!-- END CATALOG -->
