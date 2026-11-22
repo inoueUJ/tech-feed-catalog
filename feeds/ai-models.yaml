@@ -9,12 +9,12 @@
   tags:
   - claude
   - llm-research
-  volume: ~135/month
+  volume: ~120/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Anthropic News
   url: https://www.anthropic.com/sitemap.xml
   type: sitemap
@@ -25,12 +25,12 @@
   language: en
   tags:
   - claude
-  volume: ~170/month
+  volume: ~150/month
   radio_friendly: medium
   has_timestamps: false
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Google AI Blog
   url: https://blog.google/technology/ai/rss/
   site: https://blog.google/technology/ai/
@@ -42,9 +42,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-12'
+  latest_post: '2026-11-19'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Google DeepMind
   url: https://deepmind.google/blog/rss.xml
   site: https://deepmind.google/discover/blog/
@@ -57,9 +57,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-12'
+  latest_post: '2026-11-18'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Google Gemini
   url: https://blog.google/products/gemini/rss/
   site: https://blog.google/products/gemini/
@@ -68,12 +68,12 @@
   language: en
   tags:
   - gemini
-  volume: ~35/month
+  volume: ~40/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Hugging Face
   url: https://huggingface.co/blog/feed.xml
   site: https://huggingface.co/blog
@@ -82,12 +82,12 @@
   language: en
   tags:
   - llm-research
-  volume: ~20/month
+  volume: ~25/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: OpenAI News
   url: https://openai.com/news/rss.xml
   site: https://openai.com/news
@@ -97,12 +97,12 @@
   tags:
   - openai
   source_mode: text
-  volume: ~75/month
+  volume: ~80/month
   radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Simon Willison
   url: https://simonwillison.net/atom/everything/
   site: https://simonwillison.net/
@@ -111,9 +111,9 @@
   language: en
   tags:
   - llm-research
-  volume: ~75/month
-  radio_friendly: high
+  volume: ~90/month
+  radio_friendly: medium
   has_timestamps: true
-  latest_post: '2026-11-14'
+  latest_post: '2026-11-21'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'

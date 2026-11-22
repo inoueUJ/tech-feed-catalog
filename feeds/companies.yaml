@@ -6,12 +6,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~8/month
+  volume: ~7/month
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-10-30'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: DeNA Engineering
   url: https://engineering.dena.com/index.xml
   site: https://engineering.dena.com/
@@ -20,12 +20,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~9/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-04'
+  latest_post: '2026-11-16'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Discord Engineering
   url: https://discord.com/blog/rss.xml
   site: https://discord.com/category/engineering
@@ -37,9 +37,9 @@
   volume: ~6/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-12'
+  latest_post: '2026-11-19'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Dropbox Tech
   url: https://dropbox.tech/feed
   site: https://dropbox.tech/
@@ -53,7 +53,7 @@
   has_timestamps: true
   latest_post: '2026-11-05'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Figma Engineering
   url: https://www.figma.com/blog/feed/atom.xml
   site: https://www.figma.com/blog/engineering/
@@ -65,9 +65,9 @@
   volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: freee Developers Hub
   url: https://developers.freee.co.jp/feed
   site: https://developers.freee.co.jp/
@@ -76,12 +76,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~5/month
+  volume: ~4/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-05'
+  latest_post: '2026-11-16'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: LINE / LY Engineering
   url: https://techblog.lycorp.co.jp/ja/feed/index.xml
   site: https://techblog.lycorp.co.jp/ja
@@ -90,12 +90,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~10/month
+  volume: ~15/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-11'
+  latest_post: '2026-11-19'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Netflix Tech Blog
   url: https://netflixtechblog.com/feed
   site: https://netflixtechblog.com/
@@ -104,12 +104,12 @@
   language: en
   tags:
   - global-tech
-  volume: ~10/month
+  volume: ~8/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-09'
+  latest_post: '2026-11-17'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Shopify Engineering
   url: https://shopify.engineering/blog.atom
   site: https://shopify.engineering/
@@ -121,9 +121,9 @@
   volume: ~5/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-12'
+  latest_post: '2026-11-18'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Slack Engineering
   url: https://slack.engineering/feed/
   site: https://slack.engineering/
@@ -137,7 +137,7 @@
   has_timestamps: true
   latest_post: '2026-07-14'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: SmartHR Tech Blog
   url: https://tech.smarthr.jp/feed
   site: https://tech.smarthr.jp/
@@ -146,12 +146,12 @@
   language: ja
   tags:
   - japan-tech
-  volume: ~20/month
+  volume: ~25/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: Stripe Engineering
   url: https://stripe.com/blog/feed.rss
   site: https://stripe.com/blog/engineering
@@ -160,12 +160,12 @@
   language: en
   tags:
   - global-tech
-  volume: ~7/month
+  volume: ~6/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-05'
+  latest_post: '2026-11-19'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: ZOZO TECH BLOG
   url: https://techblog.zozo.com/feed
   site: https://techblog.zozo.com/
@@ -177,9 +177,9 @@
   volume: ~10/month
   radio_friendly: high
   has_timestamps: true
-  latest_post: '2026-11-13'
+  latest_post: '2026-11-20'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: クックパッド開発者ブログ
   url: https://techlife.cookpad.com/feed
   site: https://techlife.cookpad.com/
@@ -193,7 +193,7 @@
   has_timestamps: true
   latest_post: '2026-09-02'
   status: ok
-  last_checked: '2026-11-15'
+  last_checked: '2026-11-22'
 - name: メルカリ engineering
   url: https://engineering.mercari.com/blog/feed.xml
   site: https://engineering.mercari.com/blog/
@@ -206,5 +206,6 @@
   radio_friendly: high
   has_timestamps: true
   latest_post: '2026-11-10'
-  status: ok
-  last_checked: '2026-11-15'
+  status: blocked
+  last_checked: '2026-11-22'
+  status_detail: refuses automated clients (HTTP 403 from CI)
